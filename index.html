@@ -10,12 +10,15 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-      integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+    <script
+      src="https://kit.fontawesome.com/5468db3c8c.js"
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
     />
     <title>JPro - Team 1 Project</title>
   </head>
@@ -23,11 +26,17 @@
     <div id="root">
       <div class="screen">
         <div class="menu-bar">
-          <img src="static/images/js_logo.png" alt="JPro Logo" />
+          <img
+            src="static/images/js_logo.png"
+            class="menu-logo"
+            alt="JPro Logo"
+          />
           <div class="search">
-            <div class="search-icon"></div>
+            <div class="search-icon">
+              <i class="fas fa-search"></i>
+            </div>
             <div class="search-field">
-              <input type="text" class="search-input" placeholder="Search" />
+              <input type="text" class="search-input" placeholder="Tìm kiếm" />
             </div>
           </div>
         </div>
