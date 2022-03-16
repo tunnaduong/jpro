@@ -2,6 +2,10 @@ body {
   margin: 0;
 }
 
+* {
+  font-family: "Saira Condensed", sans-serif;
+}
+
 .menu-logo {
   width: 60px;
   height: 60px;
@@ -20,14 +24,17 @@ body {
   height: 40px;
   padding: 11px;
   box-sizing: border-box;
-  border: 1 solid #d9d9d9;
-  box-shadow: 0px 3.58537px 3.58537px rgba(0, 0, 0, 0.25);
+  border: 1px solid #d9d9d9;
+  box-shadow: 0px 2.58537px 2.58537px rgb(0 0 0 / 25%);
+  display: flex;
+  align-items: center;
 }
 
 .search-input {
   background-color: inherit;
   border: none;
   outline: none;
+  font-family: inherit;
 }
 
 .search-icon {
@@ -41,4 +48,27 @@ body {
   align-items: center;
   border-bottom: 0.55px solid gray;
   box-shadow: 0px 1.58537px 1.58537px rgba(0, 0, 0, 0.09);
+  justify-content: space-between;
+}
+
+#cover {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgb(255, 255, 255);
+  z-index: 9999;
+}
+
+.menu-navigation-buttons,
+.center-both {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.display-row {
+  display: flex;
+  flex-direction: row;
 }
