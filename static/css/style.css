@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: #f0f2f5;
 }
 
 * {
@@ -49,6 +50,7 @@ body {
   border-bottom: 0.55px solid gray;
   box-shadow: 0px 1.58537px 1.58537px rgba(0, 0, 0, 0.09);
   justify-content: space-between;
+  background-color: white;
 }
 
 #cover {
@@ -71,4 +73,9 @@ body {
 .display-row {
   display: flex;
   flex-direction: row;
+}
+
+.menu-navigation-buttons {
+  position: absolute;
+  top: 0;
 }
