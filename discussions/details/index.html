@@ -5,20 +5,25 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="static/css/style.css" />
-  <script src="static/js/script.js"></script>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="stylesheet" href="../../static/css/style.css" />
+  <script src="../../static/js/script.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png" />
   <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap"
+    rel="stylesheet">
   <title>... - JPro</title>
 </head>
 
 <body>
   <style>
     * {
-      font-size: 20px;
+      font-size: 1.1rem;
+      font-family: 'Roboto', sans-serif;
     }
 
     ::-webkit-scrollbar {
@@ -37,6 +42,7 @@
       transition: all 0.3s;
       display: inline-block;
       border-radius: 5px;
+      cursor: pointer;
     }
 
     .more span {
@@ -81,9 +87,10 @@
     }
 
     .title {
-      font-size: 72px;
+      font-size: 48px;
       margin: 10 auto;
       text-align: center;
+      text-transform: uppercase;
     }
 
     .subtitle {
@@ -97,7 +104,6 @@
     }
 
     .discuss {
-      color: #65676B;
       margin: 50px auto;
     }
 
@@ -111,7 +117,10 @@
 
     .detail-title,
     .left,
-    .right {
+    .right,
+    .count,
+    .user,
+    .post-comment {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -121,18 +130,130 @@
     .date {
       margin-left: 20px;
     }
+
+    #content {
+      color: #65676B;
+      margin: 50px 450px;
+    }
+
+    .count {
+      margin: 20px 50px;
+    }
+
+    i {
+      margin-right: 10px;
+    }
+
+    .user-image {
+      height: 50px;
+      width: 50px;
+      object-fit: cover;
+      border-radius: 100%;
+      margin-right: 10px;
+    }
+
+    .user {
+      justify-content: flex-start;
+    }
+
+    .username {
+      color: #000;
+      font-weight: 500;
+    }
+
+    .time-comment {
+      margin-top: 5px;
+      font-size: 14px;
+      color: #999;
+    }
+
+    .fa-globe-asia {
+      font-size: 12px;
+    }
+
+    .comment {
+      border-radius: 10px;
+      background-color: #f9f9f9;
+      color: #000;
+      padding: 10px 20px 20px 10px;
+    }
+
+    .comment-detail,
+    .comment-wrapper {
+      margin-top: 10px;
+    }
+
+    .reply {
+      font-weight: 500;
+      margin-top: 15px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .reply * {
+      color: #999;
+      font-size: 15px;
+      margin-right: 20px;
+    }
+
+    .comment-wrapper .comment-wrapper,
+    .comment-detail,
+    .reply {
+      margin-left: 60px;
+    }
+
+    .input-cover {
+      width: 100%;
+      position: relative;
+    }
+
+    .input-cover img {
+      position: absolute;
+      left: 0;
+      top: 2px;
+    }
+
+    .input-cover input {
+      box-sizing: border-box;
+      width: 100%;
+      border-radius: 50px;
+      padding: 12.5px 10px;
+      border: 2px solid #fff;
+      transition: all 0.2s;
+    }
+
+    .input-cover input:focus, .input-cover input:hover{
+      outline: 0;
+      border: 2px solid #999;
+    }
+
+    .input-cover input::placeholder {
+      padding-left: 45px;
+    }
+    .up-img ion-icon{
+      margin: 0 20px;
+      font-size: 24px;
+      transition: all 0.2s;
+      padding: 15px;
+    }
+    .up-img:hover ion-icon{
+      background-color: #999;
+      border-radius: 100%;
+    }
   </style>
   <div id="root">
     <div class="screen">
-      <div class="menu-bar">
-        <img src="static/images/js_logo.png" alt="JPro Logo" />
+      <!-- <div class="menu-bar">
+        <img src="../../static/images/js_logo.png" alt="JPro Logo" />
         <div class="search">
           <div class="search-icon"></div>
           <div class="search-field">
             <input type="text" class="search-input" placeholder="Search" />
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="main-content">
         <div id="title" class="container">
           <h1 class="title">Buổi chia sẻ kiến thức</h1>
@@ -189,12 +310,90 @@
               accommodation, food, organizing tours and selling souvenirs to tourists. The weaving village has been
               therefore becoming more and more commercial and lost its root to the cultural and traditional values.</p>
           </div>
+          <hr>
+          <div class="count">
+            <div>
+              <i class="far fa-heart heart"></i> <span class="number">35</span> likes
+            </div>
+            <div>
+              <i class="far fa-comment-alt"></i> <span class="number">35</span> comments
+            </div>
+            <div>
+              <i class="far fa-share-square"></i> <span class="number">10</span> chia sẻ
+            </div>
+            <div>
+              <i class="far fa-eye"></i> <span class="number">2,5k</span> views
+            </div>
+          </div>
+          <hr>
+          <div class="discuss-comments container">
+            <div class="comment-wrapper">
+              <div class="comment-container">
+                <div class="comment">
+                  <div class="user">
+                    <img src="../../static/images/SHIP 2.png" class="user-image" alt="">
+                    <div class="user-detail">
+                      <div class="username">Trần Thùy Trang</div>
+                      <div class="time-comment">30 phút trước · <i class="fas fa-globe-asia"></i></div>
+                    </div>
+                  </div>
+                  <div class="comment-detail">Đẹp trai ghê</div>
+                  <div class="reply">
+                    <div class="comment-react">Thích</div>
+                    <div class="comment-reply">Phản hồi</div>
+                  </div>
+                </div>
+                <div class="comment-wrapper">
+                  <div class="comment-container">
+                    <div class="comment">
+                      <div class="user">
+                        <img src="../../static/images/SHIP 2.png" class="user-image" alt="">
+                        <div class="user-detail">
+                          <div class="username">Trần Thùy Trang</div>
+                          <div class="time-comment">30 phút trước · <i class="fas fa-globe-asia"></i></div>
+                        </div>
+                      </div>
+                      <div class="comment-detail">Đẹp trai ghê</div>
+                      <div class="reply">
+                        <div class="comment-react">Thích</div>
+                        <div class="comment-reply">Phản hồi</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="post-comment">
+                <div class="input-cover">
+                  <img src="../../static/images/SHIP 2.png" class="user-image" alt="">
+                  <input type="text" name="postComment" id="" placeholder="Viết bình luận tại đây...">
+                </div>
+                <div class="up-img">
+                  <input type="file" hidden multiple="false" id="upFile" accept="image/*">
+                  <label for="upFile"><ion-icon name="camera-outline"></ion-icon></label>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+      const heart = document.querySelector('.heart');
+      const num = document.querySelectorAll('.number');
+      heart.addEventListener('click', function () {
+        if (heart.className === 'far fa-heart heart') {
+          heart.className = 'fas fa-heart heart';
+          heart.style.color = 'red';
+          num[0].innerHTML = parseInt(num[0].innerHTML) + 1;
+        } else {
+          heart.className = 'far fa-heart heart';
+          heart.style.color = '#676669';
+          num[0].innerHTML = parseInt(num[0].innerHTML) - 1;
+        }
+      })
+    </script>
 </body>
 
 </html>
