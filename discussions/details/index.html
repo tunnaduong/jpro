@@ -9,12 +9,77 @@
   <script src="static/js/script.js"></script>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="manifest" href="/site.webmanifest" />
   <title>... - JPro</title>
 </head>
 
 <body>
+  <style>
+    ::-webkit-scrollbar {
+      width: 0.6rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 1rem;
+    }
+
+    .cover-box {
+      color: #fff;
+      background-color: #A61F12;
+      padding: 10px 20px;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+
+    .more span {
+      display: inline-block;
+    }
+
+    .more i {
+      margin-left: -0.5rem;
+      transform: translateY(2px);
+      opacity: 0;
+      transition: all 0.2s;
+    }
+
+    .more:hover i {
+      padding-left: 0.5rem;
+      opacity: 1;
+      margin-left: 0;
+    }
+
+    #cover {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+
+    .dropcaps::first-letter {
+      font-size: 3.2em;
+      font-weight: 700;
+      color: #A61F12;
+      line-height: 1;
+      padding-right: 0.3rem;
+      float: left;
+    }
+
+    .image-cover {
+      position: relative;
+    }
+
+    .subtitle {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 45%;
+      margin: 0;
+      padding: 50px 20px;
+      background: rgba(255, 255, 255, 0.6);
+    }
+  </style>
   <div id="root">
     <div class="screen">
       <div class="menu-bar">
@@ -35,13 +100,14 @@
               <div class="date">Mar 08, 2022 22:30</div>
             </div>
             <div class="right">
-              <div class="return cover-box">Trang thảo luận</div>
+              <div class="return cover-box more"><span>Trang thảo luận<i class="fas fa-long-arrow-alt-right"></i></span>
+              </div>
             </div>
           </div>
         </div>
-        <div id="subtitle">
-          <img src="JS.png" alt="Cover Image">
-          <div class="subtitle">
+        <div class="image-cover">
+          <img id="cover" src="JS.png" alt="Cover Image">
+          <div id="subtitle">
             <div class="subtitle-wrapper">
               <div class="container summary-wrapper">
                 <div class="dropcaps subtitle">GitLab là một hệ thống quản lý dự án và phiên bản code, hoạt động giống
@@ -50,6 +116,34 @@
                   tạo ra các kho chứa của riêng mình để có thể làm việc.</div>
               </div>
             </div>
+          </div>
+        </div>
+        <div id="content">
+          <div class="container discuss">
+            Mai Chau district has a total population of 55.663 people whilst 50% are women. There are 5 majoritty ethnic
+            in Mai Chau including 73,3% Thai Ethnic, 17,33% Muong Ethnic, 11,96 Kinh Ethnic, 9,83 % Mong Ethnic, 3.58 %
+            Giao Ethnic. Mai Chau is divided into 22 villages with the percent of poor households take 21,14%(
+            households with income of average 30$ per month). Average population of Mai Chau is 35 years Four villages
+            in the Mai Chau valley have formed a coalition, manufacturing brocade cloth with the productive force of
+            more than 300 loin looms, in order to develop handicraft tourism in their regions. The people of the Lac,
+            Nhot, Van and Pom Coong brocade villagers sell unique handbags, clothes, wallets and pieu handkerchiefs made
+            of brocade as the mean of Weaving with the use of the traditional loin loom is a skill and occupation that
+            is passed down generations among women in these villages. Even as women are engaged in cultivation, weaving
+            is a secondary occupation, with every household owning a traditional loom. Though women or girls may not
+            necessarily undergo training in weaving, the skills are learnt through lived experiences and by
+            participating in the activity from an early age while assisting their mothers or elders. Traditionally, the
+            loin loom has an economic significance as well and forms an important part of the socio-culture of tribal
+            societies. But unfortunately, over the years, loin looms have been slowly disappearing and so is the weaving
+            skill. As the result, younger generation no longer has the skill nor the knowledge as weaving is not done in
+            their homes. The massive invasion of cheap materials and products from china has quickly taken the market.
+            The traditional weaving village slowly disappear. Many young people had to leave their village to be workers
+            in the cities to secure some stable income for the family and themselves. The whole traditional weaving
+            village of Mai Chau face the challenge of being disappear since the young generation will no longer how to
+            work on the loom as they see no future of it and the old generation will also slowly pass away without
+            having a chance to let their children to inherit from their skillful weaving skill. Nowadays, income of most
+            people in the villages is based on cultivation and tourism by providing accommodation, food, organizing
+            tours and selling souvenirs to tourists. The weaving village has been therefore becoming more and more
+            commercial and lost its root to the cultural and traditional values.
           </div>
         </div>
       </div>
