@@ -18,7 +18,7 @@
     <script>
     $("#include-head").load("/includes/head.html");
     $("#include-menu").load("/includes/menu.html");
-    $(window).on("load", function() {
+    window.onload = function() {
         if (location.pathname === "/") {
             $("#include-content").load("/pages/home.html");
             $("#page-title").text("JPro - A project of JSClub Team 1");
@@ -35,7 +35,7 @@
             $("#include-content").load("/pages/errors/404.html");
             $("#page-title").text("Oops, không tìm thấy nội dung - JPro");
         }
-    });
+    };
     </script>
 </body>
 
