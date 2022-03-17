@@ -3,6 +3,14 @@ body {
   background-color: #f0f2f5;
 }
 
+html,
+body,
+#root,
+.screen,
+#include-content {
+  height: 100%;
+}
+
 * {
   font-family: "Roboto", sans-serif;
 }
@@ -47,19 +55,9 @@ body {
   height: 65px;
   display: flex;
   align-items: center;
-  box-shadow: 0px 1.58537px 6px 1px rgb(0 0 0 / 9%);
   justify-content: space-between;
-  background-color: white;
-}
-
-#cover {
   position: fixed;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background: rgb(255, 255, 255);
-  z-index: 9999;
+  visibility: visible;
 }
 
 .menu-navigation-buttons,
@@ -81,6 +79,8 @@ body {
   right: 0;
   top: 0;
   height: 65px;
+  box-shadow: 0px 1.58537px 6px 1px rgb(0 0 0 / 9%);
+  background-color: white;
 }
 
 .left-side-menu {
@@ -89,7 +89,7 @@ body {
   top: 0;
   height: 65px;
   align-items: center;
-  z-index: 5;
+  z-index: 99999;
 }
 
 .right-side-menu {
@@ -100,7 +100,7 @@ body {
   display: flex;
   align-items: center;
   padding-right: 15px;
-  z-index: 5;
+  z-index: 99999;
 }
 
 .user-button img {
@@ -210,4 +210,273 @@ ion-icon[name="flash"] {
   color: white;
   font-size: 12px;
   transform: matrix(-0.31, -0.59, -1.09, 0.11, 0, 0);
+}
+
+#include-content {
+  margin-top: 65px;
+}
+
+::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 1rem;
+}
+
+.cover-box {
+  color: #fff;
+  background-color: #a61f12;
+  padding: 10px 20px;
+  transition: all 0.3s;
+  display: inline-block;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.more span {
+  display: inline-block;
+}
+
+.more i {
+  margin-left: -0.5rem;
+  transform: translateX(2px);
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.more:hover i {
+  padding-left: 0.5rem;
+  opacity: 1;
+  margin-left: 0;
+}
+
+.dropcaps::first-letter {
+  font-size: 3.2em;
+  font-weight: 700;
+  color: #a61f12;
+  line-height: 1;
+  padding-right: 0.3rem;
+  float: left;
+}
+
+.container {
+  width: 900px;
+  margin: 20px auto;
+}
+
+.image-cover {
+  /* position: relative; */
+}
+
+.title {
+  font-size: 48px;
+  margin: 10 auto;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 45%;
+  margin: 0;
+  padding: 50px 20px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.discuss {
+  margin: 50px auto;
+}
+
+.discuss p {
+  line-height: 1.7rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  text-indent: 2rem;
+  text-align: justify;
+}
+
+.detail-title,
+.left,
+.right,
+.count,
+.user,
+.post-comment {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date {
+  margin-left: 20px;
+}
+
+#content {
+  color: #65676b;
+  margin: 50px 450px;
+}
+
+.count {
+  margin: 20px 50px;
+}
+
+i {
+  margin-right: 10px;
+}
+
+.user-image {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border-radius: 100%;
+  margin-right: 10px;
+}
+
+.user {
+  justify-content: flex-start;
+}
+
+.username {
+  color: #000;
+  font-weight: 500;
+}
+
+.time-comment {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #999;
+}
+
+.fa-globe-asia {
+  font-size: 12px;
+}
+
+.comment {
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  color: #000;
+  padding: 10px 20px 20px 10px;
+}
+
+.comment-detail,
+.comment-wrapper {
+  margin-top: 10px;
+}
+
+.reply {
+  font-weight: 500;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.reply * {
+  color: #999;
+  font-size: 15px;
+  margin-right: 20px;
+}
+
+.comment-wrapper .comment-wrapper,
+.comment-detail,
+.reply {
+  margin-left: 60px;
+}
+
+.input-cover {
+  width: 100%;
+  position: relative;
+}
+
+.input-cover img {
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+
+.input-cover input {
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 50px;
+  padding: 12.5px 10px;
+  border: 2px solid #fff;
+  transition: all 0.2s;
+}
+
+.input-cover input:focus,
+.input-cover input:hover {
+  outline: 0;
+  border: 2px solid #999;
+}
+
+.input-cover input::placeholder {
+  padding-left: 45px;
+}
+.up-img ion-icon {
+  margin: 0 20px;
+  font-size: 24px;
+  transition: all 0.2s;
+  padding: 15px;
+}
+.up-img:hover ion-icon {
+  background-color: #999;
+  border-radius: 100%;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+}
+
+.full-screen {
+  height: 100%;
+  width: 100%;
+}
+
+.display-column {
+  display: flex;
+  flex-direction: column;
+}
+
+p,
+h2 {
+  margin: 0;
+}
+
+.lg-btn-red {
+  color: #fff;
+  background-color: #a61f12;
+  padding: 10px 35px;
+  display: inline-block;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.lg-btn-red:hover {
+  background-color: #931b10;
+}
+
+.lg-btn-red:active {
+  background-color: #80160d;
+  transform: scale(0.95);
+}
+
+.no-select {
+  user-select: none;
+}
+
+.lg-link-red {
+  color: #a61f12;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.lg-link-red:hover {
+  text-decoration: underline;
 }
