@@ -266,10 +266,6 @@ ion-icon[name="flash"] {
   margin: 20px auto;
 }
 
-.image-cover {
-  /* position: relative; */
-}
-
 .title {
   font-size: 48px;
   margin: 10 auto;
@@ -479,4 +475,60 @@ h2 {
 
 .lg-link-red:hover {
   text-decoration: underline;
+}
+
+.js-club-members-image {
+  height: 400px;
+  width: 100%;
+  background: url(/static/images/jsclub_cover.png) no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.home-cover-right-text-container {
+  background: rgba(0, 0, 0, 0.15);
+  height: 100%;
+  width: 800px;
+  margin: 0 0 0 auto;
+  margin-right: -200px;
+  border-radius: 120px;
+  display: flex;
+  justify-content: center;
+  padding: 80px 245px 80px 80px;
+  box-sizing: border-box;
+  text-align: right;
+  font-family: "Roboto Condensed", sans-serif;
+  flex-direction: column;
+}
+
+.home-cover-title {
+  text-transform: uppercase;
+  color: #ca3a2d;
+  width: 100%;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: inherit;
+}
+
+.cover-white-filter {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.home-cover-description {
+  color: white;
+  width: 100%;
+  font-family: inherit;
+  font-weight: 300;
+  font-size: 19px;
+  line-height: 35px;
+}
+
+.home-cover-desc-highlight {
+  text-transform: uppercase;
+  color: #ca3a2d;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
 }
