@@ -19,4 +19,4 @@ class PostDetail(generic.DetailView):
 
 def PostList(request):
     post_list = Post.objects.filter(Post.is_published==True).order_by('-created_on')
-    return render(request, 'home_views.html', {'post_list':post_list})
+    return render(request, 'index.html', {'post_list':post_list})
