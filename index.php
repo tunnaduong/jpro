@@ -21,14 +21,6 @@
     $("#include-content").load("/pages/home.html");
     $("#page-title").text("JPro - A project of JSClub Team 1");
     $("#home-btn").addClass("nav-btn-active");
-    setTimeout(function() {
-        $("#page-title").text("JPro - A project of JSClub Team 1");
-        $("#home-btn").addClass("nav-btn-active");
-    }, 1000);
-    window.onload = function() {
-        $("#page-title").text("JPro - A project of JSClub Team 1");
-        $("#home-btn").addClass("nav-btn-active");
-    };
     if (location.pathname === "/") {
         $("#include-content").load("/pages/home.html");
         $("#home-btn").addClass("nav-btn-active");
@@ -44,6 +36,7 @@
         $("#include-content").load("/pages/discussion_detail.html");
         window.onload = function() {
             $("#page-title").text("Cuộc thảo luận - JPro");
+            $("#home-btn").removeClass("nav-btn-active");
         };
     } else {
         $("#include-content").load("/pages/errors/404.html");
