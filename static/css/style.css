@@ -534,3 +534,48 @@ h2 {
   font-weight: 700;
   font-family: inherit;
 }
+
+.below-cover {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-side-widgets {
+  width: 450px;
+}
+
+.right-side-widgets {
+  width: 450px;
+}
+
+.newsfeed {
+  width: 100%;
+}
+
+.feed-posts {
+  background-color: white;
+  width: 450px;
+  height: calc(100% - 50px);
+  padding: 15px;
+}
+
+.feed-posts-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  margin: 0 auto;
+}
+
+.newsfeed-post {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.activity-type-select {
+  margin: 30px 20px 10px 10px;
+  color: #65676b;
+}
+
+hr {
+  margin: 25px 0;
+}
