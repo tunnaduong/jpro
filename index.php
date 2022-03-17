@@ -20,7 +20,7 @@
     $("#include-menu").load("/includes/menu.html");
     if (
         window.location.pathname.split("/")[1] === "" ||
-        window.location.pathname.split("/")[1] === "index.php"
+        window.location.pathname.split("/")[1] === "index.php" || window.location.pathname === "/"
     ) {
         $("#include-content").load("/pages/home.html");
         $(window).on("load", function() {
