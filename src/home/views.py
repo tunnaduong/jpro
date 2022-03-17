@@ -28,11 +28,13 @@ def home_views(request):
         listsorted[2],
     ]
     
+
+    #hot users
+
     context = {
         'post_list': post_list,
         'hotposts': hotposts,
     }
-
 
     return render(request, 'index.html', context)
 
