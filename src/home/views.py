@@ -15,14 +15,25 @@ from .filters import BlogFilter
 
 def home_views(request):
     context = ()
-    
+
+    #all post
     post_list = Post.objects.all()
-    popular_posts = Post.objects.filter(is_published=True).order_by('-blog_views')
+    
+    #popular list
+    listsorted = Post.objects.filter(is_published=True).order_by('-blog_views')
+
+    hotposts = [
+        listsorted[0],
+        listsorted[1],
+        listsorted[2],
+    ]
     
     context = {
         'post_list': post_list,
-        'popular_posts': popular_posts
+        'hotposts': hotposts,
     }
+
+
     return render(request, 'index.html', context)
 
 def about(request):

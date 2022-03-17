@@ -25,14 +25,14 @@
     <div class="row">
         <!-- Blog Entries Column -->
         <div class="col-md-8 mt-3 left">
-            {% for popular_post in popular_posts %}
+            {% for hotpost in hotposts %}
             <div class="card mb-4">
                 <div class="card-body">
-                    <h2 class="card-title">{{ popular_post.author }}</h2>
-                    <h3>{{popular_post.status}}</h3>
-                    <p class="card-text text-muted h6">{{ popular_post.title }}</p>
-                    <p class="card-text">{{popular_post.content|slice:":200" }}</p>
-                    <a href="{% url 'post_detail' popular_post.slug  %}" class="btn btn-primary">Read More</a>
+                    <h2 class="card-title">{{ hotpost.author }}</h2>
+                    <h3>{{hotpost.status}}</h3>
+                    <p class="card-text text-muted h6">{{ hotpost.title }}</p>
+                    <p class="card-text">{{hotpost.content|slice:":200" }}</p>
+                    <a href="{% url 'post_detail' hotpost.slug  %}" class="btn btn-primary">Read More</a>
                 </div>
             </div>
             <br>

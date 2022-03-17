@@ -3,11 +3,13 @@ from multiprocessing.spawn import import_main_path
 from django.db import models
 from datetime import datetime
 from django.contrib.auth.models import User
+from django.forms import DateTimeField
 
 
 STATUS = (
-    ('discussion',"Discussion"),
-    ('learning',"Learning")
+    ('discussion', 'Discussion'),
+    ('learning', 'Learning'),
+    ('techtalk', 'Teach Talk')
 )
 
 class Post(models.Model):
@@ -20,6 +22,7 @@ class Post(models.Model):
     status              = models.CharField(max_length=20,choices=STATUS, default='discussion')
     is_published        = models.BooleanField(default=True)
     blog_views          = models.IntegerField(default=0)
+    time_start_tech     = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ['-created_on']
