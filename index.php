@@ -21,7 +21,6 @@
     if (location.pathname === "/") {
         $("#include-content").load("/pages/home.html", function() {
             $("#page-title").text("JPro - A project of JSClub Team 1");
-            $("#home-btn").addClass("nav-btn-active");
         });
     } else if (
         location.pathname.split("/")[1] === "discussions" &&
