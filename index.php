@@ -20,23 +20,19 @@
     $("#include-menu").load("/includes/menu.html");
     if (location.pathname === "/") {
         $("#include-content").load("/pages/home.html", function() {
-            console.log("External content loaded successfully!");
             $("#page-title").text("JPro - A project of JSClub Team 1");
             $("#home-btn").addClass("nav-btn-active");
         });
     } else if (
-        window.location.pathname.split("/")[1] === "discussions" &&
-        window.location.pathname.split("/")[2] &&
-        window.location.pathname.split("/")[3] === "detail"
+        location.pathname.split("/")[1] === "discussions" &&
+        location.pathname.split("/")[2] &&
+        location.pathname.split("/")[3] === "detail"
     ) {
         $("#include-content").load("/pages/discussion_detail.html", function() {
-            console.log("External content loaded successfully!");
             $("#page-title").text("Cuộc thảo luận - JPro");
-            $("#home-btn").removeClass("nav-btn-active");
         });
     } else {
         $("#include-content").load("/pages/errors/404.html", function() {
-            console.log("External content loaded successfully!");
             $("#page-title").text("Oops, không tìm thấy nội dung - JPro");
         });
     }
