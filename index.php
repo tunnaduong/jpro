@@ -18,25 +18,24 @@
     <script>
     $("#include-head").load("/includes/head.html");
     $("#include-menu").load("/includes/menu.html");
-    if (location.pathname === "/") {
-        $("#include-content").load("/pages/home.html");
-        $("#page-title").text("JPro - A project of JSClub Team 1");
-        $("#home-btn").addClass("nav-btn-active");
-    } else if (
-        window.location.pathname.split("/")[1] === "discussions" &&
-        window.location.pathname.split("/")[2] &&
-        window.location.pathname.split("/")[3] === "detail"
-    ) {
-        $("#include-content").load("/pages/discussion_detail.html");
-        $(window).on("load", function() {
+    $(window).on("load", function() {
+        if (location.pathname === "/") {
+            $("#include-content").load("/pages/home.html");
+            $("#page-title").text("JPro - A project of JSClub Team 1");
+            $("#home-btn").addClass("nav-btn-active");
+
+        } else if (
+            window.location.pathname.split("/")[1] === "discussions" &&
+            window.location.pathname.split("/")[2] &&
+            window.location.pathname.split("/")[3] === "detail"
+        ) {
+            $("#include-content").load("/pages/discussion_detail.html");
             $("#page-title").text("Cuộc thảo luận - JPro");
-        });
-    } else {
-        $("#include-content").load("/pages/errors/404.html");
-        $(window).on("load", function() {
+        } else {
+            $("#include-content").load("/pages/errors/404.html");
             $("#page-title").text("Oops, không tìm thấy nội dung - JPro");
-        });
-    }
+        }
+    });
     </script>
 </body>
 
