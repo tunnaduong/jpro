@@ -18,9 +18,14 @@
     <script>
     $("#include-head").load("/includes/head.html");
     $("#include-menu").load("/includes/menu.html");
-
+    $("#include-content").load("/pages/home.html");
+    window.onload = function() {
+        $("#page-title").text("JPro - A project of JSClub Team 1");
+        $("#home-btn").addClass("nav-btn-active");
+    };
     if (location.pathname === "/") {
         $("#include-content").load("/pages/home.html");
+        $("#home-btn").addClass("nav-btn-active");
         window.onload = function() {
             $("#page-title").text("JPro - A project of JSClub Team 1");
             $("#home-btn").addClass("nav-btn-active");
