@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
     <header id="include-head"></header>
   </head>
   <body>
@@ -26,6 +25,7 @@
       $("#include-menu").load("/includes/menu.html");
       $(window).on("load", function () {
         $("#cover").hide();
+        $("#page-title").text("JPro - A project of JSClub Team 1");
       });
     </script>
   </body>

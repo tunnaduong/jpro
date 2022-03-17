@@ -4,7 +4,7 @@ body {
 }
 
 * {
-  font-family: "Saira Condensed", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .menu-logo {
@@ -47,8 +47,7 @@ body {
   height: 65px;
   display: flex;
   align-items: center;
-  border-bottom: 0.55px solid gray;
-  box-shadow: 0px 1.58537px 1.58537px rgba(0, 0, 0, 0.09);
+  box-shadow: 0px 1.58537px 6px 1px rgb(0 0 0 / 9%);
   justify-content: space-between;
   background-color: white;
 }
@@ -76,6 +75,139 @@ body {
 }
 
 .menu-navigation-buttons {
-  position: absolute;
+  padding: 0 auto;
+  position: fixed;
+  left: 0;
+  right: 0;
   top: 0;
+  height: 65px;
+}
+
+.left-side-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 65px;
+  align-items: center;
+  z-index: 5;
+}
+
+.right-side-menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  padding-right: 15px;
+  z-index: 5;
+}
+
+.user-button img {
+  border-radius: 50%;
+  height: 27px;
+  width: 27px;
+  margin-right: 7px;
+}
+
+.menu-nav-button {
+  width: 111px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  color: #65676b;
+  padding: 3px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition-duration: 200ms;
+  transition-property: background-color;
+}
+
+.menu-nav-button ion-icon {
+  font-size: 33px;
+  margin-bottom: 2px;
+}
+
+.nav-btn-text {
+  font-size: 12px;
+}
+
+.nav-btn-active {
+  color: #a61f12;
+}
+
+.menu-nav-button:hover {
+  background-color: #f0f2f5;
+}
+
+.user-button {
+  height: 40px;
+  background-color: rgba(196, 196, 196, 0.4);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+  box-sizing: border-box;
+  border-radius: 300px;
+  cursor: pointer;
+  transition-duration: 200ms;
+  transition-property: background-color;
+}
+
+.menu-user-info {
+  padding-right: 7px;
+  padding-left: 4px;
+  font-weight: 500;
+}
+
+.user-button:hover {
+  background-color: rgba(196, 196, 196, 0.62);
+}
+
+.chat-button,
+.notification-button {
+  height: 40px;
+  width: 40px;
+  background-color: rgba(196, 196, 196, 0.4);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+  box-sizing: border-box;
+  border-radius: 300px;
+  cursor: pointer;
+  margin-right: 8px;
+  font-size: 23px;
+  color: #404040;
+  transition-duration: 200ms;
+  transition-property: background-color;
+}
+
+.chat-button:hover,
+.notification-button:hover {
+  background-color: rgba(196, 196, 196, 0.62);
+}
+
+.nav-btn-badge {
+  border-radius: 50px;
+  background-color: #dd2f2f;
+  color: white;
+  font-size: 13px;
+  width: 19px;
+  height: 19px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(17px) translateY(-17px);
+}
+
+ion-icon[name="flash"] {
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  transform: matrix(-0.31, -0.59, -1.09, 0.11, 0, 0);
 }
