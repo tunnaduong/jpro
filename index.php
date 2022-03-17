@@ -18,10 +18,7 @@
     <script>
     $("#include-head").load("/includes/head.html");
     $("#include-menu").load("/includes/menu.html");
-    if (
-        window.location.pathname.split("/")[1] === "" ||
-        window.location.pathname.split("/")[1] === "index.php" || window.location.pathname === "/"
-    ) {
+    if (window.location.pathname === "/") {
         $("#include-content").load("/pages/home.html");
         $(window).on("load", function() {
             $("#page-title").text("JPro - A project of JSClub Team 1");
