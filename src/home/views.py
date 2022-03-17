@@ -1,5 +1,7 @@
 from msilib.schema import ListView
 from turtle import mode
+from django.contrib.auth.models import User
+from django.shortcuts import render, get_object_or_404
 from django.shortcuts import (
     render, 
     redirect

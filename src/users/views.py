@@ -10,9 +10,9 @@ def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
-            form.save()             #save user
             username =  form.cleaned_data.get('username')
             messages.success(request, f'Account created for {username}! You are able to login')
+            form.save()             #save user         
             return redirect('login')        # dang ky xong thi dua ve trang login
     else:
         form = UserRegisterForm()    #form rong
