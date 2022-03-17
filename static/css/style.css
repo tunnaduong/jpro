@@ -73,14 +73,16 @@ body,
 }
 
 .menu-navigation-buttons {
-  padding: 0 auto;
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   height: 65px;
+  width: 100%;
   box-shadow: 0px 1.58537px 6px 1px rgb(0 0 0 / 9%);
   background-color: white;
+  padding: 0 27%;
+  box-sizing: border-box;
 }
 
 .left-side-menu {
@@ -111,7 +113,7 @@ body,
 }
 
 .menu-nav-button {
-  width: 111px;
+  width: 100%;
   align-items: center;
   display: flex;
   flex-direction: column;
