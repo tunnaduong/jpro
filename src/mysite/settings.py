@@ -130,3 +130,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MIDDLEWARE_CLASSES = (
     'visits.middleware.CounterMiddleware',
 )
+
+LOGIN_REDIRECT_URL = 'Blog-home'
+LOGIN_URL = 'login'
