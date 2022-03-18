@@ -2,7 +2,7 @@
 
 <p align="center">
   <img alt="JPro logo" width="200" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/js_logo_transparent.png">
-
+</p>
 <p align="center">Một dự án của Team 1 CTV Ban chuyên môn JS Club Đại học FPT Hà Nội</p>
 
 
@@ -31,3 +31,37 @@ https://www.figma.com/file/aRhh6cQSHSQ3Ph2V1IUhyP/JPro?node-id=0%3A1
 
 #### Link đăng nhập hệ thống quản trị cơ sở dữ liệu PHPMyAdmin:
 http://103.81.85.224/phpmyadmin
+
+## Ảnh chụp màn hình
+
+<p align="center">
+  <img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/1.png">
+</p>
+
+<p align="center">
+  <img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/2.png">
+</p>
+
+<p align="center">
+  <img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/3.png">
+</p>
+
+<p align="center">
+  <img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/4.png">
+</p>
+
+<p align="center">
+  <img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/5.png">
+</p>
+
+<p align="center">
+  <img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/6.png">
+</p>
+
+<p align="center">
+  <img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/7.png">
+</p>
+
+<p align="center">
+  <img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/8.png">
+</p>
