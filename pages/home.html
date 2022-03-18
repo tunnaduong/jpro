@@ -1,9 +1,11 @@
 <div class="home-cover">
   <div class="js-club-members-image">
     <div class="cover-white-filter">
-      <div class="home-cover-right-text-container">
+      <div
+        class="home-cover-right-text-container animate__animated animate__fadeInRight"
+      >
         <div class="home-cover-title">Japanese Software Engineers</div>
-        <div class="home-cover-description">
+        <div class="home-cover-description hide">
           JS mang sứ mệnh trở thành một cộng đồng kết nối các sinh viên theo
           chuyên ngành hẹp JS. Sau này, câu lạc bộ được mở rộng, trở thành nơi
           chia sẻ kiến thức của các sinh viên<br />
@@ -147,4 +149,22 @@
 </div>
 <script>
   $("#page-title").text("JPro - A project of JSClub Team 1");
+  var element = document.querySelector(".home-cover-right-text-container");
+  var title = document.querySelector(".home-cover-title");
+  var text = document.querySelector(".home-cover-description");
+  element.addEventListener("animationend", () => {
+    element.classList.remove("animate__animated", "animate__fadeInRight");
+  });
+  setTimeout(() => {
+    title.classList.add("animate__animated", "animate__fadeInRight");
+    title.addEventListener("animationend", () => {
+      title.classList.remove("animate__animated", "animate__fadeInRight");
+    });
+  }, 150);
+  setTimeout(() => {
+    text.classList.add("animate__animated", "animate__fadeInRight", "show");
+    text.addEventListener("animationend", () => {
+      text.classList.remove("animate__animated", "animate__fadeInRight");
+    });
+  }, 400);
 </script>

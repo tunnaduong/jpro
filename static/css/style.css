@@ -58,6 +58,9 @@ body,
   justify-content: space-between;
   position: fixed;
   visibility: visible;
+  position: absolute;
+  top: 0;
+  z-index: 1500;
 }
 
 .menu-navigation-buttons,
@@ -634,4 +637,16 @@ hr {
 .feed-post-title-outer,
 .feed-post-title {
   font-weight: 600;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible !important;
+}
+
+.subtitle-wrapper {
+  position: relative;
 }
