@@ -482,7 +482,7 @@ h2 {
 .js-club-members-image {
   height: 400px;
   width: 100%;
-  background: url(/static/images/jsclub_cover.png) no-repeat center center;
+  background: url(/static/images/jsclub_cover.jpeg) no-repeat center center;
   background-size: cover;
   overflow: hidden;
 }
