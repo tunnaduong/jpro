@@ -6,6 +6,9 @@
 
 Một dự án của Team 1 CTV Ban chuyên môn JS Club Đại học FPT Hà Nội
 
+## Về thư mục mã nguồn của dự án
+Repository này là nơi mà các thành viên Team 1 Cộng tác viên Ban chuyên môn Câu lạc bộ Japanese Software Engineers phụ trách lập trình front-end và back-end của dự án JPro đăng tải code lên để dễ dàng quản lý, triển khai dự án qua Heroku và theo dõi các thay đổi.
+
 ## Giới thiệu
 JPro là một mạng xã hội học tập dạng blog mã nguồn mở. Mục tiêu của JPro là tạo ra một cộng đồng người học Tiếng Nhật và lập trình lớn mạnh, một sân chơi để mọi người thảo luận, học hỏi, tổ chức sự kiện và chia sẻ kiến thức.
 
