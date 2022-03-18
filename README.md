@@ -2,8 +2,9 @@
 
 <p align="center">
   <img alt="JPro logo" width="200" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/js_logo_transparent.png">
-Một dự án của Team 1 CTV Ban chuyên môn JS Club Đại học FPT Hà Nội
-</p>
+
+<p align="center">Một dự án của Team 1 CTV Ban chuyên môn JS Club Đại học FPT Hà Nội</p>
+
 
 ## Về thư mục mã nguồn của dự án
 Repository này là nơi mà các thành viên Team 1 Cộng tác viên Ban chuyên môn Câu lạc bộ Japanese Software Engineers phụ trách lập trình front-end và back-end của dự án JPro đăng tải code lên để dễ dàng quản lý, triển khai dự án qua Heroku và theo dõi các thay đổi.
