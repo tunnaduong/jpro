@@ -1,0 +1,2 @@
+<?php
+echo "This file is created just to fools Heroku PHP Buildpack that our project is made with PHP. If this file didn't exists, Heroku won't let our deploy-fronted to be built. So, don't delete this file please!";
