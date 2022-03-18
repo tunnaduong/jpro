@@ -39,3 +39,18 @@ http://103.81.85.224/phpmyadmin
 |<img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/1.png">|<img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/2.png">|<img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/3.png">|
 |<img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/4.png">|<img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/5.png">|<img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/6.png">|
 |<img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/7.png">|<img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/8.png">|<img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/9.png">|
+|<img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/7.png">|<img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/8.png">|<img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/9.png">|
+
+
+## Người đóng góp
+### Front-end
+**Dương Tùng Anh**  
+<a href="https://github.com/tunnaduong">@tunnaduong</a>  
+**Trần Thùy Trang**  
+<a href="https://github.com/trantrang2101">@trantrang2101</a>
+
+### Back-end
+**Trần Gia Bảo**  
+<a href="https://github.com/ImGib">@ImGib</a>  
+**Nguyễn Đình Quang Anh**  
+<a href="https://github.com/qa0108">@qa0108</a>  
