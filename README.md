@@ -54,3 +54,12 @@ http://103.81.85.224/phpmyadmin
 <a href="https://github.com/ImGib">@ImGib</a>  
 **Nguyễn Đình Quang Anh**  
 <a href="https://github.com/qa0108">@qa0108</a>  
+
+### Dịch thuật Tiếng Nhật
+**Nguyễn P. Huy**  
+<a href="https://www.facebook.com/profile.php?id=100026792671879">https://www.facebook.com/profile.php?id=100026792671879</a>  
+
+## Giấy phép
+
+Copyright (c) JSClub 2022. Bảo lưu mọi quyền
+Được cấp phép theo giấy phép <a href="https://github.com/tunnaduong/jpro/blob/main/LICENSE.txt">MIT</a>.
