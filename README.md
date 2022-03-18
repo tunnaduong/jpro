@@ -22,4 +22,12 @@ J trong JPro nghĩa là Japanese (Tiếng Nhật), Pro nghĩa là Programming (L
  - deploy-frontend (Dùng để deploy lên Heroku)
 
 ## Địa chỉ của dự án
+
+#### Web chính thức:
 https://jpro-web.herokuapp.com/
+
+#### Bản thiết kế trên Figma:
+https://www.figma.com/file/aRhh6cQSHSQ3Ph2V1IUhyP/JPro?node-id=0%3A1
+
+#### Link đăng nhập hệ thống quản trị cơ sở dữ liệu PHPMyAdmin:
+http://103.81.85.224/phpmyadmin
