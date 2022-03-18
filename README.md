@@ -61,5 +61,5 @@ http://103.81.85.224/phpmyadmin
 
 ## Giấy phép
 
-Copyright (c) JSClub 2022. Bảo lưu mọi quyền
+Copyright (c) JSClub 2022. Bảo lưu mọi quyền  
 Được cấp phép theo giấy phép <a href="https://github.com/tunnaduong/jpro/blob/main/LICENSE.txt">MIT</a>.
