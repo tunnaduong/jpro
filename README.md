@@ -34,34 +34,32 @@ http://103.81.85.224/phpmyadmin
 
 ## Ảnh chụp màn hình
 
-<p align="center">
-  <img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/1.png">
-</p>
+| | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+|<img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/1.png">|<img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/2.png">|<img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/3.png">|
+|<img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/4.png">|<img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/5.png">|<img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/6.png">|
+|<img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/7.png">|<img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/8.png">|<img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/9.png">|
+|<img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/7.png">|<img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/8.png">|<img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/9.png">|
 
-<p align="center">
-  <img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/2.png">
-</p>
 
-<p align="center">
-  <img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/3.png">
-</p>
+## Người đóng góp
+### Front-end
+**Dương Tùng Anh**  
+<a href="https://github.com/tunnaduong">@tunnaduong</a>  
+**Trần Thùy Trang**  
+<a href="https://github.com/trantrang2101">@trantrang2101</a>
 
-<p align="center">
-  <img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/4.png">
-</p>
+### Back-end
+**Trần Gia Bảo**  
+<a href="https://github.com/ImGib">@ImGib</a>  
+**Nguyễn Đình Quang Anh**  
+<a href="https://github.com/qa0108">@qa0108</a>  
 
-<p align="center">
-  <img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/5.png">
-</p>
+### Dịch thuật Tiếng Nhật
+**Nguyễn P. Huy**  
+<a href="https://www.facebook.com/profile.php?id=100026792671879">https://www.facebook.com/profile.php?id=100026792671879</a>  
 
-<p align="center">
-  <img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/6.png">
-</p>
+## Giấy phép
 
-<p align="center">
-  <img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/7.png">
-</p>
-
-<p align="center">
-  <img alt="Screenshots" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/screenshots/8.png">
-</p>
+Copyright (c) JSClub 2022. Bảo lưu mọi quyền  
+Được cấp phép theo giấy phép <a href="https://github.com/tunnaduong/jpro/blob/main/LICENSE.txt">MIT</a>.
