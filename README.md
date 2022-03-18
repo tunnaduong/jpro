@@ -1,6 +1,10 @@
 # JPro - Learn Japanese and Programming together
 Một dự án của Team 1 CTV Ban chuyên môn JS Club Đại học FPT Hà Nội
 
+<p align="center">
+  <img alt="JPro logo" width="200" src="https://raw.githubusercontent.com/tunnaduong/jpro/main/js_logo_transparent.png">
+</p>
+
 ## Giới thiệu
 JPro là một mạng xã hội học tập dạng blog mã nguồn mở. Mục tiêu của JPro là tạo ra một cộng đồng người học Tiếng Nhật và lập trình lớn mạnh, một sân chơi để mọi người thảo luận, học hỏi, tổ chức sự kiện và chia sẻ kiến thức.
 
