@@ -43,7 +43,7 @@
       class="menu-nav-button"
       onclick="window.location.href='/'"
     >
-      <ion-icon name="planet"></ion-icon>
+      <ion-icon id="home-icon" name="planet-outline"></ion-icon>
       <div class="nav-btn-text">Trang chủ</div>
     </div>
     <div
@@ -51,7 +51,7 @@
       class="menu-nav-button"
       onclick="window.location.href='/about'"
     >
-      <ion-icon name="information-circle-outline"></ion-icon>
+      <ion-icon id="about-icon" name="information-circle-outline"></ion-icon>
       <div class="nav-btn-text">Giới thiệu</div>
     </div>
     <div
@@ -59,7 +59,7 @@
       class="menu-nav-button"
       onclick="window.location.href='/discussions'"
     >
-      <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+      <ion-icon id="discuss-icon" name="chatbox-ellipses-outline"></ion-icon>
       <div class="nav-btn-text">Thảo luận</div>
     </div>
     <div
@@ -67,7 +67,7 @@
       class="menu-nav-button"
       onclick="window.location.href='/learn'"
     >
-      <ion-icon name="book-outline"></ion-icon>
+      <ion-icon id="learn-icon" name="book-outline"></ion-icon>
       <div class="nav-btn-text">Học tập</div>
     </div>
     <div
@@ -75,7 +75,7 @@
       class="menu-nav-button"
       onclick="window.location.href='/techtalk'"
     >
-      <ion-icon name="cafe-outline"></ion-icon>
+      <ion-icon id="techtalk-icon" name="cafe-outline"></ion-icon>
       <div class="nav-btn-text">TechTalk</div>
     </div>
   </div>
@@ -83,5 +83,6 @@
 <script>
   if (location.pathname === "/") {
     $("#home-btn").addClass("nav-btn-active");
+    $("#home-icon").attr("name", "planet");
   }
 </script>
