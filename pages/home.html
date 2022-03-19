@@ -1,4 +1,4 @@
-<div class="home-cover">
+<div class="home-cover" style="background-attachment: fixed">
   <div class="js-club-members-image">
     <div class="cover-white-filter">
       <div
@@ -18,7 +18,11 @@
   </div>
 </div>
 <div class="below-cover">
-  <div class="left-side-widgets"></div>
+  <div class="left-side-widgets">
+    <div class="widget-card incoming-techtalk-events">
+      <div class="card-title">Tech Talk sắp tới</div>
+    </div>
+  </div>
   <div class="newsfeed">
     <div class="feed-posts-wrapper">
       <div class="activity-type-select">Hoạt động mới</div>
@@ -149,22 +153,14 @@
 </div>
 <script>
   $("#page-title").text("JPro - A project of JSClub Team 1");
-  var element = document.querySelector(".home-cover-right-text-container");
-  var title = document.querySelector(".home-cover-title");
-  var text = document.querySelector(".home-cover-description");
-  element.addEventListener("animationend", () => {
-    element.classList.remove("animate__animated", "animate__fadeInRight");
-  });
   setTimeout(() => {
-    title.classList.add("animate__animated", "animate__fadeInRight");
-    title.addEventListener("animationend", () => {
-      title.classList.remove("animate__animated", "animate__fadeInRight");
-    });
+    document
+      .querySelector(".home-cover-title")
+      .classList.add("animate__animated", "animate__fadeInRight");
   }, 150);
   setTimeout(() => {
-    text.classList.add("animate__animated", "animate__fadeInRight", "show");
-    text.addEventListener("animationend", () => {
-      text.classList.remove("animate__animated", "animate__fadeInRight");
-    });
+    document
+      .querySelector(".home-cover-description")
+      .classList.add("animate__animated", "animate__fadeInRight", "show");
   }, 400);
 </script>

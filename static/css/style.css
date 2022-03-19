@@ -543,16 +543,8 @@ h2 {
   flex-direction: row;
 }
 
-.left-side-widgets {
-  width: 450px;
-}
-
-.right-side-widgets {
-  width: 450px;
-}
-
 .newsfeed {
-  width: 100%;
+  width: 590px;
 }
 
 .feed-posts {
@@ -647,6 +639,16 @@ hr {
   visibility: visible !important;
 }
 
-.subtitle-wrapper {
+.image-cover {
   position: relative;
+}
+
+.widget-card {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.left-side-widgets,
+.right-side-widgets {
+  width: 100%;
 }
