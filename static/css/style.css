@@ -660,9 +660,12 @@ header,
 .discuss-container,
 .discuss-menu,
 .discuss,
+.event,
 .author-time,
 .more-discuss,
 .react,
+.event-header,
+.event-menu,
 .active-person a,
 .trend-detail {
   display: flex;
@@ -670,12 +673,13 @@ header,
   align-items: center;
   justify-content: space-between;
 }
-
 .discuss-list,
+.event-list,
 .active-content,
 .discuss-detail,
+.event-detail,
 .active-cover,
-.trend-container{
+.trend-container {
   margin-top: 0;
   margin-left: 15px;
   display: flex;
@@ -684,12 +688,22 @@ header,
   flex: 1;
   justify-content: space-between;
 }
-
+.event-menu{
+  width: 70%;
+}
+.event-menu>div{
+  width: 33.33%;
+  text-align: center;
+}
 .react {
   width: 100%;
 }
 .more {
   cursor: pointer;
+}
+.event-list {
+  width: 70%;
+  margin: 0 auto;
 }
 .react .more:hover *,
 .more-discuss .more:hover *,
@@ -697,7 +711,6 @@ header,
   color: #a61f12;
   font-weight: bold;
 }
-
 .discuss-left {
   width: 70%;
 }
@@ -712,17 +725,17 @@ header,
   padding: 6px;
 }
 
-.discuss-left * {
+.discuss-left *,
+.event-menu {
   margin-top: 20px;
 }
-
 a {
   color: black;
   text-decoration: none;
 }
 
-.discuss-cover {
-  width: 75%;
+.cover {
+  width: 65%;
   margin: 30px auto;
 }
 
@@ -732,36 +745,54 @@ a {
   color: #a61f12;
 }
 
-.discuss-menu {
+.discuss-menu,
+.event-menu {
   list-style: none;
   text-align: left;
   padding: 0;
 }
 
-.discuss-menu > div {
+.discuss-menu > div,
+.event-menu > div:not(:last-child) {
   flex: 1;
 }
 
-.discuss-menu div:not(:last-child) {
+.discuss-menu div:not(:last-child),
+.event-menu div:not(:last-child) {
   width: 100%;
   cursor: pointer;
   text-align: center;
 }
-
+.event-menu .under {
+  margin-top: 10px;
+}
+.more-discuss {
+  margin-top: 80px;
+}
 .under {
   padding-top: 5px;
   border-top: 2px solid black;
 }
 
-.discuss-choose {
+.discuss-choose,
+.event-choose {
   font-weight: 500;
 }
 
-.discuss-choose .under {
+.discuss-choose .under,
+.event-choose .under {
   border-top: 2px solid #a61f12;
 }
-
-.discuss-choose a {
+.event-image {
+  border-radius: 10px 0 0 10px;
+}
+.event {
+  margin-top: 50px;
+  border-radius: 10px;
+  box-shadow: 6px 5px rgba(0, 0, 0, 0.55);
+}
+.discuss-choose a,
+.event-choose a {
   color: #a61f12;
 }
 
@@ -769,23 +800,35 @@ a {
   text-align: end;
 }
 
-.discuss {
+.discuss,
+.event {
   margin-bottom: 0px;
 }
-
+.event {
+  background-color: white;
+}
 .discuss-image {
   width: 300px;
   height: auto;
   object-fit: cover;
   margin-top: 10px;
 }
-
-.discuss-title {
+.event-image {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+}
+.event-title {
+  text-align: center;
+}
+.discuss-title,
+.event-title {
   font-size: 28px;
   font-weight: bold;
 }
-
-.discuss-content,.trend-content {
+.discuss-content,
+.trend-content,
+.event-content {
   color: #a4a4a4;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -796,10 +839,28 @@ a {
 }
 
 @media screen and (max-width: 600px) {
-  .discuss-container {
+  .event-cover{
+    width: 100%;
+  }
+  .more-discuss{
+    margin-top: 30px;
+  }
+  .discuss-container,
+  .event-header {
     width: 90%;
     margin: 0 auto;
-    flex-direction: column-reverse;
+    flex-direction: column;
+  }
+  .event{
+    min-width: 400px;
+    margin: 20px auto;
+  }
+  .event-menu{
+    margin: 20px auto;
+    width: 100%;
+  }
+  .addEvent {
+    margin: 0;
   }
   .discuss-right {
     width: 100%;
@@ -865,6 +926,10 @@ a {
 .discuss-container {
   align-items: flex-start;
 }
-.trend-detail,.trend-content{
+.trend-detail,
+.trend-content {
   margin-top: 10px;
+}
+.event-cover header {
+  justify-content: center;
 }
