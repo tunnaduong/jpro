@@ -241,7 +241,24 @@ ion-icon[name="flash"] {
   border-radius: 5px;
   cursor: pointer;
 }
-
+.cover-white-box {
+  background-color: #fff;
+  color: #a61f12;
+  padding: 10px 20px;
+  transition: all 0.3s;
+  display: inline-block;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.event-button .cover-box,
+.event-button .cover-white-box {
+  border-radius: 30px;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.55);
+}
+.event-button{
+  justify-content: space-around;
+  width: 100%;
+}
 .more span {
   display: inline-block;
 }
@@ -661,17 +678,20 @@ header,
 .discuss-menu,
 .discuss,
 .event,
-.author-time,
+.author-time,.time-address,
 .more-discuss,
 .react,
 .event-header,
-.event-menu,
+.event-menu,.event-button,
 .active-person a,
 .trend-detail {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+.event-button{
+  width: 100%;
 }
 .discuss-list,
 .event-list,
@@ -688,10 +708,10 @@ header,
   flex: 1;
   justify-content: space-between;
 }
-.event-menu{
+.event-menu {
   width: 70%;
 }
-.event-menu>div{
+.event-menu > div {
   width: 33.33%;
   text-align: center;
 }
@@ -707,7 +727,7 @@ header,
 }
 .react .more:hover *,
 .more-discuss .more:hover *,
-.trend-detail .more:hover * {
+.trend-detail .more:hover *{
   color: #a61f12;
   font-weight: bold;
 }
@@ -715,13 +735,13 @@ header,
   width: 70%;
 }
 
-.author-time {
+.author-time,.time-address {
   align-items: center;
   justify-content: flex-start;
   font-weight: bold;
 }
 
-.author-time *:not(:first-child) {
+.author-time *:not(:first-child),.time-address *:not(:first-child) {
   padding: 6px;
 }
 
@@ -783,9 +803,7 @@ a {
 .event-choose .under {
   border-top: 2px solid #a61f12;
 }
-.event-image {
-  border-radius: 10px 0 0 10px;
-}
+
 .event {
   margin-top: 50px;
   border-radius: 10px;
@@ -806,6 +824,17 @@ a {
 }
 .event {
   background-color: white;
+}
+.event-detail>div{
+  margin-top: 30px;
+}
+.react .author{
+  font-weight: 700;
+}
+.event-detail{
+  padding: 50px 30px;
+  height: 100%;
+  margin: 0;
 }
 .discuss-image {
   width: 300px;
@@ -837,25 +866,50 @@ a {
   line-clamp: 2;
   -webkit-box-orient: vertical;
 }
-
+.event:nth-child(odd) .event-image{
+  border-radius: 10px 0 0 10px;
+}
+.event:nth-child(even) .event-image {
+  border-radius: 0 10px 10px 0;
+  order: 1;
+}
+.time-address,.event-title{
+  margin: 0 auto;
+}
 @media screen and (max-width: 600px) {
-  .event-cover{
-    width: 100%;
-  }
-  .more-discuss{
+  .more-discuss {
     margin-top: 30px;
   }
+  .event-content{
+    -webkit-line-clamp: 2;
+  }
   .discuss-container,
-  .event-header {
+  .event-header,.react{
     width: 90%;
     margin: 0 auto;
     flex-direction: column;
   }
-  .event{
-    min-width: 400px;
-    margin: 20px auto;
+  .event-detail>div{
+    margin-top: 10px;
   }
-  .event-menu{
+  .event-detail{
+    padding: 10px 15px;
+    justify-content: space-around;
+  }
+  .event-cover,.event-button{
+    width: 100%;
+  }
+  .event-button>*{
+    margin-top: 5px;
+  }
+  .event-list{
+    margin: 0;
+  }
+  .event{
+    min-width: 550px;
+    margin: 20px 25px;
+  }
+  .event-menu {
     margin: 20px auto;
     width: 100%;
   }
