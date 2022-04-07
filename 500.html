@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head id="include-head"></head>
+  <body>
+    <div id="root">
+      <div class="screen">
+        <div id="include-menu"></div>
+        <div id="include-content"></div>
+      </div>
+    </div>
+    <div id="include-script"></div>
+    <script type="module">
+      import "/static/js/jquery/jquery.min.js";
+      import surl from "/static/js/surl/surl.js";
+      surl({
+        500: "/pages/errors/500.html",
+        head: "/includes/head.html",
+        menu: "/includes/menu.html",
+        script: "/includes/script.html",
+      });
+    </script>
+  </body>
+</html>

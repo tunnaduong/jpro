@@ -1,0 +1,30 @@
+<div class="center-both full-screen display-column">
+  <img src="/static/images/404.svg" alt="404 Not Found" width="110" />
+  <h2 style="color: #64676b; font-weight: 500; margin-top: 15px">
+    Đã có lỗi xảy ra với máy chủ!
+  </h2>
+
+  <p style="color: #64676b; text-align: center; margin-top: 10px">
+    Các hệ thống máy tính tinh vi của chúng tôi đang gặp chút sự cố.<br />
+    Có thể là do sơ suất của chúng tôi trong lúc cấu hình.<br />Hãy thử lại sau.
+    Chúng tôi sẽ sớm khắc phục!
+  </p>
+
+  <div
+    class="lg-btn-red no-select"
+    onclick="location.href='/'"
+    style="margin-top: 20px"
+  >
+    Quay lại trang chủ
+  </div>
+  <center style="margin-top: 15px">
+    <a href="javascript:window.history.back()" class="lg-link-red">Quay lại</a>
+  </center>
+</div>
+<script>
+  $(document).ready(function () {
+    $("#page-title").text(
+      "Ố ồ, đã có lỗi xảy ra tại máy chủ của chúng tôi - JPro"
+    );
+  });
+</script>

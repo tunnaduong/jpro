@@ -1,1 +1,2 @@
-FallbackResource /index.html
+FallbackResource /base.html
+ErrorDocument 500 /500.html
