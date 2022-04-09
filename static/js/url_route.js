@@ -8,14 +8,11 @@ const url_route = {
   "/discussions/*/details": "/pages/discussion_detail.html",
   "/techtalk": "/pages/event.html",
   "/techtalk/*/details": "/pages/event_detail.html",
-  "/person/*/activity": "/pages/pesonal_active.html",
+  "/*/profile": "/utils/profile_common.html",
 };
 
 const conf = {
   custom_add_syntax: "*",
 };
 
-export {
-  url_route,
-  conf
-};
+export { url_route, conf };
