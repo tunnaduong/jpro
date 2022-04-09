@@ -290,11 +290,6 @@ ion-icon[name="flash"] {
   float: left;
 }
 
-.container {
-  width: 900px;
-  margin: 20px auto;
-}
-
 .title {
   font-size: 48px;
   margin: 10px auto;
@@ -370,11 +365,6 @@ ion-icon[name="flash"] {
 
 .date {
   margin-left: 20px;
-}
-
-#content {
-  color: #65676b;
-  margin: 50px 450px;
 }
 
 .count {
@@ -697,6 +687,7 @@ hr {
 }
 
 .image-cover {
+  margin-top: 20px;
   position: relative;
   width: 100%;
 }
@@ -1132,6 +1123,7 @@ header .image-cover::after {
   margin-bottom: 20px;
 }
 .filter {
+  width: 100%;
   font-size: 20px;
   font-weight: bold;
   outline: none;
@@ -1157,4 +1149,68 @@ header .image-cover::after {
 .activity {
   margin-top: 6px;
   margin-left: 10px;
+}
+#abc .event-container {
+  padding: 60px;
+  margin: 0 auto;
+}
+#abc {
+  width: 100%;
+  height: 100%;
+}
+#abc #content {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+.container {
+  width: 60% !important;
+  margin: 0 auto;
+}
+@media screen and (max-width: 720px) {
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .techtalk {
+    flex: 0 0 50%;
+  }
+}
+.techtalk-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.techtalk {
+  flex: 0 0 33.333%;
+  box-sizing: border-box;
+  margin: 50px auto;
+  height: 500px;
+  padding: 5px;
+}
+.techtalk-image {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+.techtalk-detail {
+  padding: 23px 20px;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  justify-content: space-around;
+  border-radius: 0 0 20px 20px;
+}
+.techtalk-title,
+.techtalk-author-time {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.techtalk-detail p {
+  color: #65676b;
+  font-weight: lighter;
 }
