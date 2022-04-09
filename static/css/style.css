@@ -238,7 +238,9 @@ ion-icon[name="flash"] {
   background-color: #a61f12;
   padding: 10px 20px;
   transition: all 0.3s;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 5px;
   cursor: pointer;
 }
