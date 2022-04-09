@@ -7,6 +7,7 @@ const url_route = {
   "/discussions": "/pages/discuss.html",
   "/discussions/*/details": "/pages/discussion_detail.html",
   "/techtalk": "/pages/event.html",
+  "/techtalk/*/details": "/pages/event_detail.html",
 };
 
 const conf = {

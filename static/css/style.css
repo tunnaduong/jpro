@@ -255,14 +255,16 @@ ion-icon[name="flash"] {
   border-radius: 30px;
   box-shadow: 2px 2px rgba(0, 0, 0, 0.55);
 }
-.event-button{
+.event-button {
   justify-content: space-around;
   width: 100%;
 }
 .more span {
   display: inline-block;
 }
-
+#title *:not(h2) {
+  font-size: 20px;
+}
 .more i {
   margin-left: -0.5rem;
   transform: translateX(2px);
@@ -292,7 +294,7 @@ ion-icon[name="flash"] {
 
 .title {
   font-size: 48px;
-  margin: 10 auto;
+  margin: 10px auto;
   text-align: center;
   text-transform: uppercase;
 }
@@ -307,11 +309,43 @@ ion-icon[name="flash"] {
   background: rgba(255, 255, 255, 0.6);
 }
 
-.discuss {
+.discuss-detail-content,
+.event-detail-content {
   margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.discuss p {
+.event-detail-content {
+  align-items: flex-start;
+  color: black;
+}
+.event-image-cover {
+  width: 80%;
+  margin: 0 auto;
+}
+.event-image-cover img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 100px;
+  filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.3));
+}
+.event-detail-content > div {
+  margin-bottom: 50px;
+}
+.event-content-detail > * {
+  margin-top: 15px;
+}
+.text-white {
+  color: white !important;
+}
+.event-content-detail h2 {
+  color: #a61f12;
+}
+.discuss-detail-content p {
   line-height: 1.7rem;
   font-weight: 300;
   margin-bottom: 1rem;
@@ -660,6 +694,11 @@ hr {
 
 .image-cover {
   position: relative;
+  width: 100%;
+}
+.image-cover img {
+  width: 100%;
+  object-fit: cover;
 }
 
 .widget-card {
@@ -678,11 +717,14 @@ header,
 .discuss-menu,
 .discuss,
 .event,
-.author-time,.time-address,
+.author-time,
+.time-address,
 .more-discuss,
 .react,
 .event-header,
-.event-menu,.event-button,
+.event-time-address,
+.event-menu,
+.event-button,
 .active-person a,
 .trend-detail {
   display: flex;
@@ -690,8 +732,39 @@ header,
   align-items: center;
   justify-content: space-between;
 }
-.event-button{
+.event-button {
   width: 100%;
+}
+.event-time-address {
+  justify-content: center;
+}
+.event-time-address span {
+  margin: 0 20px;
+}
+#title {
+  width: 100%;
+}
+#abc {
+  background-color: #931b10;
+  width: 100%;
+  background: url("/static/images/event-bgr.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: top;
+  height: 100%;
+}
+/* #circle{
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  transform: translateX(calc(-10.5/100*150%)) translateY(calc(-50/100*150%));
+  z-index: -1;
+  border-radius: 100%;
+  background-color: #931b10;
+} */
+.event-title {
+  margin: 20px auto;
 }
 .discuss-list,
 .event-list,
@@ -727,7 +800,7 @@ header,
 }
 .react .more:hover *,
 .more-discuss .more:hover *,
-.trend-detail .more:hover *{
+.trend-detail .more:hover * {
   color: #a61f12;
   font-weight: bold;
 }
@@ -735,13 +808,15 @@ header,
   width: 70%;
 }
 
-.author-time,.time-address {
+.author-time,
+.time-address {
   align-items: center;
   justify-content: flex-start;
   font-weight: bold;
 }
 
-.author-time *:not(:first-child),.time-address *:not(:first-child) {
+.author-time *:not(:first-child),
+.time-address *:not(:first-child) {
   padding: 6px;
 }
 
@@ -825,13 +900,13 @@ a {
 .event {
   background-color: white;
 }
-.event-detail>div{
+.event-detail > div {
   margin-top: 30px;
 }
-.react .author{
+.react .author {
   font-weight: 700;
 }
-.event-detail{
+.event-detail {
   padding: 50px 30px;
   height: 100%;
   margin: 0;
@@ -866,46 +941,49 @@ a {
   line-clamp: 2;
   -webkit-box-orient: vertical;
 }
-.event:nth-child(odd) .event-image{
+.event:nth-child(odd) .event-image {
   border-radius: 10px 0 0 10px;
 }
 .event:nth-child(even) .event-image {
   border-radius: 0 10px 10px 0;
   order: 1;
 }
-.time-address,.event-title{
+.time-address,
+.event-title {
   margin: 0 auto;
 }
 @media screen and (max-width: 600px) {
   .more-discuss {
     margin-top: 30px;
   }
-  .event-content{
+  .event-content {
     -webkit-line-clamp: 2;
   }
   .discuss-container,
-  .event-header,.react{
+  .event-header,
+  .react {
     width: 90%;
     margin: 0 auto;
     flex-direction: column;
   }
-  .event-detail>div{
+  .event-detail > div {
     margin-top: 10px;
   }
-  .event-detail{
+  .event-detail {
     padding: 10px 15px;
     justify-content: space-around;
   }
-  .event-cover,.event-button{
+  .event-cover,
+  .event-button {
     width: 100%;
   }
-  .event-button>*{
+  .event-button > * {
     margin-top: 5px;
   }
-  .event-list{
+  .event-list {
     margin: 0;
   }
-  .event{
+  .event {
     min-width: 550px;
     margin: 20px 25px;
   }
