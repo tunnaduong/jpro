@@ -1,3 +1,19 @@
+<div id="logout" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="closeLogout">&times;</span>
+      <h3>Logout</h3>
+    </div>
+    <div class="modal-body">
+      <div class="modal-container">
+        Chọn "Đăng xuất" bên dưới nếu bạn đã sẵn sàng kết thúc phiên hiện tại của mình.
+      </div>
+    </div>
+    <div class="modal-footer container">
+      <button type="submit" class="cover-box">Đăng Xuất</button>
+    </div>
+  </div>
+</div>
 <div id="navbarmenu" class="menu-bar">
   <div class="left-side-menu display-row">
     <img src="/static/images/js_logo.png" class="menu-logo" alt="JPro Logo" width="60" />
@@ -21,12 +37,14 @@
       <ion-icon name="notifications"></ion-icon>
       <div class="nav-btn-badge">9</div>
     </div>
-    <a href="/tunnaduong/profile">
-      <div class="user-button">
-        <img src="/static/images/tunganh1.jpeg" alt="Ảnh đại diện..." width="40" height="40" />
-        <div class="menu-user-info">Tùng Anh</div>
+    <div class="user-button dropdown">
+      <img src="/static/images/tunganh1.jpeg" alt="Ảnh đại diện..." width="40" height="40" />
+      <div class="menu-user-info">Tùng Anh</div>
+      <div class="dropdown-content">
+        <a href="/myprofile" class="dropdown-item">Trang cá nhân</a>
+        <button class="dropdown-item" id="logoutBtn">Đăng Xuất</button>
       </div>
-    </a>
+    </div>
   </div>
   <div id="sidebar">
     <div id="home-btn" class="menu-nav-button" onclick="window.location.href='/'">
@@ -84,4 +102,18 @@
       $('#sidebar').toggleClass('active');
     });
   });
+  var logoutModal = document.getElementById("logout");
+  var logoutbtn = document.getElementById("logoutBtn");
+  var logoutSpan = document.getElementsByClassName("closeLogout")[0];
+  logoutbtn.onclick = function () {
+    logoutModal.style.display = "block";
+  }
+  logoutSpan.onclick = function () {
+    logoutModal.style.display = "none";
+  }
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      logoutModal.style.display = "none";
+    }
+  }
 </script>

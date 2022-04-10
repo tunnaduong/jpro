@@ -1,0 +1,409 @@
+<div id="edit" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h3>Sửa bài thảo luận</h3>
+        </div>
+        <div class="modal-body">
+            <div class="modal-cover-image">
+                <img src="/static/images/japan_mountain.png" id="imageUpdate" alt="">
+                <label for="changeImage" class="modal-change-img cover-box">
+                    <ion-icon name="camera-outline"></ion-icon>
+                    <div class="text-white">Sửa ảnh</div>
+                </label>
+                <input type="file" name="" accept="image/*" id="changeImage" hidden>
+            </div>
+            <div class="container modal-container">
+                <div class="modal-form">
+                    <div class="modal-title">Tên Sự Kiện</div>
+                    <input type="text" class="modal-input">
+                </div>
+                <div class="flex-2">
+                    <div class="column">
+                        <div class="modal-form">
+                            <div class="modal-title">Thời gian diễn ra</div>
+                            <input type="datetime" class="modal-input">
+                        </div>
+                        <div class="modal-form">
+                            <div class="modal-title">Thời gian diễn ra</div>
+                            <select name="" id="" class="modal-select">
+                                <option value="online">Online</option>
+                                <option value="offline">Offline</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-form">
+                        <div class="modal-title">Địa điểm tổ chức sự kiện</div>
+                        <textarea class="modal-input" rows="7"></textarea>
+                    </div>
+                </div>
+                <div class="modal-form">
+                    <div class="modal-title">Nội dung bài viết</div>
+                    <textarea class="modal-input" rows="6"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="cover-box">Sửa Bài</button>
+            <button type="reset" class="cover-white-box">Nhập Lại</button>
+        </div>
+    </div>
+</div>
+<div id="delete" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h3>Xóa bài thảo luận</h3>
+        </div>
+        <div class="modal-body">
+            <div class="modal-cover-image">
+                <img src="/static/images/japan_mountain.png" id="imageUpdate" alt="">
+                <label for="changeImage" class="modal-change-img cover-box">
+                    <ion-icon name="camera-outline"></ion-icon>
+                    <div class="text-white">Sửa ảnh</div>
+                </label>
+                <input type="file" name="" accept="image/*" id="changeImage" hidden>
+            </div>
+            <div class="container modal-container">
+                <div class="modal-form">
+                    <div class="modal-title">Tên Sự Kiện</div>
+                    <input type="text" class="modal-input">
+                </div>
+                <div class="flex-2">
+                    <div class="column">
+                        <div class="modal-form">
+                            <div class="modal-title">Thời gian diễn ra</div>
+                            <input type="datetime" class="modal-input">
+                        </div>
+                        <div class="modal-form">
+                            <div class="modal-title">Thời gian diễn ra</div>
+                            <select name="" id="" class="modal-select">
+                                <option value="online">Online</option>
+                                <option value="offline">Offline</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-form">
+                        <div class="modal-title">Địa điểm tổ chức sự kiện</div>
+                        <textarea class="modal-input" rows="7"></textarea>
+                    </div>
+                </div>
+                <div class="modal-form">
+                    <div class="modal-title">Nội dung bài viết</div>
+                    <textarea class="modal-input" rows="6"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="cover-box">Xóa bài</button>
+            <button type="reset" class="cover-white-box">Nhập Lại</button>
+        </div>
+    </div>
+</div>
+<header class="person-container">
+    <div class="image-cover">
+        <img id="cover_img" src="../../static/images/JS.png" alt="Cover Image" />
+        <div class="person">
+            <img src="/static/images/pbhuu.jpeg" alt="" class="avatar">
+            <div class="person-info">
+                <div class="username text-white">@huupb</div>
+                <h2 class="name text-white">Phạm Bằng Hữu</h2>
+            </div>
+        </div>
+    </div>
+    <div class="person-menu">
+        <div class="discuss-menu">
+            <div class="">
+                <a href="/myprofile">Hoạt Động</a>
+                <div class="under"></div>
+            </div>
+            <div class=""><a href="">Học Tập</a>
+                <div class="under"></div>
+            </div>
+            <div class="discuss-choose"><a href="/myprofile/techtalk">Tech Talk</a>
+                <div class="under"></div>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="techtalk-list container">
+        <div class="techtalk">
+            <img src="/static/images/japan_mountain.png" alt="" class="techtalk-image">
+            <div class="techtalk-detail">
+                <div class="techtalk-title">
+                    <h2><a href="">GitLab</a></h2>
+                    <div class="">
+                        <strong class="number">32</strong> đăng ký
+                        <div class="dropdown">
+                            <span>
+                                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                            </span>
+                            <div class="dropdown-content">
+                                <button class="dropdown-item" id="editBtn">Chỉnh sửa</button>
+                                <button class="dropdown-item" id="deleteBtn">Xóa TechTalk</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="techtalk-author-time">
+                    <p class="techtalk-author">Khuất Mạnh Hoàng</p>
+                    <p class="techtalk-time">20h ngày 20/4</p>
+                </div>
+                <a href="/techtalk/123/details">
+                    <div class="cover-box">Đã Đăng Ký</div>
+                </a>
+            </div>
+        </div>
+        <div class="techtalk">
+            <img src="/static/images/japan_mountain.png" alt="" class="techtalk-image">
+            <div class="techtalk-detail">
+                <div class="techtalk-title">
+                    <h2><a href="">GitLab</a></h2>
+                    <div class="">
+                        <strong class="number">32</strong> đăng ký
+                        <div class="dropdown">
+                            <span>
+                                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                            </span>
+                            <div class="dropdown-content">
+                                <button class="dropdown-item" id="editBtn">Chỉnh sửa</button>
+                                <button class="dropdown-item" id="deleteBtn">Xóa TechTalk</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="techtalk-author-time">
+                    <p class="techtalk-author">Khuất Mạnh Hoàng</p>
+                    <p class="techtalk-time">20h ngày 20/4</p>
+                </div>
+                <a href="/techtalk/123/details">
+                    <div class="cover-box">Đã Đăng Ký</div>
+                </a>
+            </div>
+        </div>
+        <div class="techtalk">
+            <img src="/static/images/japan_mountain.png" alt="" class="techtalk-image">
+            <div class="techtalk-detail">
+                <div class="techtalk-title">
+                    <h2><a href="">GitLab</a></h2>
+                    <div class="">
+                        <strong class="number">32</strong> đăng ký
+                        <div class="dropdown">
+                            <span>
+                                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                            </span>
+                            <div class="dropdown-content">
+                                <button class="dropdown-item" id="editBtn">Chỉnh sửa</button>
+                                <button class="dropdown-item" id="deleteBtn">Xóa TechTalk</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="techtalk-author-time">
+                    <p class="techtalk-author">Khuất Mạnh Hoàng</p>
+                    <p class="techtalk-time">20h ngày 20/4</p>
+                </div>
+                <a href="/techtalk/123/details">
+                    <div class="cover-box">Đã Đăng Ký</div>
+                </a>
+            </div>
+        </div>
+        <div class="techtalk">
+            <img src="/static/images/japan_mountain.png" alt="" class="techtalk-image">
+            <div class="techtalk-detail">
+                <div class="techtalk-title">
+                    <h2><a href="">GitLab</a></h2>
+                    <div class="">
+                        <strong class="number">32</strong> đăng ký
+                        <div class="dropdown">
+                            <span>
+                                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                            </span>
+                            <div class="dropdown-content">
+                                <button class="dropdown-item" id="editBtn">Chỉnh sửa</button>
+                                <button class="dropdown-item" id="deleteBtn">Xóa TechTalk</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="techtalk-author-time">
+                    <p class="techtalk-author">Khuất Mạnh Hoàng</p>
+                    <p class="techtalk-time">20h ngày 20/4</p>
+                </div>
+                <a href="/techtalk/123/details">
+                    <div class="cover-box">Đã Đăng Ký</div>
+                </a>
+            </div>
+        </div>
+        <div class="techtalk">
+            <img src="/static/images/japan_mountain.png" alt="" class="techtalk-image">
+            <div class="techtalk-detail">
+                <div class="techtalk-title">
+                    <h2><a href="">GitLab</a></h2>
+                    <div class="">
+                        <strong class="number">32</strong> đăng ký
+                        <div class="dropdown">
+                            <span>
+                                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                            </span>
+                            <div class="dropdown-content">
+                                <button class="dropdown-item" id="editBtn">Chỉnh sửa</button>
+                                <button class="dropdown-item" id="deleteBtn">Xóa TechTalk</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="techtalk-author-time">
+                    <p class="techtalk-author">Khuất Mạnh Hoàng</p>
+                    <p class="techtalk-time">20h ngày 20/4</p>
+                </div>
+                <a href="/techtalk/123/details">
+                    <div class="cover-box">Đã Đăng Ký</div>
+                </a>
+            </div>
+        </div>
+        <div class="techtalk">
+            <img src="/static/images/japan_mountain.png" alt="" class="techtalk-image">
+            <div class="techtalk-detail">
+                <div class="techtalk-title">
+                    <h2><a href="">GitLab</a></h2>
+                    <div class="">
+                        <strong class="number">32</strong> đăng ký
+                        <div class="dropdown">
+                            <span>
+                                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                            </span>
+                            <div class="dropdown-content">
+                                <button class="dropdown-item" id="editBtn">Chỉnh sửa</button>
+                                <button class="dropdown-item" id="deleteBtn">Xóa TechTalk</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="techtalk-author-time">
+                    <p class="techtalk-author">Khuất Mạnh Hoàng</p>
+                    <p class="techtalk-time">20h ngày 20/4</p>
+                </div>
+                <a href="/techtalk/123/details">
+                    <div class="cover-box">Đã Đăng Ký</div>
+                </a>
+            </div>
+        </div>
+        <div class="techtalk">
+            <img src="/static/images/japan_mountain.png" alt="" class="techtalk-image">
+            <div class="techtalk-detail">
+                <div class="techtalk-title">
+                    <h2><a href="">GitLab</a></h2>
+                    <div class="">
+                        <strong class="number">32</strong> đăng ký
+                        <div class="dropdown">
+                            <span>
+                                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                            </span>
+                            <div class="dropdown-content">
+                                <button class="dropdown-item" id="editBtn">Chỉnh sửa</button>
+                                <button class="dropdown-item" id="deleteBtn">Xóa TechTalk</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="techtalk-author-time">
+                    <p class="techtalk-author">Khuất Mạnh Hoàng</p>
+                    <p class="techtalk-time">20h ngày 20/4</p>
+                </div>
+                <a href="/techtalk/123/details">
+                    <div class="cover-box">Đã Đăng Ký</div>
+                </a>
+            </div>
+        </div>
+        <div class="techtalk">
+            <img src="/static/images/japan_mountain.png" alt="" class="techtalk-image">
+            <div class="techtalk-detail">
+                <div class="techtalk-title">
+                    <h2><a href="">GitLab</a></h2>
+                    <div class="">
+                        <strong class="number">32</strong> đăng ký
+                        <div class="dropdown">
+                            <span>
+                                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                            </span>
+                            <div class="dropdown-content">
+                                <button class="dropdown-item" id="editBtn">Chỉnh sửa</button>
+                                <button class="dropdown-item" id="deleteBtn">Xóa TechTalk</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="techtalk-author-time">
+                    <p class="techtalk-author">Khuất Mạnh Hoàng</p>
+                    <p class="techtalk-time">20h ngày 20/4</p>
+                </div>
+                <a href="/techtalk/123/details">
+                    <div class="cover-box">Đã Đăng Ký</div>
+                </a>
+            </div>
+        </div>
+        <div class="techtalk">
+            <img src="/static/images/japan_mountain.png" alt="" class="techtalk-image">
+            <div class="techtalk-detail">
+                <div class="techtalk-title">
+                    <h2><a href="">GitLab</a></h2>
+                    <div class="">
+                        <strong class="number">32</strong> đăng ký
+                        <div class="dropdown">
+                            <span>
+                                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                            </span>
+                            <div class="dropdown-content">
+                                <button class="dropdown-item" id="editBtn">Chỉnh sửa</button>
+                                <button class="dropdown-item" id="deleteBtn">Xóa TechTalk</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="techtalk-author-time">
+                    <p class="techtalk-author">Khuất Mạnh Hoàng</p>
+                    <p class="techtalk-time">20h ngày 20/4</p>
+                </div>
+                <a href="/techtalk/123/details">
+                    <div class="cover-box">Đã Đăng Ký</div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</main>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+    $("#page-title").text("Cuộc thảo luận - JPro");
+    var modal = document.getElementById("edit");
+    var btn = document.getElementById("editBtn");
+    var span = document.getElementsByClassName("close")[0];
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    var deleteModal = document.getElementById("delete");
+    var deletebtn = document.getElementById("deleteBtn");
+    var deleteSpan = document.getElementsByClassName("close")[1];
+    deletebtn.onclick = function () {
+        deleteModal.style.display = "block";
+    }
+    deleteSpan.onclick = function () {
+        deleteModal.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            deleteModal.style.display = "none";
+        }
+    }
+</script>

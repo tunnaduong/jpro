@@ -10,6 +10,8 @@ const url_route = {
   "/techtalk/*/details": "/pages/event_detail.html",
   "/*/profile": "/utils/profile_common.html",
   "/*/profile/techtalk": "/pages/public_profile_techtalk.html",
+  "/myprofile": "/pages/private_profile.html",
+  "/myprofile/techtalk": "/pages/private_profile_techtalk.html",
 };
 
 const conf = {
