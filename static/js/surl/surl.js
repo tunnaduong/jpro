@@ -60,22 +60,61 @@ function surl(data, config) {
 
       if (expectedPath == "head") {
         debugging == true && console.log("Now load <head> tag...");
-        $(include_head_element).load(loadPath);
+        $.ajax({
+          url: loadPath,
+          success: function (ajaxData) {
+            $(include_head_element).html(ajaxData);
+          },
+          async: false,
+        });
       } else if (expectedPath == "menu") {
         debugging == true && console.log("Now load menu...");
-        $(include_menu_element).load(loadPath);
+        $.ajax({
+          url: loadPath,
+          success: function (ajaxData) {
+            $(include_menu_element).html(ajaxData);
+          },
+          async: false,
+        });
       } else if (expectedPath == "script") {
         debugging == true && console.log("Now load bottom page scripts...");
-        $(include_script_element).load(loadPath);
+        $.ajax({
+          url: loadPath,
+          success: function (ajaxData) {
+            $(include_script_element).html(ajaxData);
+          },
+          async: false,
+        });
       } else if (expectedPath == "500") {
         debugging == true && console.log("Now load 500 page...");
-        $(include_content_element).load(loadPath);
+        $.ajax({
+          url: loadPath,
+          success: function (ajaxData) {
+            $(include_content_element).html(ajaxData);
+          },
+          async: false,
+        });
       } else if (expectedPath == "404") {
         debugging == true &&
           console.log(
             "Now load 404 page... If the next URL tries is failed then it will remain and show the 404 page..."
           );
-        $(include_content_element).load(loadPath);
+        $.ajax({
+          url: loadPath,
+          success: function (ajaxData) {
+            $(include_content_element).html(ajaxData);
+          },
+          async: false,
+        });
+      } else if (expectedPath == "/*") {
+        debugging == true && console.log("Now load /* page...");
+        $.ajax({
+          url: loadPath,
+          success: function (ajaxData) {
+            $(include_content_element).html(ajaxData);
+          },
+          async: false,
+        });
       } else {
         for (var i = 1; i < splitedPath.length; i++) {
           if (
@@ -109,7 +148,12 @@ function surl(data, config) {
                 loadPath +
                 '"'
             );
-          $(include_content_element).load(loadPath);
+          $.ajax({
+            url: loadPath,
+            success: function (ajaxData) {
+              $(include_content_element).html(ajaxData);
+            },
+          });
         } else {
           debugging == true &&
             console.warn(
