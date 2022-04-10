@@ -3,7 +3,10 @@ body {
   background-color: #f0f2f5;
   overflow-x: hidden;
 }
-
+button {
+  outline: none;
+  border: none;
+}
 html,
 body,
 #root,
@@ -33,15 +36,15 @@ body,
 .techtalk-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 .techtalk {
-  flex: 0 0 25%;
+  flex: 0 0 33.33333%;
   box-sizing: border-box;
   margin: 50px auto;
   height: 500px;
-  padding: 5px;
+  padding: 15px;
 }
 .techtalk-image {
   width: 100%;
@@ -288,6 +291,7 @@ ion-icon[name="flash"] {
 .cover-white-box {
   background-color: #fff;
   color: #a61f12;
+  border: 1px solid #931b10;
   padding: 10px 20px;
   transition: all 0.3s;
   display: inline-block;
@@ -311,13 +315,14 @@ ion-icon[name="flash"] {
 }
 .more i {
   margin-left: -0.5rem;
+  margin-right: 0;
   transform: translateX(2px);
   opacity: 0;
   transition: all 0.2s;
 }
-
 .more:hover i {
   padding-left: 0.5rem;
+  padding-right: 0.5rem;
   opacity: 1;
   margin-left: 0;
 }
@@ -358,6 +363,7 @@ ion-icon[name="flash"] {
 }
 
 .event-detail-content {
+  padding-top: 100px;
   align-items: flex-start;
   color: black;
 }
@@ -781,8 +787,6 @@ header,
   width: 100%;
 }
 #abc {
-  background-color: #931b10;
-  width: 100%;
   background: url("/static/images/event-bgr.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -937,6 +941,7 @@ a {
 }
 .event {
   background-color: white;
+  box-sizing: border-box;
 }
 .event-detail > div {
   margin-top: 30px;
@@ -945,9 +950,9 @@ a {
   font-weight: 700;
 }
 .event-detail {
-  padding: 50px 30px;
-  height: 100%;
-  margin: 0;
+  justify-content: space-around;
+  padding: 50px 15px;
+  height: 350px;
 }
 .discuss-image {
   width: 300px;
@@ -955,9 +960,13 @@ a {
   object-fit: cover;
   margin-top: 10px;
 }
+.event {
+  height: 450px;
+  box-sizing: border-box;
+}
 .event-image {
   width: 50%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 }
 .event-title {
@@ -1028,6 +1037,7 @@ a {
 
 .active-person:not(:last-child),
 .trend-cover:not(:last-child) {
+  width: 100%;
   border-bottom: 2px solid #818181;
 }
 .active-name,
@@ -1139,8 +1149,11 @@ header .image-cover::after {
   margin-left: 10px;
 }
 #abc .event-container {
-  padding: 60px;
+  padding: 60px 0;
   margin: 0 auto;
+}
+#abc .discuss-comments {
+  background-color: white;
 }
 #abc {
   width: 100%;
@@ -1195,7 +1208,39 @@ header .image-cover::after {
   display: block;
   z-index: 100;
 }
-@media screen and (max-width: 960px) {
+.addTitle,
+.addEvent {
+  width: 170px;
+}
+@media screen and (max-width: 1400px) {
+  .event-button {
+    display: flex;
+    flex-direction: column;
+  }
+  .event-button > * {
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #sidebar {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #abc {
+    background-color: #931b10;
+    background-position-y: 200px;
+  }
+  .container {
+    width: 80% !important;
+    margin: 0 auto;
+  }
+  .techtalk {
+    flex: 0 0 33.3333%;
+  }
+  .fa-align-justify {
+    display: inherit;
+  }
   .more-discuss {
     margin-top: 30px;
   }
@@ -1212,7 +1257,6 @@ header .image-cover::after {
     margin-top: 10px;
   }
   .event-detail {
-    padding: 10px 15px;
     justify-content: space-around;
   }
   .event-cover,
@@ -1246,23 +1290,8 @@ header .image-cover::after {
   .discuss-image {
     width: 200px;
   }
-  .container {
-    width: 90%;
-    margin: 0 auto;
-  }
   .techtalk {
     flex: 0 0 50%;
-  }
-  .search-field {
-    width: 0;
-    -webkit-transition: width 1s ease-in-out;
-    -moz-transition: width 1s ease-in-out;
-    -o-transition: width 1s ease-in-out;
-    transition: width 1s ease-in-out;
-    float: right;
-  }
-  .search .search-field:focus {
-    width: 100px !important;
   }
   .fa-align-justify {
     display: block !important;
@@ -1270,16 +1299,275 @@ header .image-cover::after {
   .menu-nav-button {
     display: none;
   }
+  .event-list {
+    margin: 20px auto;
+  }
+  #title {
+    text-align: center;
+  }
+  .event {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+  .event .event-image {
+    order: 1;
+    min-height: 200px;
+    max-width: 100%;
+    object-fit: cover;
+  }
+  .event:nth-child(odd) .event-image {
+    border-radius: 20px;
+  }
+  .event:nth-child(even) .event-image {
+    border-radius: 20px;
+  }
+  .event-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
-@media screen and (max-width: 1200px) {
-  .container {
-    width: 70%;
-    margin: 0 auto;
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 85px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  border-radius: 10px;
+}
+
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
   }
-  .techtalk {
-    flex: 0 0 33.3333%;
+  to {
+    top: 0;
+    opacity: 1;
   }
-  .fa-align-justify {
-    display: inherit;
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
   }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.close {
+  color: #80160d;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 15px 20px;
+  text-transform: uppercase;
+  border-bottom: 5px solid #931b10;
+}
+.modal-cover-image {
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+.modal-body img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.modal-container {
+  margin: 20px auto;
+}
+.modal-change-img {
+  position: absolute;
+  bottom: 10px;
+  left: 30px;
+  padding: 10px 20px;
+}
+.modal-change-img div {
+  margin-left: 5px;
+}
+.modal-footer {
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.modal-footer button {
+  margin: 10px 20px;
+}
+.modal-form {
+  margin-top: 20px;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.column > * {
+  width: 100%;
+}
+.flex-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+.flex-2 > * {
+  flex-basis: 40%;
+}
+.modal-title {
+  color: #80160d;
+  font-size: 18px;
+  font-weight: 700;
+}
+.modal-input,
+.modal-select {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+  box-shadow: 2px 2px black;
+}
+.modal-checkbox {
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  transform: scale(2);
+  margin: 10px;
+}
+label.modal-form {
+  display: inline-block;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+}
+
+label.modal-form .check-box-effect {
+  display: inline-block;
+  position: relative;
+  background-color: transparent;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #dcdcdc;
+  border-radius: 10%;
+}
+
+label.modal-form .check-box-effect:before {
+  content: "";
+  width: 0px;
+  height: 2px;
+  border-radius: 2px;
+  background: #626262;
+  position: absolute;
+  transform: rotate(45deg);
+  top: 13px;
+  left: 9px;
+  transition: width 50ms ease 50ms;
+  transform-origin: 0% 0%;
+}
+
+label.modal-form .check-box-effect:after {
+  content: "";
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: #626262;
+  position: absolute;
+  transform: rotate(305deg);
+  top: 16px;
+  left: 10px;
+  transition: width 50ms ease;
+  transform-origin: 0% 0%;
+}
+
+label.modal-form:hover .check-box-effect:before {
+  width: 5px;
+  transition: width 100ms ease;
+}
+
+label.modal-form:hover .check-box-effect:after {
+  width: 10px;
+  transition: width 150ms ease 100ms;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked + .check-box-effect {
+  color: #931b10 !important;
+  transform: scale(1.25);
+}
+
+input[type="checkbox"]:checked + .check-box-effect:after {
+  width: 10px;
+  background: #333;
+  transition: width 150ms ease 100ms;
+}
+
+input[type="checkbox"]:checked + .check-box-effect:before {
+  width: 5px;
+  background: #333;
+  transition: width 150ms ease 100ms;
+}
+
+input[type="checkbox"]:checked:hover + .check-box-effect {
+  background-color: #dcdcdc;
+  transform: scale(1.25);
+}
+
+input[type="checkbox"]:checked:hover + .check-box-effect:after {
+  width: 10px;
+  background: #333;
+  transition: width 150ms ease 100ms;
+}
+
+input[type="checkbox"]:checked:hover + .check-box-effect:before {
+  width: 5px;
+  background: #333;
+  transition: width 150ms ease 100ms;
+}
+label.modal-form span:not(.check-box-effect) {
+  color: black;
+  margin: 10px;
 }
