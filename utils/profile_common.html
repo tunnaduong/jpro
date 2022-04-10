@@ -1,3 +1,30 @@
 <script>
-  $("#include-content").load("/pages/public_profile.html");
+  var splitedRealPath = location.pathname.split("/");
+  if (location.pathname) {
+    $.ajax({
+      url: "/pages/errors/404.html",
+      success: function (ajaxData) {
+        $("#include-content").html(ajaxData);
+      },
+      async: false,
+    });
+  }
+  if (splitedRealPath[2] == "profile" && splitedRealPath[1] == "tunnaduong") {
+    $.ajax({
+      url: "/pages/public_profile.html",
+      success: function (ajaxData) {
+        $("#include-content").html(ajaxData);
+      },
+      async: false,
+    });
+  } else if (splitedRealPath[1] == "tunnaduong") {
+    history.pushState({}, "", "/" + splitedRealPath[1] + "/profile");
+    $.ajax({
+      url: "/pages/public_profile.html",
+      success: function (ajaxData) {
+        $("#include-content").html(ajaxData);
+      },
+      async: false,
+    });
+  }
 </script>

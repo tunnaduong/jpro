@@ -1,4 +1,5 @@
 const url_route = {
+  "/*": "/utils/profile_common.html",
   head: "/includes/head.html",
   menu: "/includes/menu.html",
   script: "/includes/script.html",
@@ -16,6 +17,7 @@ const url_route = {
 
 const conf = {
   custom_add_syntax: "*",
+  debug: true,
 };
 
 export {
