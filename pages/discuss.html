@@ -1,229 +1,331 @@
-    <div class="cover">
-        <header>
-            <div id="title">Thảo Luận</div>
-            <div class="addTitle cover-box">
-                <ion-icon name="add-outline"></ion-icon>
-                <div>Thêm bài viết</div>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h3>Thêm bài thảo luận</h3>
+        </div>
+        <div class="modal-body">
+            <div class="modal-cover-image">
+                <img src="/static/images/japan_mountain.png" id="imageUpdate" alt="">
+                <label for="changeImage" class="modal-change-img cover-box">
+                    <ion-icon name="camera-outline"></ion-icon>
+                    <div class="text-white">Sửa ảnh</div>
+                </label>
+                <input type="file" name="" accept="image/*" id="changeImage" hidden>
             </div>
-        </header>
-        <div class="discuss-container">
-            <div class="discuss-left">
-                <div class="discuss-menu">
-                    <div class="discuss-choose "><a href="">Tất cả</a>
-                        <div class="under"></div>
+            <div class="container modal-container">
+                <div class="modal-form">
+                    <div class="modal-title">Tiêu đề</div>
+                    <input type="text" class="modal-input">
+                </div>
+                <div class="flex-2">
+                    <div class="modal-form">
+                        <div class="modal-title">Tags</div>
+                        <input type="text" class="modal-input">
                     </div>
-                    <div class=""><a href="">Tiếng Nhật</a>
-                        <div class="under"></div>
-                    </div>
-                    <div class=""><a href="">Lập Trình</a>
-                        <div class="under"></div>
-                    </div>
-                    <div class=""><a href="">Thảo Luận</a>
-                        <div class="under"></div>
-                    </div>
-                    <div class="show-more">
-                        <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                    <div class="modal-form">
+                        <div class="modal-title">Giới hạn bình luận</div>
+                        <input type="text" class="modal-input">
                     </div>
                 </div>
-                <ul class="discuss-list">
-                    <li class="discuss">
-                        <img src="/static/images/js_logo.png" class="discuss-image" alt="">
-                        <div class="discuss-detail">
-                            <div class="discuss-title">Thảo luận</div>
-                            <div class="discuss-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                Deserunt, est voluptatum. Officia molestiae corporis asperiores sequi laborum. Vero
-                                consequatur quaerat tempore quod, omnis dolores sapiente optio maiores ea nobis
-                            </div>
-                            <div class="author-time">
-                                <div class="author">Tạ Cưa Cưa</div>
-                                <span>-</span>
-                                <div class="time">8-4-2020</div>
-                            </div>
-                            <div class="react">
-                                <div class="view">3m người xem</div>
-                                <a class="more"> <span>Đọc thêm<i class="fas fa-long-arrow-alt-right"></i></span>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="discuss">
-                        <img src="/static/images/js_logo.png" class="discuss-image" alt="">
-                        <div class="discuss-detail">
-                            <div class="discuss-title">Thảo luận</div>
-                            <div class="discuss-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                Deserunt, est voluptatum. Officia molestiae corporis asperiores sequi laborum. Vero
-                                consequatur quaerat tempore quod, omnis dolores sapiente optio maiores ea nobis
-                            </div>
-                            <div class="author-time">
-                                <div class="author">Tạ Cưa Cưa</div>
-                                <span>-</span>
-                                <div class="time">8-4-2020</div>
-                            </div>
-                            <div class="react">
-                                <div class="view">3m người xem</div>
-                                <a class="more"> <span>Đọc thêm<i class="fas fa-long-arrow-alt-right"></i></span>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="discuss">
-                        <img src="/static/images/js_logo.png" class="discuss-image" alt="">
-                        <div class="discuss-detail">
-                            <div class="discuss-title">Thảo luận</div>
-                            <div class="discuss-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                Deserunt, est voluptatum. Officia molestiae corporis asperiores sequi laborum. Vero
-                                consequatur quaerat tempore quod, omnis dolores sapiente optio maiores ea nobis
-                            </div>
-                            <div class="author-time">
-                                <div class="author">Tạ Cưa Cưa</div>
-                                <span>-</span>
-                                <div class="time">8-4-2020</div>
-                            </div>
-                            <div class="react">
-                                <div class="view">3m người xem</div>
-                                <a class="more"> <span>Đọc thêm<i class="fas fa-long-arrow-alt-right"></i></span></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="discuss">
-                        <img src="/static/images/js_logo.png" class="discuss-image" alt="">
-                        <div class="discuss-detail">
-                            <div class="discuss-title">Thảo luận</div>
-                            <div class="discuss-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                Deserunt, est voluptatum. Officia molestiae corporis asperiores sequi laborum. Vero
-                                consequatur quaerat tempore quod, omnis dolores sapiente optio maiores ea nobis
-                            </div>
-                            <div class="author-time">
-                                <div class="author">Tạ Cưa Cưa</div>
-                                <span>-</span>
-                                <div class="time">8-4-2020</div>
-                            </div>
-                            <div class="react">
-                                <div class="view">3m người xem</div>
-                                <a class="more"> <span>Đọc thêm<i class="fas fa-long-arrow-alt-right"></i></span>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="discuss">
-                        <img src="/static/images/js_logo.png" class="discuss-image" alt="">
-                        <div class="discuss-detail">
-                            <div class="discuss-title">Thảo luận</div>
-                            <div class="discuss-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                Deserunt, est voluptatum. Officia molestiae corporis asperiores sequi laborum. Vero
-                                consequatur quaerat tempore quod, omnis dolores sapiente optio maiores ea nobis
-                            </div>
-                            <div class="author-time">
-                                <div class="author">Tạ Cưa Cưa</div>
-                                <span>-</span>
-                                <div class="time">8-4-2020</div>
-                            </div>
-                            <div class="react">
-                                <div class="view">3m người xem</div>
-                                <a class="more"> <span>Đọc thêm<i class="fas fa-long-arrow-alt-right"></i></span>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="discuss">
-                        <img src="/static/images/js_logo.png" class="discuss-image" alt="">
-                        <div class="discuss-detail">
-                            <div class="discuss-title">Thảo luận</div>
-                            <div class="discuss-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                Deserunt, est voluptatum. Officia molestiae corporis asperiores sequi laborum. Vero
-                                consequatur quaerat tempore quod, omnis dolores sapiente optio maiores ea nobis
-                            </div>
-                            <div class="author-time">
-                                <div class="author">Tạ Cưa Cưa</div>
-                                <span>-</span>
-                                <div class="time">8-4-2020</div>
-                            </div>
-                            <div class="react">
-                                <div class="view">3m người xem</div>
-                                <a class="more"> <span>Đọc thêm<i class="fas fa-long-arrow-alt-right"></i></span>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <div class="more-discuss">
-                    <div class="more previous"> <span><i class="fas fa-long-arrow-alt-left"></i>Trang trước</span>
+                <div class="flex-2">
+                    <div class="modal-form">
+                        <div class="modal-title">Danh mục</div>
+                        <input type="text" class="modal-input">
                     </div>
-                    <div class="more next"> <span>Trang sau<i class="fas fa-long-arrow-alt-right"></i></span></div>
+                    <label class="modal-form">
+                        <input type="checkbox" class="modal-checkbox">
+                        <span class="check-box-effect"></span>
+                        <span>Hiện số người thích bài viết này </span>
+                    </label>
                 </div>
-            </div>
-            <div class="discuss-right">
-                <div class="top-active">
-                    <div class="active-title">Hoạt động sôi nổi nhất</div>
-                    <div class="line"></div>
-                    <ul class="active-content">
-                        <li class="active-person"><a href="">
-                                <img src="/static/images/japan_mountain.png" class="active-image" alt="">
-                                <div class="active-cover">
-                                    <div class="active-name">Tạ Cưa Cưa</div>
-                                    <div class="active-detail">Đăng n bài, tổ chức n techtalk</div>
-                                </div>
-                            </a></li>
-                        <li class="active-person"><a href="">
-                                <img src="/static/images/japan_mountain.png" class="active-image" alt="">
-                                <div class="active-cover">
-                                    <div class="active-name">Tạ Cưa Cưa</div>
-                                    <div class="active-detail">Đăng n bài, tổ chức n techtalk</div>
-                                </div>
-                            </a></li>
-                        <li class="active-person"><a href="">
-                                <img src="/static/images/japan_mountain.png" class="active-image" alt="">
-                                <div class="active-cover">
-                                    <div class="active-name">Tạ Cưa Cưa</div>
-                                    <div class="active-detail">Đăng n bài, tổ chức n techtalk</div>
-                                </div>
-                            </a></li>
-                    </ul>
-                </div>
-                <div class="discuss-trend">
-                    <div class="discuss-trend-title">Bài viết phổ biến</div>
-                    <div class="line"></div>
-                    <ul class="trend-container">
-                        <li class="trend-cover">
-                            <div class="trend-title">
-                                [Thông báo]
-                                <span class="trend-content">Lorem ipsum dolor sit amet
-                                    consectetur adipisicing elit. A vitae nisi delectus eveniet expedita sed provident
-                                    dolor, magnam ipsa excepturi, sint ducimus deleniti quo dolores omnis culpa
-                                    accusantium consequatur atque.</span>
-                            </div>
-                            <div class="trend-detail">
-                                <div class="trend-artist">Koutahara</div>
-                                <div class="more"><span>Đọc thêm<i class="fas fa-long-arrow-alt-right"></i></span></div>
-                            </div>
-                        </li>
-                        <li class="trend-cover">
-                            <div class="trend-title">
-                                [Thông báo]
-                                <span class="trend-content">Lorem ipsum dolor sit amet
-                                    consectetur adipisicing elit. A vitae nisi delectus eveniet expedita sed provident
-                                    dolor, magnam ipsa excepturi, sint ducimus deleniti quo dolores omnis culpa
-                                    accusantium consequatur atque.</span>
-                            </div>
-                            <div class="trend-detail">
-                                <div class="trend-artist">Koutahara</div>
-                                <div class="more"><span>Đọc thêm<i class="fas fa-long-arrow-alt-right"></i></span></div>
-                            </div>
-                        </li>
-                        <li class="trend-cover">
-                            <div class="trend-title">
-                                [Thông báo]<span class="trend-content">Lorem ipsum dolor sit amet
-                                    consectetur adipisicing elit. A vitae nisi delectus eveniet expedita sed provident
-                                    dolor, magnam ipsa excepturi, sint ducimus deleniti quo dolores omnis culpa
-                                    accusantium consequatur atque.</span>
-                            </div>
-                            <div class="trend-detail">
-                                <div class="trend-artist">Koutahara</div>
-                                <div class="more"><span>Đọc thêm<i class="fas fa-long-arrow-alt-right"></i></span></div>
-                            </div>
-                        </li>
-                    </ul>
+                <div class="modal-form">
+                    <div class="modal-title">Nội dung bài viết</div>
+                    <textarea class="modal-input" rows="6"></textarea>
                 </div>
             </div>
         </div>
+        <div class="modal-footer">
+            <button type="submit" class="cover-box">Đăng Bài</button>
+            <button type="reset" class="cover-white-box">Nhập Lại</button>
+        </div>
     </div>
+</div>
+<div class="cover">
+    <header>
+        <div id="title">Thảo Luận</div>
+        <button id="myBtn" class="addTitle cover-box">
+            <ion-icon name="add-outline"></ion-icon>
+            <div>Thêm bài viết</div>
+        </button>
+    </header>
+    <div class="discuss-container">
+        <div class="discuss-left">
+            <div class="discuss-menu">
+                <div class="discuss-choose "><a href="">Tất cả</a>
+                    <div class="under"></div>
+                </div>
+                <div class=""><a href="">Tiếng Nhật</a>
+                    <div class="under"></div>
+                </div>
+                <div class=""><a href="">Lập Trình</a>
+                    <div class="under"></div>
+                </div>
+                <div class=""><a href="">Thảo Luận</a>
+                    <div class="under"></div>
+                </div>
+                <div class="show-more">
+                    <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                </div>
+            </div>
+            <ul class="discuss-list">
+                <li class="discuss">
+                    <a href="/discussions/4/details"><img src="/static/images/js_logo.png" class="discuss-image"
+                            alt=""></a>
+                    <div class="discuss-detail">
+                        <a href="/discussions/4/details">
+                            <div class="discuss-title">Thảo luận</div>
+                        </a>
+                        <div class="discuss-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                            Deserunt, est voluptatum. Officia molestiae corporis asperiores sequi laborum. Vero
+                            consequatur quaerat tempore quod, omnis dolores sapiente optio maiores ea nobis
+                        </div>
+                        <div class="author-time">
+                            <div class="author">Tạ Cưa Cưa</div>
+                            <span>-</span>
+                            <div class="time">8-4-2020</div>
+                        </div>
+                        <div class="react">
+                            <div class="view">3m người xem</div>
+                            <a class="more" href="/discussions/4/details"> <span>Đọc thêm<i
+                                        class="fas fa-long-arrow-alt-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="discuss">
+                    <a href="/discussions/4/details"><img src="/static/images/js_logo.png" class="discuss-image"
+                            alt=""></a>
+                    <div class="discuss-detail">
+                        <a href="/discussions/4/details">
+                            <div class="discuss-title">Thảo luận</div>
+                        </a>
+                        <div class="discuss-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                            Deserunt, est voluptatum. Officia molestiae corporis asperiores sequi laborum. Vero
+                            consequatur quaerat tempore quod, omnis dolores sapiente optio maiores ea nobis
+                        </div>
+                        <div class="author-time">
+                            <div class="author">Tạ Cưa Cưa</div>
+                            <span>-</span>
+                            <div class="time">8-4-2020</div>
+                        </div>
+                        <div class="react">
+                            <div class="view">3m người xem</div>
+                            <a class="more" href="/discussions/4/details"> <span>Đọc thêm<i
+                                        class="fas fa-long-arrow-alt-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="discuss">
+                    <a href="/discussions/4/details"><img src="/static/images/js_logo.png" class="discuss-image"
+                            alt=""></a>
+                    <div class="discuss-detail">
+                        <a href="/discussions/4/details">
+                            <div class="discuss-title">Thảo luận</div>
+                        </a>
+                        <div class="discuss-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                            Deserunt, est voluptatum. Officia molestiae corporis asperiores sequi laborum. Vero
+                            consequatur quaerat tempore quod, omnis dolores sapiente optio maiores ea nobis
+                        </div>
+                        <div class="author-time">
+                            <div class="author">Tạ Cưa Cưa</div>
+                            <span>-</span>
+                            <div class="time">8-4-2020</div>
+                        </div>
+                        <div class="react">
+                            <div class="view">3m người xem</div>
+                            <a class="more" href="/discussions/4/details"> <span>Đọc thêm<i
+                                        class="fas fa-long-arrow-alt-right"></i></span></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="discuss">
+                    <a href="/discussions/4/details"><img src="/static/images/js_logo.png" class="discuss-image"
+                            alt=""></a>
+                    <div class="discuss-detail">
+                        <a href="/discussions/4/details">
+                            <div class="discuss-title">Thảo luận</div>
+                        </a>
+                        <div class="discuss-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                            Deserunt, est voluptatum. Officia molestiae corporis asperiores sequi laborum. Vero
+                            consequatur quaerat tempore quod, omnis dolores sapiente optio maiores ea nobis
+                        </div>
+                        <div class="author-time">
+                            <div class="author">Tạ Cưa Cưa</div>
+                            <span>-</span>
+                            <div class="time">8-4-2020</div>
+                        </div>
+                        <div class="react">
+                            <div class="view">3m người xem</div>
+                            <a class="more" href="/discussions/4/details"> <span>Đọc thêm<i
+                                        class="fas fa-long-arrow-alt-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="discuss">
+                    <a href="/discussions/4/details"><img src="/static/images/js_logo.png" class="discuss-image"
+                            alt=""></a>
+                    <div class="discuss-detail">
+                        <a href="/discussions/4/details">
+                            <div class="discuss-title">Thảo luận</div>
+                        </a>
+                        <div class="discuss-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                            Deserunt, est voluptatum. Officia molestiae corporis asperiores sequi laborum. Vero
+                            consequatur quaerat tempore quod, omnis dolores sapiente optio maiores ea nobis
+                        </div>
+                        <div class="author-time">
+                            <div class="author">Tạ Cưa Cưa</div>
+                            <span>-</span>
+                            <div class="time">8-4-2020</div>
+                        </div>
+                        <div class="react">
+                            <div class="view">3m người xem</div>
+                            <a class="more" href="/discussions/4/details"> <span>Đọc thêm<i
+                                        class="fas fa-long-arrow-alt-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="discuss">
+                    <a href="/discussions/4/details"><img src="/static/images/js_logo.png" class="discuss-image"
+                            alt=""></a>
+                    <div class="discuss-detail">
+                        <a href="/discussions/4/details">
+                            <div class="discuss-title">Thảo luận</div>
+                        </a>
+                        <div class="discuss-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                            Deserunt, est voluptatum. Officia molestiae corporis asperiores sequi laborum. Vero
+                            consequatur quaerat tempore quod, omnis dolores sapiente optio maiores ea nobis
+                        </div>
+                        <div class="author-time">
+                            <div class="author">Tạ Cưa Cưa</div>
+                            <span>-</span>
+                            <div class="time">8-4-2020</div>
+                        </div>
+                        <div class="react">
+                            <div class="view">3m người xem</div>
+                            <a class="more" href="/discussions/4/details"> <span>Đọc thêm<i
+                                        class="fas fa-long-arrow-alt-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="more-discuss">
+                <div class="more previous"> <span><i class="fas fa-long-arrow-alt-left"></i>Trang trước</span>
+                </div>
+                <div class="more next"> <span>Trang sau<i class="fas fa-long-arrow-alt-right"></i></span></div>
+            </div>
+        </div>
+        <div class="discuss-right">
+            <div class="top-active">
+                <div class="active-title">Hoạt động sôi nổi nhất</div>
+                <div class="line"></div>
+                <ul class="active-content">
+                    <li class="active-person"><a href="">
+                            <img src="/static/images/japan_mountain.png" class="active-image" alt="">
+                            <div class="active-cover">
+                                <div class="active-name">Tạ Cưa Cưa</div>
+                                <div class="active-detail">Đăng n bài, tổ chức n techtalk</div>
+                            </div>
+                        </a></li>
+                    <li class="active-person"><a href="">
+                            <img src="/static/images/japan_mountain.png" class="active-image" alt="">
+                            <div class="active-cover">
+                                <div class="active-name">Tạ Cưa Cưa</div>
+                                <div class="active-detail">Đăng n bài, tổ chức n techtalk</div>
+                            </div>
+                        </a></li>
+                    <li class="active-person"><a href="">
+                            <img src="/static/images/japan_mountain.png" class="active-image" alt="">
+                            <div class="active-cover">
+                                <div class="active-name">Tạ Cưa Cưa</div>
+                                <div class="active-detail">Đăng n bài, tổ chức n techtalk</div>
+                            </div>
+                        </a></li>
+                </ul>
+            </div>
+            <div class="discuss-trend">
+                <div class="discuss-trend-title">Bài viết phổ biến</div>
+                <div class="line"></div>
+                <ul class="trend-container">
+                    <li class="trend-cover">
+                        <div class="trend-title">
+                            [Thông báo]
+                            <span class="trend-content">Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit. A vitae nisi delectus eveniet expedita sed provident
+                                dolor, magnam ipsa excepturi, sint ducimus deleniti quo dolores omnis culpa
+                                accusantium consequatur atque.</span>
+                        </div>
+                        <div class="trend-detail">
+                            <div class="trend-artist">Koutahara</div>
+                            <a href="/discussions/4/details">
+                                <div class="more"><span>Đọc thêm<i class="fas fa-long-arrow-alt-right"></i></span>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="trend-cover">
+                        <div class="trend-title">
+                            [Thông báo]
+                            <span class="trend-content">Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit. A vitae nisi delectus eveniet expedita sed provident
+                                dolor, magnam ipsa excepturi, sint ducimus deleniti quo dolores omnis culpa
+                                accusantium consequatur atque.</span>
+                        </div>
+                        <div class="trend-detail">
+                            <div class="trend-artist">Koutahara</div>
+                            <a href="/discussions/4/details">
+                                <div class="more"><span>Đọc thêm<i class="fas fa-long-arrow-alt-right"></i></span>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="trend-cover">
+                        <div class="trend-title">
+                            [Thông báo]<span class="trend-content">Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit. A vitae nisi delectus eveniet expedita sed provident
+                                dolor, magnam ipsa excepturi, sint ducimus deleniti quo dolores omnis culpa
+                                accusantium consequatur atque.</span>
+                        </div>
+                        <div class="trend-detail">
+                            <div class="trend-artist">Koutahara</div>
+                            <a href="/discussions/4/details">
+                                <div class="more"><span>Đọc thêm<i class="fas fa-long-arrow-alt-right"></i></span>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("myBtn");
+    var span = document.getElementsByClassName("close")[0];
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>

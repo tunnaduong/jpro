@@ -10,6 +10,7 @@ const url_route = {
   "/techtalk": "/pages/event.html",
   "/techtalk/*/details": "/pages/event_detail.html",
   "/*/profile": "/utils/profile_common.html",
+  "/*/profile/techtalk": "/pages/public_profile_techtalk.html",
 };
 
 const conf = {
@@ -17,4 +18,7 @@ const conf = {
   debug: true,
 };
 
-export { url_route, conf };
+export {
+  url_route,
+  conf
+};
