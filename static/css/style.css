@@ -1241,122 +1241,118 @@ header .image-cover::after {
 .addEvent {
   width: 170px;
 }
-@media screen and (max-width: 1400px) {
-  .event-button {
-    display: flex;
-    flex-direction: column;
-  }
-  .event-button > * {
-    margin-top: 20px;
-  }
+.cover-login {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background-color: #80160d;
+  color: white;
+  padding: 50px 30px;
+  border-radius: 10px;
 }
-@media screen and (min-width: 1200px) {
-  #sidebar {
-    display: none !important;
-  }
+.welcom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-@media screen and (max-width: 1200px) {
-  #abc {
-    background-color: #931b10;
-    background-position-y: 200px;
-  }
-  .container {
-    width: 80% !important;
-    margin: 0 auto;
-  }
-  .techtalk {
-    flex: 0 0 33.3333%;
-  }
-  .fa-align-justify {
-    display: inherit;
-  }
-  .more-discuss {
-    margin-top: 30px;
-  }
-  .event-content {
-    -webkit-line-clamp: 2;
-  }
-  .discuss-container,
-  .event-header {
-    width: 90%;
-    margin: 0 auto;
-    flex-direction: column;
-  }
-  .event-detail > div {
-    margin-top: 10px;
-  }
-  .event-detail {
-    justify-content: space-around;
-  }
-  .event-cover,
-  .event-button {
-    width: 100%;
-  }
-  .event-button > * {
-    margin-top: 5px;
-  }
-  .event-list {
-    margin: 0;
-  }
-  .event {
-    min-width: 550px;
-    margin: 20px 25px;
-  }
-  .event-menu {
-    margin: 20px auto;
-    width: 100%;
-  }
-  .addEvent {
-    margin: 0;
-  }
-  .discuss-right {
-    width: 100%;
-  }
-  .discuss-left {
-    width: 100%;
-  }
-
-  .discuss-image {
-    width: 200px;
-  }
-  .techtalk {
-    flex: 0 0 50%;
-  }
-  .fa-align-justify {
-    display: block !important;
-  }
-  .menu-nav-button {
-    display: none;
-  }
-  .event-list {
-    margin: 20px auto;
-  }
-  #title {
-    text-align: center;
-  }
-  .event {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    padding: 20px;
-  }
-  .event .event-image {
-    order: 1;
-    min-height: 200px;
-    max-width: 100%;
-    object-fit: cover;
-  }
-  .event:nth-child(odd) .event-image {
-    border-radius: 20px;
-  }
-  .event:nth-child(even) .event-image {
-    border-radius: 20px;
-  }
-  .event-button {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
+.image-login {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  background-color: white;
+  margin-bottom: 20px;
+  border-radius: 100%;
+}
+.welcom .text-span {
+  color: lightgrey !important;
+  font-style: italic !important;
+}
+form {
+  margin-top: 25px;
+}
+form .input_box {
+  height: 50px;
+  width: 100%;
+  position: relative;
+  margin-top: 15px;
+}
+.input_box input {
+  height: 100%;
+  width: 85%;
+  outline: none;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 45px;
+  font-size: 17px;
+  transition: all 0.3s ease;
+}
+.input_box input:focus {
+  border-color: #80160d;
+}
+.input_box .icon {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  color: grey;
+}
+form .option_div {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.return_home a {
+  color: white;
+}
+.option_div span {
+  margin-left: 5px;
+  font-size: 16px;
+  color: #333;
+}
+.option_div .forget_div a {
+  font-size: 16px;
+  color: white;
+  text-align: end;
+}
+.button input {
+  padding-left: 0;
+  width: 100%;
+  background-color: white;
+  color: #80160d;
+  border: none;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+.button input:hover {
+  background: #115617;
+  color: white;
+}
+form .sign_up {
+  text-align: center;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+}
+.sign_up a {
+  color: white;
+}
+form a {
+  text-decoration: none;
+}
+form a:hover {
+  text-decoration: underline;
+}
+.text-center {
+  text-align: center;
 }
 .activity .dropdown {
   position: absolute;
@@ -1613,4 +1609,121 @@ input[type="checkbox"]:checked:hover + .check-box-effect:before {
 label.modal-form span:not(.check-box-effect) {
   color: black;
   margin: 10px;
+}
+@media screen and (max-width: 1400px) {
+  .event-button {
+    display: flex;
+    flex-direction: column;
+  }
+  .event-button > * {
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #sidebar {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #abc {
+    background-color: #931b10;
+    background-position-y: 200px;
+  }
+  .container {
+    width: 80% !important;
+    margin: 0 auto;
+  }
+  .techtalk {
+    flex: 0 0 33.3333%;
+  }
+  .fa-align-justify {
+    display: inherit;
+  }
+  .more-discuss {
+    margin-top: 30px;
+  }
+  .event-content {
+    -webkit-line-clamp: 2;
+  }
+  .discuss-container,
+  .event-header {
+    width: 90%;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+  .event-detail > div {
+    margin-top: 10px;
+  }
+  .event-detail {
+    justify-content: space-around;
+  }
+  .event-cover,
+  .event-button {
+    width: 100%;
+  }
+  .event-button > * {
+    margin-top: 5px;
+  }
+  .event-list {
+    margin: 0;
+  }
+  .event {
+    min-width: 550px;
+    margin: 20px 25px;
+  }
+  .event-menu {
+    margin: 20px auto;
+    width: 100%;
+  }
+  .addEvent {
+    margin: 0;
+  }
+  .discuss-right {
+    width: 100%;
+  }
+  .discuss-left {
+    width: 100%;
+  }
+
+  .discuss-image {
+    width: 200px;
+  }
+  .techtalk {
+    flex: 0 0 50%;
+  }
+  .fa-align-justify {
+    display: block !important;
+  }
+  .menu-nav-button {
+    display: none;
+  }
+  .event-list {
+    margin: 20px auto;
+  }
+  #title {
+    text-align: center;
+  }
+  .event {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+  .event .event-image {
+    order: 1;
+    min-height: 200px;
+    max-width: 100%;
+    object-fit: cover;
+  }
+  .event:nth-child(odd) .event-image {
+    border-radius: 20px;
+  }
+  .event:nth-child(even) .event-image {
+    border-radius: 20px;
+  }
+  .event-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }

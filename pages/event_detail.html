@@ -116,4 +116,17 @@
 </div>
 <script>
     $("#page-title").text("Tech Talk - JPro");
+    const heart = document.querySelector(".heart");
+    const num = document.querySelectorAll(".number");
+    heart.addEventListener("click", function () {
+        if (heart.className === "far fa-heart heart") {
+            heart.className = "fas fa-heart heart";
+            heart.style.color = "red";
+            num[0].innerHTML = parseInt(num[0].innerHTML) + 1;
+        } else {
+            heart.className = "far fa-heart heart";
+            heart.style.color = "#676669";
+            num[0].innerHTML = parseInt(num[0].innerHTML) - 1;
+        }
+    });
 </script>
