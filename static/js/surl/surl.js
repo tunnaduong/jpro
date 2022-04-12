@@ -166,7 +166,6 @@ function surl(data, config) {
                 expectedPath +
                 `". Skipping...`
             );
-          $("#page-title").text("Oops, không tìm thấy nội dung - JPro");
           setTimeout(() => {
             $("#404").css("visibility", "visible");
           }, 450);
