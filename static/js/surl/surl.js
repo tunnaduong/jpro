@@ -168,7 +168,7 @@ function surl(data, config) {
             );
           setTimeout(() => {
             $("#404").css("visibility", "visible");
-          }, 450);
+          }, 850);
         }
       }
     });
