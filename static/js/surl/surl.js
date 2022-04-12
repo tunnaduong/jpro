@@ -166,6 +166,8 @@ function surl(data, config) {
                 expectedPath +
                 `". Skipping...`
             );
+          $("#page-title").text("Oops, không tìm thấy nội dung - JPro");
+          $("#404").css("visibility", "visible");
         }
       }
     });
