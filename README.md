@@ -17,9 +17,8 @@ J trong JPro nghĩa là Japanese (Tiếng Nhật), Pro nghĩa là Programming (L
 
 ## Các branches trong dự án
  - main (Dùng để tổng hợp các nhánh lại với nhau để dễ quản lý và nơi chứa file backup cơ sở dữ liệu của web)
- - frontend (Giao diện người dùng chính)
+ - frontend (Giao diện người dùng chính và dùng để deploy lên Heroku)
  - backend (Chức năng chính của web dưới dạng API)
- - deploy-frontend (Dùng để deploy lên Heroku)
 
 ## Địa chỉ của dự án
 
