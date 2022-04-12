@@ -6,7 +6,8 @@
     </div>
     <div class="modal-body">
       <div class="modal-container">
-        Chọn "Đăng xuất" bên dưới nếu bạn đã sẵn sàng kết thúc phiên hiện tại của mình.
+        Chọn "Đăng xuất" bên dưới nếu bạn đã sẵn sàng kết thúc phiên hiện tại
+        của mình.
       </div>
     </div>
     <div class="modal-footer container">
@@ -16,7 +17,12 @@
 </div>
 <div id="navbarmenu" class="menu-bar">
   <div class="left-side-menu display-row">
-    <img src="/static/images/js_logo.png" class="menu-logo" alt="JPro Logo" width="60" />
+    <img
+      src="/static/images/js_logo.png"
+      class="menu-logo"
+      alt="JPro Logo"
+      width="60"
+    />
     <div class="search">
       <div class="search-icon">
         <i class="fas fa-search"></i>
@@ -38,55 +44,100 @@
       <div class="nav-btn-badge">9</div>
     </div>
     <div class="user-button dropdown">
-      <img src="/static/images/tunganh1.jpeg" alt="Ảnh đại diện..." width="40" height="40" />
+      <img
+        src="/static/images/tunganh1.jpeg"
+        alt="Ảnh đại diện..."
+        width="40"
+        height="40"
+      />
       <div class="menu-user-info">Tùng Anh</div>
       <div class="dropdown-content">
-        <a href="/myprofile" class="dropdown-item">Trang cá nhân</a>
+        <a href="/profile" class="dropdown-item">Trang cá nhân</a>
         <button class="dropdown-item" id="logoutBtn">Đăng Xuất</button>
       </div>
     </div>
   </div>
   <div id="sidebar">
-    <div id="home-btn" class="menu-nav-button" onclick="window.location.href='/'">
+    <div
+      id="home-btn"
+      class="menu-nav-button"
+      onclick="window.location.href='/'"
+    >
       <ion-icon id="home-icon" name="planet-outline"></ion-icon>
       <div class="nav-btn-text">Trang chủ</div>
     </div>
-    <div id="about-btn" class="menu-nav-button" onclick="window.location.href='/about'">
+    <div
+      id="about-btn"
+      class="menu-nav-button"
+      onclick="window.location.href='/about'"
+    >
       <ion-icon id="about-icon" name="information-circle-outline"></ion-icon>
       <div class="nav-btn-text">Giới thiệu</div>
     </div>
-    <div id="discuss-btn" class="menu-nav-button" onclick="window.location.href='/discussions'">
+    <div
+      id="discuss-btn"
+      class="menu-nav-button"
+      onclick="window.location.href='/discussions'"
+    >
       <ion-icon id="discuss-icon" name="chatbox-ellipses-outline"></ion-icon>
       <div class="nav-btn-text">Thảo luận</div>
     </div>
-    <div id="learn-btn" class="menu-nav-button" onclick="window.location.href='/learn'">
+    <div
+      id="learn-btn"
+      class="menu-nav-button"
+      onclick="window.location.href='/learn'"
+    >
       <ion-icon id="learn-icon" name="book-outline"></ion-icon>
       <div class="nav-btn-text">Học tập</div>
     </div>
-    <div id="techtalk-btn" class="menu-nav-button" onclick="window.location.href='/techtalk'">
+    <div
+      id="techtalk-btn"
+      class="menu-nav-button"
+      onclick="window.location.href='/techtalk'"
+    >
       <ion-icon id="techtalk-icon" name="cafe-outline"></ion-icon>
       <div class="nav-btn-text">TechTalk</div>
     </div>
   </div>
   <div class="menu-navigation-buttons">
     <button id="sidebarCollapse"><i class="fas fa-align-justify"></i></button>
-    <div id="home-btn" class="menu-nav-button" onclick="window.location.href='/'">
+    <div
+      id="home-btn"
+      class="menu-nav-button"
+      onclick="window.location.href='/'"
+    >
       <ion-icon id="home-icon" name="planet-outline"></ion-icon>
       <div class="nav-btn-text">Trang chủ</div>
     </div>
-    <div id="about-btn" class="menu-nav-button" onclick="window.location.href='/about'">
+    <div
+      id="about-btn"
+      class="menu-nav-button"
+      onclick="window.location.href='/about'"
+    >
       <ion-icon id="about-icon" name="information-circle-outline"></ion-icon>
       <div class="nav-btn-text">Giới thiệu</div>
     </div>
-    <div id="discuss-btn" class="menu-nav-button" onclick="window.location.href='/discussions'">
+    <div
+      id="discuss-btn"
+      class="menu-nav-button"
+      onclick="window.location.href='/discussions'"
+    >
       <ion-icon id="discuss-icon" name="chatbox-ellipses-outline"></ion-icon>
       <div class="nav-btn-text">Thảo luận</div>
     </div>
-    <div id="learn-btn" class="menu-nav-button" onclick="window.location.href='/learn'">
+    <div
+      id="learn-btn"
+      class="menu-nav-button"
+      onclick="window.location.href='/learn'"
+    >
       <ion-icon id="learn-icon" name="book-outline"></ion-icon>
       <div class="nav-btn-text">Học tập</div>
     </div>
-    <div id="techtalk-btn" class="menu-nav-button" onclick="window.location.href='/techtalk'">
+    <div
+      id="techtalk-btn"
+      class="menu-nav-button"
+      onclick="window.location.href='/techtalk'"
+    >
       <ion-icon id="techtalk-icon" name="cafe-outline"></ion-icon>
       <div class="nav-btn-text">TechTalk</div>
     </div>
@@ -98,8 +149,8 @@
     $("#home-icon").attr("name", "planet");
   }
   $(document).ready(function () {
-    $('#sidebarCollapse').on('click', function () {
-      $('#sidebar').toggleClass('active');
+    $("#sidebarCollapse").on("click", function () {
+      $("#sidebar").toggleClass("active");
     });
   });
   var logoutModal = document.getElementById("logout");
@@ -107,13 +158,13 @@
   var logoutSpan = document.getElementsByClassName("closeLogout")[0];
   logoutbtn.onclick = function () {
     logoutModal.style.display = "block";
-  }
+  };
   logoutSpan.onclick = function () {
     logoutModal.style.display = "none";
-  }
+  };
   window.onclick = function (event) {
     if (event.target == modal) {
       logoutModal.style.display = "none";
     }
-  }
+  };
 </script>

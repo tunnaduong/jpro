@@ -126,6 +126,7 @@ function surl(data, config) {
             for (var j = 1; j < splitedRealPath.length; j++) {
               if (
                 splitedPath[i] == splitedRealPath[j] &&
+                splitedRealPath[i] == splitedPath[i] &&
                 splitedPath[i] != custom_add_syntax
               ) {
                 matchCount++;
