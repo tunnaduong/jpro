@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer,SerializerMethodField
-from .models import Learn, Post,Comment, PostLike, Techtalk, TechtalkLike, TechtalkSubcribe
+from .models import Learn, Post,Comment, Techtalk, TechtalkLike, TechtalkSubcribe
 from django.shortcuts import get_object_or_404
 
 class PostSerializer(ModelSerializer):
@@ -14,7 +14,7 @@ class PostDetailSerializer(ModelSerializer):
 
     class Meta: 
         model = Post
-        fields = ["id","title","content","author","date_posted","comments"] 
+        fields = ["id","title","content","author","date_posted","comments","total_likes"] 
 
     def get_comments(self, obj):
         post = obj.id
@@ -85,10 +85,7 @@ class TechtalkCreateSerializer(ModelSerializer):
         fields =  ["id","title","content","start_on","author"] 
 
 
-class PostlikeSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = PostLike
-        fields = '__all__'     
+     
 
 class TechtalkLikeSerializer(serializers.ModelSerializer):
     class Meta:

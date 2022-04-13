@@ -1,8 +1,9 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
+from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from blog.serializer import PostSerializer
-from .models import Learn, Post, Post_Category, Comment, Techtalk
+from .models import Learn, Post, Comment, Techtalk
 from django.contrib.auth.models import User
 from django.views.generic import DeleteView, ListView, DetailView, CreateView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -24,7 +25,7 @@ from .serializer import (
     PostSerializer,
     PostCreateSerializer,
     PostDeleteSerializer, TechtalkLikeSerializer,
-    PostUpdateSerializer, PostlikeSerializer,
+    PostUpdateSerializer,
     TechtalkSerializer, TechtalkDetailSerializer, TechtalkCreateSerializer, TechtalkDeleteSerializer,
     TechtalkSubcribeSerializer, TechtalkUpdateSerializer)
 from blog import permisssions
@@ -175,28 +176,19 @@ class TechtalkDeleteView(generics.DestroyAPIView):
     lookup_field = 'slug'
 
 
-class PostLikeList(views.APIView):
-    def get(self, request, slug): 
-        post = Post.objects.filter(slug=slug)
-        like_count = post.like_posts.count()
-        serializer = PostlikeSerializer(like_count, many=True)
-        return Response(serializer.data)
-
-    def post(self, request, slug): 
-        likeusers = request.user
-        likepost = Post.objects.filter(slug=slug)
-        serializer = PostlikeSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save(likeusers, likepost)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+@api_view(['POST'])
+def like_create_api(request, slug):
+    post = get_object_or_404(Post.objects.all(), slug = slug)
+    post.likes.add(request.user)
+    serializer = PostDetailSerializer(post)
+    return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
 class TechtalkLikeList(views.APIView):
     def get(self, request, slug): 
         techtalk = Techtalk.objects.filter(slug=slug)
         like_count = techtalk.like_techtalks.count()
-        serializer = PostlikeSerializer(like_count, many=True)
+        serializer = TechtalkLikeSerializer(like_count, many=True)
         return Response(serializer.data)
 
     def post(self, request, slug):
@@ -212,7 +204,7 @@ class TechtalkSubcribeList(views.APIView):
     def get(self, request, slug):  
         techtalk = Techtalk.objects.filter(slug=slug)
         subcribe_count = techtalk.subcribe_techtalks.count()
-        serializer = PostlikeSerializer(subcribe_count, many=True)
+        serializer = TechtalkSubcribeSerializer(subcribe_count, many=True)
         return Response(serializer.data)
 
     def post(self, request, slug):  

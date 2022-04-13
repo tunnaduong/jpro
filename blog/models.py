@@ -19,10 +19,10 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete = models.CASCADE)
     category = models.ForeignKey(Post_Category, on_delete= models.CASCADE,default=True, null = False) 
     views = models.IntegerField(default=0)
-    #likes = models.ManyToManyField(User,related_name= 'blog_posts')
+    likes = models.ManyToManyField(User,related_name= 'post_like')
 
-    #def total_likes(self):
-    #    return self.likes.count()
+    def total_likes(self):
+        return self.likes.count()
 
     def __str__(self): 
         return self.title
@@ -35,9 +35,7 @@ class Post(models.Model):
         self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)    
     
-class PostLike(models.Model):
-    like_users = models.ManyToManyField(User)
-    like_posts = models.ForeignKey(Post,on_delete=models.CASCADE,null=True,related_name='likepost')
+
 
 
 
