@@ -740,7 +740,6 @@ hr {
 }
 
 .image-cover {
-  margin-top: 20px;
   position: relative;
   width: 100%;
 }
@@ -791,6 +790,7 @@ header,
 }
 #title {
   width: 100%;
+  margin: 45px auto;
 }
 #abc {
   background: url("/static/images/event-bg.svg");
