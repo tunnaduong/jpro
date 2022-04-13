@@ -79,7 +79,7 @@ class Techtalk(models.Model):
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
-        super(Post, self).save(*args, **kwargs) 
+        super(Techtalk, self).save(*args, **kwargs) 
 
 
 

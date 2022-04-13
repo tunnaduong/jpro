@@ -140,7 +140,7 @@ class UserTechtalkListView (generics.ListAPIView):
 
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
-        return Techtalk.objects.filter(subcribes=user).order_by('-date_posted')
+        return Techtalk.objects.filter(subcribes=user).order_by('-start_on')
         #neu co bug thi doi subcribes --> author
 
 
