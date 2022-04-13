@@ -10,12 +10,18 @@
         của mình.
       </div>
     </div>
-    <div class="modal-footer container">
-      <button type="submit" class="cover-box">Đăng Xuất</button>
+    <div class="modal-footer">
+      <button
+        type="submit"
+        onclick="location.href = '/logout'"
+        class="cover-box"
+      >
+        Đăng xuất
+      </button>
     </div>
   </div>
 </div>
-<div id="navbarmenu" class="menu-bar">
+<div id="navbarmenu" class="menu-bar" style="display: none">
   <div class="left-side-menu display-row">
     <img
       src="/static/images/js_logo.png"
@@ -51,9 +57,13 @@
         height="40"
       />
       <div class="menu-user-info">Tùng Anh</div>
-      <div class="dropdown-content">
-        <a href="/profile" class="dropdown-item">Trang cá nhân</a>
-        <button class="dropdown-item" id="logoutBtn">Đăng Xuất</button>
+      <div class="dropdown-content" id="user-dropdown">
+        <button class="dropdown-item" onclick="location.href = '/profile'">
+          <ion-icon name="person-circle-outline"></ion-icon> Trang cá nhân
+        </button>
+        <button class="dropdown-item logout-red" id="logoutBtn">
+          <ion-icon name="log-out-outline"></ion-icon> Đăng xuất
+        </button>
       </div>
     </div>
   </div>
@@ -144,6 +154,17 @@
   </div>
 </div>
 <script>
+  $(document).mouseup(function (e) {
+    var container = $(".user-button");
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+      $("#user-dropdown").removeClass("display");
+    }
+  });
+
+  $(".user-button").on("click", () => {
+    $("#user-dropdown").toggleClass("display");
+  });
   if (location.pathname === "/") {
     $("#home-btn").addClass("nav-btn-active");
     $("#home-icon").attr("name", "planet");
@@ -167,4 +188,14 @@
       logoutModal.style.display = "none";
     }
   };
+</script>
+<script>
+  $(document).ready(function () {
+    console.log("if else");
+    if (localStorage.getItem("access_token") != null) {
+      $("#navbarmenu").css("display", "block");
+    } else {
+      $("#include-content").css("margin", "0");
+    }
+  });
 </script>

@@ -1,33 +1,110 @@
-    <div class="container">
-        <div class="cover-login">
-            <div class="welcome">
-                <img src="/static/images/js_logo.png" alt="" class="image-login">
-                <h2 class="text-center">Welcome</h2>
-                <span class="text-span text-center">Sign in by entering the information below</span>
-            </div>
-            <form>
-                <div class="input_box">
-                    <input type="text" placeholder="Email or Phone" required>
-                    <div class="icon"><i class="fas fa-user"></i></div>
-                </div>
-                <div class="input_box">
-                    <input type="password" placeholder="Password" required>
-                    <div class="icon"><i class="fas fa-lock"></i></div>
-                </div>
-                <div class="option_div">
-                    <div class="return_home">
-                        <a href="/">Return Home</a>
-                    </div>
-                    <div class="forget_div">
-                        <a href="#">Forgot password?</a>
-                    </div>
-                </div>
-                <div class="input_box button">
-                    <input type="submit" value="Login">
-                </div>
-                <div class="sign_up">
-                    Not a member? <a href="#">Signup now</a>
-                </div>
-            </form>
-        </div>
+<div class="container">
+  <div class="cover-login">
+    <div class="welcome">
+      <img src="/static/images/js_logo.png" alt="" class="image-login" />
+      <h2 class="text-center">Welcome</h2>
+      <span class="text-span text-center"
+        >Sign in by entering the information below</span
+      >
     </div>
+    <form>
+      <div class="input_box">
+        <input type="text" id="username" placeholder="Username" required />
+        <div class="icon"><i class="fas fa-user"></i></div>
+      </div>
+      <div class="input_box">
+        <input type="password" id="password" placeholder="Password" required />
+        <div class="icon"><i class="fas fa-lock"></i></div>
+      </div>
+      <div class="option_div">
+        <div class="return_home">
+          <a href="/">Return Home</a>
+        </div>
+        <div class="forget_div">
+          <a href="#">Forgot password?</a>
+        </div>
+      </div>
+      <div class="input_box button">
+        <input type="submit" value="Login" id="login-btn" />
+        <div class="loading" id="loading" style="display: none">
+          <img
+            src="/static/images/loading.svg"
+            style="width: 35px; height: 50px; margin: 0 auto; display: block"
+          />
+        </div>
+      </div>
+      <div class="sign_up">
+        Not a member?
+        <a href="https://facebook.com/fu.jsclub">Join our club now!</a>
+      </div>
+    </form>
+  </div>
+</div>
+<script>
+  const baseURL = `https://jpro-api.herokuapp.com/`;
+  console.log(baseURL);
+  const axiosInstance = axios.create({
+    baseURL: baseURL,
+    timeout: 5000,
+    headers: {
+      Authorization: localStorage.getItem("access_token")
+        ? "Bearer " + localStorage.getItem("access_token")
+        : null,
+      "Content-Type": "application/json",
+      accept: "application/json",
+    },
+  });
+
+  axiosInstance.interceptors.response.use(
+    (response) => response,
+    (error) => {
+      // Prevent infinite loops
+      if (error.response.status === 401) {
+        // window.location.href = "/logout";
+        return Promise.reject(error);
+      }
+
+      // specific error handling done elsewhere
+      return Promise.reject(error);
+    }
+  );
+
+  async function auth(username, password) {
+    try {
+      const response = await axiosInstance.post("/api/user/login/", {
+        username: username,
+        password: password,
+      });
+
+      if (response.data.access && response.data.refresh) {
+        window.location.href = "/";
+        localStorage.setItem("access_token", response.data.access);
+        localStorage.setItem("refresh_token", response.data.refresh);
+      }
+      console.log("ok");
+      $("#login-btn").css("display", "block");
+      $("#loading").css("display", "none");
+      return response.data;
+    } catch (error) {
+      if (error.response) {
+        console.log("failed");
+        console.log(error.response.data);
+        alert(
+          "Đã có lỗi khi đăng nhập! Vui lòng thử lại...\nMã lỗi: " +
+            error.response.status
+        );
+        $("#login-btn").css("display", "block");
+        $("#loading").css("display", "none");
+      }
+    }
+  }
+
+  $("#login-btn").on("click", function (event) {
+    $("#login-btn").css("display", "none");
+    $("#loading").css("display", "block");
+    var user = $("#username").val();
+    var pass = $("#password").val();
+    auth(user, pass);
+    event.preventDefault();
+  });
+</script>

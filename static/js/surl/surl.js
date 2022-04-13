@@ -155,6 +155,9 @@ function surl(data, config) {
               $(include_content_element).html(ajaxData);
             },
           });
+          if (expectedPath == "/login") {
+            $("#include-menu").html("");
+          }
         } else {
           debugging == true &&
             console.warn(

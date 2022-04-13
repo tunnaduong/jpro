@@ -207,6 +207,7 @@ body,
   cursor: pointer;
   transition-duration: 200ms;
   transition-property: background-color;
+  user-select: none;
 }
 
 .menu-user-info {
@@ -536,6 +537,10 @@ i {
 .display-column {
   display: flex;
   flex-direction: column;
+}
+
+.display {
+  display: block !important;
 }
 
 p,
@@ -1129,26 +1134,32 @@ header .image-cover::after {
   display: none;
   position: absolute;
   background-color: white;
-  min-width: 160px;
+  min-width: 200px;
   right: 0;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  padding: 12px 16px;
   border-radius: 10px;
   z-index: 1;
   color: black;
+  overflow: hidden;
 }
 .user-button .dropdown-content {
-  bottom: -70px;
+  bottom: -115px;
+}
+.logout-red {
+  color: #b93327;
 }
 .dropdown-item {
-  width: 100% !important;
+  min-width: 100% !important;
   background-color: transparent;
   text-align: left;
-  padding: 5px 0;
+  padding: 15px;
   font-size: 16px;
+  display: inline-flex;
+  align-items: center;
 }
-.dropdown:hover .dropdown-content {
-  display: block;
+.dropdown-item > ion-icon {
+  font-size: 25px;
+  margin-right: 7px;
 }
 .filter {
   font-size: 20px;
@@ -1283,7 +1294,8 @@ form .input_box {
   position: relative;
   margin-top: 15px;
 }
-.input_box input {
+.input_box > input,
+.input_box > .loading {
   height: 100%;
   width: 85%;
   outline: none;
@@ -1321,7 +1333,8 @@ form .option_div {
   color: white;
   text-align: end;
 }
-.button input {
+.button input,
+.button > .loading {
   padding-left: 0;
   width: 100%;
   background-color: white;
@@ -1331,10 +1344,6 @@ form .option_div {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s linear;
-}
-.button input:hover {
-  background: #115617;
-  color: white;
 }
 form .sign_up {
   text-align: center;
@@ -1382,8 +1391,9 @@ form a:hover {
   background-color: #fefefe;
   margin: auto;
   padding: 0;
+  width: 570px;
   border: 1px solid #888;
-  width: 80%;
+  max-width: 85%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
@@ -1420,9 +1430,10 @@ form a:hover {
   float: right;
   font-size: 28px;
   font-weight: bold;
+  margin-top: -5px;
 }
 #logout .modal-container {
-  margin: 50px 60px;
+  margin: 35px;
 }
 .close:hover,
 .close:focus,
@@ -1468,7 +1479,7 @@ form a:hover {
   align-items: center;
 }
 .modal-footer button {
-  margin: 10px 20px;
+  margin: 10px;
 }
 .modal-form {
   margin-top: 20px;

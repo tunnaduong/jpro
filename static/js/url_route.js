@@ -3,6 +3,8 @@ const url_route = {
   menu: "/includes/menu.html",
   script: "/includes/script.html",
   "/": "/pages/home.html",
+  "/login": "/pages/login.html",
+  "/logout": "/utils/logout.html",
   "/discussions": "/pages/discuss.html",
   "/discussions/*/details": "/pages/discussion_detail.html",
   "/techtalk": "/pages/event.html",
