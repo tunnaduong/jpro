@@ -18,6 +18,7 @@ class Post(models.Model):
     date_posted = models.DateTimeField(default = timezone.now)
     author = models.ForeignKey(User, on_delete = models.CASCADE)
     category = models.ForeignKey(Post_Category, on_delete= models.CASCADE,default=True, null = False) 
+    views = models.IntegerField(default=0)
     #likes = models.ManyToManyField(User,related_name= 'blog_posts')
 
     #def total_likes(self):
