@@ -79,6 +79,10 @@ class TechtalkLike(models.Model):
     like_users = models.ManyToManyField(User)
     like_techtalks = models.ForeignKey(Techtalk,on_delete=models.CASCADE,null=True,related_name='liketechtalk')
 
+class TechtalkSubcribe(models.Model):
+    subcribe_users = models.ManyToManyField(User)
+    subcribe_techtalks = models.ForeignKey(Techtalk,on_delete=models.CASCADE,null=True,related_name='subcribetechtalk')
+
 class Learn(models.Model):
     title = models.CharField(max_length=50)
     slug = models.SlugField(max_length=200 ,default='',unique =False)

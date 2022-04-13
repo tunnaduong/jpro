@@ -25,7 +25,8 @@ from .serializer import (
     PostCreateSerializer,
     PostDeleteSerializer, TechtalkLikeSerializer,
     PostUpdateSerializer, PostlikeSerializer,
-    TechtalkSerializer, TechtalkDetailSerializer, TechtalkCreateSerializer, TechtalkDeleteSerializer, TechtalkUpdateSerializer)
+    TechtalkSerializer, TechtalkDetailSerializer, TechtalkCreateSerializer, TechtalkDeleteSerializer,
+    TechtalkSubcribeSerializer, TechtalkUpdateSerializer)
 from blog import permisssions
 
 
@@ -175,16 +176,13 @@ class TechtalkDeleteView(generics.DestroyAPIView):
 
 
 class PostLikeList(views.APIView):
-    def get(self, request, slug):  # function to get total number of likes to particular post
-        # find which post's likes are to be extracted
+    def get(self, request, slug): 
         post = Post.objects.filter(slug=slug)
-        # counts total user likes ,besides my code is wrong
         like_count = post.like_posts.count()
         serializer = PostlikeSerializer(like_count, many=True)
         return Response(serializer.data)
 
-    def post(self, request, slug):  # function to add likes to post
-        # how do I check if user is already liked the post ?
+    def post(self, request, slug): 
         likeusers = request.user
         likepost = Post.objects.filter(slug=slug)
         serializer = PostlikeSerializer(data=request.data)
@@ -195,16 +193,13 @@ class PostLikeList(views.APIView):
 
 
 class TechtalkLikeList(views.APIView):
-    def get(self, request, slug):  # function to get total number of likes to particular post
-        # find which post's likes are to be extracted
+    def get(self, request, slug): 
         techtalk = Techtalk.objects.filter(slug=slug)
-        # counts total user likes ,besides my code is wrong
         like_count = techtalk.like_techtalks.count()
         serializer = PostlikeSerializer(like_count, many=True)
         return Response(serializer.data)
 
-    def post(self, request, slug):  # function to add likes to post
-        # how do I check if user is already liked the post ?
+    def post(self, request, slug):
         likeusers = request.user
         likepost = Techtalk.objects.filter(slug=slug)
         serializer = TechtalkLikeSerializer(data=request.data)
@@ -213,6 +208,21 @@ class TechtalkLikeList(views.APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+class TechtalkSubcribeList(views.APIView):
+    def get(self, request, slug):  
+        techtalk = Techtalk.objects.filter(slug=slug)
+        subcribe_count = techtalk.subcribe_techtalks.count()
+        serializer = PostlikeSerializer(subcribe_count, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, slug):  
+        likeusers = request.user
+        likepost = Techtalk.objects.filter(slug=slug)
+        serializer = TechtalkSubcribeSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(likeusers, likepost)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class LearnDetailView(generics.RetrieveAPIView):
     queryset = Learn.objects.all()

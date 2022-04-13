@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer,SerializerMethodField
-from .models import Learn, Post,Comment, PostLike, Techtalk, TechtalkLike
+from .models import Learn, Post,Comment, PostLike, Techtalk, TechtalkLike, TechtalkSubcribe
 from django.shortcuts import get_object_or_404
 
 class PostSerializer(ModelSerializer):
@@ -94,6 +94,11 @@ class TechtalkLikeSerializer(serializers.ModelSerializer):
     class Meta:
         model = TechtalkLike
         fields = '__all__'           
+
+class TechtalkSubcribeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TechtalkSubcribe
+        fields = '__all__'
 
 class LearnSerializer(serializers.ModelSerializer):
     class Meta:
