@@ -17,6 +17,5 @@ portalocker==2.4.0
 pycparser==2.21
 PyJWT==2.3.0
 pytz==2022.1
-pywin32==303
 sqlparse==0.4.2
 tzdata==2021.5
