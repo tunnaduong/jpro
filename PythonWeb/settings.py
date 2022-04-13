@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'rest_framework',
     'knox',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -55,6 +56,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'PythonWeb.urls'
@@ -152,3 +155,10 @@ REST_FRAMEWORK = {
         'knox.auth.TokenAuthentication',
     )
 }
+
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost',
+    'http://jpro-web.herokuapp.com',
+    'http://jpro-api.herokuapp.com',
+]
