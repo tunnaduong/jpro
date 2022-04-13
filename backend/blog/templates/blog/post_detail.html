@@ -1,0 +1,59 @@
+{% extends "blog/base.html" %} {% load crispy_forms_tags %} {% block content %}
+<article class="media content-section">
+  <img class="rounded-circle article-img" src="{{object.author.profile.image.url}}">
+  <div class="media-body">
+    <div class="article-metadata">
+      <a class="mr-2" href="{%url 'user-posts' object.author.username %}"> {{object.author}} </a>
+      <small class="text-muted"> {{object.date_posted | date:"F d, Y"}} </small>
+      {% if object.author == user%}
+        <div>
+          <a class="btn btn-secondary btn-sm mt-1 mb-1" href= "{% url 'post-update' object.id %}">Update </a>
+        <a class="btn btn-danger btn-sm mt-1 mb-1" href= "{% url 'post-delete' object.id %}">Delete </a>
+        </div>         
+      {% endif %}
+      </div>
+    <h2 class="article-title"> {{object.title}}</h2>
+    <p class="article-content">{{object.content}}</p>
+  </div>
+
+  <!-- Phan like -->
+  <br/><br/>
+  <hr>
+  <br/>
+  <form action = "{% url 'like_post' post.pk %}" method = "POST">
+    {%csrf_token%}
+    {%if user.is_authenticated%} 
+      {% if liked %}
+        <button type="submit", name = "post_id", value= "{{post.id}}", class="btn btn-danger btn-sm">Unlike</button> 
+      {%else%}
+        <button type="submit", name = "post_id", value= "{{post.id}}", class="btn btn-primary btn-sm">Like</button>
+      {%endif%}
+    {% else %}
+      <small>Login to like  </small> 
+    {%endif%}  
+      - {{total_likes}} Likes
+  </form> 
+</article>
+<!-- Phan comment -->
+<div class= "col-md-5 col-sm-12">
+  <div class= "row justify-content-center mt-3 mb-5  ">
+    <form method= "POST">
+      {%csrf_token%}
+      {{comment_form | crispy}}
+      <div class="d-grid gap-2">
+        <button class="btn btn-success mt-3" type ="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+ <!-- Hien thi comment -->
+ {% for comment in comments %}
+ <div class= "row justify-content-center mt-3 mb-5">
+   <div class= "col-md-5 col-sm-12 ">
+     <p><strong>{{comment.author}}</strong> {{comment.created_on}}</p>
+     <p>{{comment.comment}}</p>
+   </div>
+ </div>    
+ {%endfor%}
+{% endblock %}

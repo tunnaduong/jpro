@@ -1,0 +1,305 @@
+<div id="edit" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h3>Sửa bài thảo luận</h3>
+    </div>
+    <div class="modal-body">
+      <div class="modal-cover-image">
+        <img src="/static/images/japan_mountain.png" id="imageUpdate" alt="" />
+        <label for="changeImage" class="modal-change-img cover-box">
+          <ion-icon name="camera-outline"></ion-icon>
+          <div class="text-white">Sửa ảnh</div>
+        </label>
+        <input type="file" name="" accept="image/*" id="changeImage" hidden />
+      </div>
+      <div class="container modal-container">
+        <div class="modal-form">
+          <div class="modal-title">Tiêu đề</div>
+          <input type="text" class="modal-input" />
+        </div>
+        <div class="flex-2">
+          <div class="modal-form">
+            <div class="modal-title">Tags</div>
+            <input type="text" class="modal-input" />
+          </div>
+          <div class="modal-form">
+            <div class="modal-title">Giới hạn bình luận</div>
+            <input type="text" class="modal-input" />
+          </div>
+        </div>
+        <div class="flex-2">
+          <div class="modal-form">
+            <div class="modal-title">Danh mục</div>
+            <input type="text" class="modal-input" />
+          </div>
+          <label class="modal-form">
+            <input type="checkbox" class="modal-checkbox" />
+            <span class="check-box-effect"></span>
+            <span>Hiện số người thích bài viết này </span>
+          </label>
+        </div>
+        <div class="modal-form">
+          <div class="modal-title">Nội dung bài viết</div>
+          <textarea class="modal-input" rows="6"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="submit" class="cover-box">Sửa Bài</button>
+      <button type="reset" class="cover-white-box">Nhập Lại</button>
+    </div>
+  </div>
+</div>
+<div id="delete" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h3>Xóa bài thảo luận</h3>
+    </div>
+    <div class="modal-body">
+      <div class="modal-cover-image">
+        <img src="/static/images/japan_mountain.png" id="imageUpdate" alt="" />
+        <label for="changeImage" class="modal-change-img cover-box">
+          <ion-icon name="camera-outline"></ion-icon>
+          <div class="text-white">Sửa ảnh</div>
+        </label>
+        <input type="file" name="" accept="image/*" id="changeImage" hidden />
+      </div>
+      <div class="container modal-container">
+        <div class="modal-form">
+          <div class="modal-title">Tiêu đề</div>
+          <input type="text" class="modal-input" />
+        </div>
+        <div class="flex-2">
+          <div class="modal-form">
+            <div class="modal-title">Tags</div>
+            <input type="text" class="modal-input" />
+          </div>
+          <div class="modal-form">
+            <div class="modal-title">Giới hạn bình luận</div>
+            <input type="text" class="modal-input" />
+          </div>
+        </div>
+        <div class="flex-2">
+          <div class="modal-form">
+            <div class="modal-title">Danh mục</div>
+            <input type="text" class="modal-input" />
+          </div>
+          <label class="modal-form">
+            <input type="checkbox" class="modal-checkbox" />
+            <span class="check-box-effect"></span>
+            <span>Hiện số người thích bài viết này </span>
+          </label>
+        </div>
+        <div class="modal-form">
+          <div class="modal-title">Nội dung bài viết</div>
+          <textarea class="modal-input" rows="6"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="submit" class="cover-box">Xóa Bài</button>
+      <button type="reset" class="cover-white-box">Nhập Lại</button>
+    </div>
+  </div>
+</div>
+<header class="person-container">
+  <div class="image-cover">
+    <img id="cover_img" src="../../static/images/JS.png" alt="Cover Image" />
+    <div class="person">
+      <img src="/static/images/pbhuu.jpeg" alt="" class="avatar" />
+      <div class="person-info">
+        <div class="username text-white">@huupb</div>
+        <h3 class="name text-white">Phạm Bằng Hữu</h3>
+      </div>
+    </div>
+  </div>
+  <div class="person-menu">
+    <div class="discuss-menu">
+      <div class="discuss-choose">
+        <a href="/profile/">Hoạt Động</a>
+        <div class="under"></div>
+      </div>
+      <div class="">
+        <a href="">Học Tập</a>
+        <div class="under"></div>
+      </div>
+      <div class="">
+        <a href="/profile/techtalk">Tech Talk</a>
+        <div class="under"></div>
+      </div>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="container">
+    <select name="" class="filter" id="">
+      <option value="">Hoạt động mới nhất</option>
+      <option value="">Hoạt động lâu nhất</option>
+      <option value="">Hoạt động mới nhất</option>
+      <option value="">Hoạt động mới nhất</option>
+      <option value="">Hoạt động mới nhất</option>
+    </select>
+    <div class="active-post bg-white">
+      <div class="feed-post-avatar">
+        <img
+          src="/static/images/pbhuu.jpeg"
+          alt="Ảnh đại diện của người dùng"
+        />
+      </div>
+      <div>
+        <div class="feed-post-info">
+          <div class="active-history">
+            <div class="feed-post-user-name">Phạm Bằng Hữu</div>
+            <div class="activity">
+              <p>đã đăng một bài viết</p>
+              <div class="dropdown">
+                <span>
+                  <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                </span>
+                <div class="dropdown-content">
+                  <button class="dropdown-item" id="editBtn">Chỉnh sửa</button>
+                  <button class="dropdown-item" id="deleteBtn">
+                    Xóa TechTalk
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feed-post-created-time">1 ngày trước</div>
+        </div>
+        <div class="feed-post-content">
+          <span class="feed-post-title-outer">
+            [<span class="feed-post-title"
+              >Lorem ipsum dolor sit amet, consectetur porttitor.</span
+            >] </span
+          ><span class="feed-post-excerpt">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisl
+            eros, dapibus vitae eleifend eget, scelerisque sit amet odio. Donec
+            a arcu in nisi suscipit tempor ac ut nisi. Donec lacinia ullamcorper
+            nisl blandit porttitor. In hac habitasse platea dictumst. Cras sed
+            diam urna. Vestibulum molestie.</span
+          >
+        </div>
+      </div>
+    </div>
+    <div class="active-post bg-white">
+      <div class="feed-post-avatar">
+        <img
+          src="/static/images/pbhuu.jpeg"
+          alt="Ảnh đại diện của người dùng"
+        />
+      </div>
+      <div>
+        <div class="feed-post-info">
+          <div class="active-history">
+            <div class="feed-post-user-name">Phạm Bằng Hữu</div>
+            <div class="activity">
+              <p>đã đăng một bài viết</p>
+              <div class="dropdown">
+                <span>
+                  <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                </span>
+                <div class="dropdown-content">
+                  <button class="dropdown-item" id="editBtn">Chỉnh sửa</button>
+                  <button class="dropdown-item" id="deleteBtn">
+                    Xóa TechTalk
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feed-post-created-time">1 ngày trước</div>
+        </div>
+        <div class="feed-post-content">
+          <span class="feed-post-title-outer">
+            [<span class="feed-post-title"
+              >Lorem ipsum dolor sit amet, consectetur porttitor.</span
+            >] </span
+          ><span class="feed-post-excerpt">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisl
+            eros, dapibus vitae eleifend eget, scelerisque sit amet odio. Donec
+            a arcu in nisi suscipit tempor ac ut nisi. Donec lacinia ullamcorper
+            nisl blandit porttitor. In hac habitasse platea dictumst. Cras sed
+            diam urna. Vestibulum molestie.</span
+          >
+        </div>
+      </div>
+    </div>
+    <div class="active-post bg-white">
+      <div class="feed-post-avatar">
+        <img
+          src="/static/images/pbhuu.jpeg"
+          alt="Ảnh đại diện của người dùng"
+        />
+      </div>
+      <div>
+        <div class="feed-post-info">
+          <div class="active-history">
+            <div class="feed-post-user-name">Phạm Bằng Hữu</div>
+            <div class="activity">
+              <p>đã đăng một bài viết</p>
+              <div class="dropdown">
+                <span>
+                  <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                </span>
+                <div class="dropdown-content">
+                  <button class="dropdown-item" id="editBtn">Chỉnh sửa</button>
+                  <button class="dropdown-item" id="deleteBtn">
+                    Xóa TechTalk
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feed-post-created-time">1 ngày trước</div>
+        </div>
+        <div class="feed-post-content">
+          <span class="feed-post-title-outer">
+            [<span class="feed-post-title"
+              >Lorem ipsum dolor sit amet, consectetur porttitor.</span
+            >] </span
+          ><span class="feed-post-excerpt">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisl
+            eros, dapibus vitae eleifend eget, scelerisque sit amet odio. Donec
+            a arcu in nisi suscipit tempor ac ut nisi. Donec lacinia ullamcorper
+            nisl blandit porttitor. In hac habitasse platea dictumst. Cras sed
+            diam urna. Vestibulum molestie.</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<script>
+  $("#page-title").text("Cuộc thảo luận - JPro");
+  var modal = document.getElementById("edit");
+  var btn = document.getElementById("editBtn");
+  var span = document.getElementsByClassName("close")[0];
+  btn.onclick = function () {
+    modal.style.display = "block";
+  };
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+  var deleteModal = document.getElementById("delete");
+  var deletebtn = document.getElementById("deleteBtn");
+  var deleteSpan = document.getElementsByClassName("close")[1];
+  deletebtn.onclick = function () {
+    deleteModal.style.display = "block";
+  };
+  deleteSpan.onclick = function () {
+    deleteModal.style.display = "none";
+  };
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      deleteModal.style.display = "none";
+    }
+  };
+</script>
