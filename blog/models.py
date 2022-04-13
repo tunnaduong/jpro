@@ -69,6 +69,10 @@ class Techtalk(models.Model):
     start_on = models.DateTimeField()
     author = models.ForeignKey(User,on_delete = models.CASCADE)
     likes = models.ManyToManyField(User,related_name= 'techtalk_like')
+    subcribes = models.ManyToManyField(User,related_name= 'techtalk_subcribe')
+
+    def total_subcribes(self):
+        return self.subcribes.count()
 
     def total_likes(self):
         return self.likes.count()

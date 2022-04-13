@@ -4,7 +4,7 @@ from blog.serializer import TechtalkCreateSerializer, TechtalkDeleteSerializer
 
 from .views import (PostListView2,CommentCreateView, LikeView,CreatePostView,PostDetailView,PostUpdateView,PostDeleteView,PostListView, UserPostListView
 ,UserTechtalkListView,CreateTechtalkView,TechtalkUpdateView,TechtalkDetailView,TechTalkListView,TechtalkDeleteView,
-LearnListView,LearnDetailView,like_create_api,techtalk_like_create_api)
+LearnListView,LearnDetailView,like_create_api,techtalk_like_create_api,techtalk_subcribe_create_api)
 from . import views 
 
 from rest_framework.routers import DefaultRouter
@@ -30,6 +30,7 @@ urlpatterns = [
     path('techtalk/<slug:slug>/delete/',TechtalkDeleteView.as_view(), name = 'techtalk-delete'),
     path('techtalk/create',CreateTechtalkView.as_view(),name = 'techtalk-create'),
     path('techtalk/<slug:slug>/like/',techtalk_like_create_api,name = 'techtalk_likes'),
+    path('techtalk/<slug:slug>/subcribe/',techtalk_subcribe_create_api,name = 'techtalk_subcribes'),
     path('techtalk/', TechTalkListView.as_view(), name = 'techtalk-list'),
     path('learn/', LearnListView.as_view(), name = 'learn-list'),
     path('learn/<slug:slug>/', LearnDetailView.as_view(), name = 'learn-detail'),
