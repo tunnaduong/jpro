@@ -19,10 +19,10 @@ class Post(models.Model):
     date_posted = models.DateTimeField(default = timezone.now)
     author = models.ForeignKey(User, on_delete = models.CASCADE)
     category = models.ForeignKey(Post_Category, on_delete= models.CASCADE,default=True, null = False) 
-    likes = models.ManyToManyField(User,related_name= 'blog_posts')
+    #likes = models.ManyToManyField(User,related_name= 'blog_posts')
 
-    def total_likes(self):
-        return self.likes.count()
+    #def total_likes(self):
+    #    return self.likes.count()
 
     def __str__(self): 
         return self.title
@@ -35,6 +35,11 @@ class Post(models.Model):
         self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)    
     
+class PostLike(models.Model):
+    like_users = models.ManyToManyField(User)
+    like_posts = models.ForeignKey(Post,on_delete=models.CASCADE,null=True,related_name='likepost')
+
+
 
 class Comment(models.Model):
     comment = models.TextField()
@@ -57,3 +62,25 @@ class Comment(models.Model):
         if self.parent is not None:
             return False
         return True
+
+
+class Techtalk(models.Model):
+    title = models.CharField(max_length=50)
+    slug = models.SlugField(max_length=200 ,default='',unique =False)
+    content=models.TextField()
+    start_on = models.DateTimeField()
+    author = models.ForeignKey(User,on_delete = models.CASCADE)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(Post, self).save(*args, **kwargs) 
+
+class TechtalkLike(models.Model):
+    like_users = models.ManyToManyField(User)
+    like_techtalks = models.ForeignKey(Techtalk,on_delete=models.CASCADE,null=True,related_name='liketechtalk')
+
+class Learn(models.Model):
+    title = models.CharField(max_length=50)
+    slug = models.SlugField(max_length=200 ,default='',unique =False)
+    content = models.TextField()
+    created_on = models.DateTimeField(default = timezone.now)

@@ -1,3 +1,4 @@
+from .models import Profile
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 
@@ -52,3 +53,15 @@ class RegisterSerializer(serializers.ModelSerializer):
         user.save()
 
         return user        
+
+class ProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Profile
+        fields = ["id","user","image"]  
+
+
+class ProfileUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Profile
+        fields = ["image"]        
+

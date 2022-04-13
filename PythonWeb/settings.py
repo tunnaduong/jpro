@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'PythonWeb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'demo2',
+        'NAME': 'demo3',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
@@ -136,7 +136,7 @@ MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-LOGIN_REDIRECT_URL = 'Blog-home'
+LOGIN_REDIRECT_URL = 'blog-home'
 LOGIN_URL = 'login'
 
 

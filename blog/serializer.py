@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer,SerializerMethodField
-from .models import Post,Comment
+from .models import Learn, Post,Comment, PostLike, Techtalk, TechtalkLike
 from django.shortcuts import get_object_or_404
 
 class PostSerializer(ModelSerializer):
@@ -51,3 +51,51 @@ class CreateCommentSerializer(ModelSerializer):
     class Meta:
         model =  Comment
         fields = ["comment","user"]        
+
+
+
+class TechtalkSerializer(ModelSerializer):
+    class Meta: 
+        model = Techtalk
+        fields = ["id","title","content","start_on","author"]
+
+class TechtalkDetailSerializer(ModelSerializer):
+    author = serializers.ReadOnlyField(source='author.username')
+
+
+    class Meta: 
+        model = Techtalk
+        fields = ["id","title","content","start_on","author"]
+ 
+
+    
+class TechtalkUpdateSerializer(ModelSerializer):
+    class Meta: 
+        model = Techtalk
+        fields =  ["id","title","content","start_on","author"]
+
+class TechtalkDeleteSerializer(ModelSerializer):
+    class Meta: 
+        model = Techtalk
+        fields =  ["id","title","content","start_on","author"] 
+
+class TechtalkCreateSerializer(ModelSerializer):
+    class Meta:
+        model = Techtalk
+        fields =  ["id","title","content","start_on","author"] 
+
+
+class PostlikeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PostLike
+        fields = '__all__'     
+
+class TechtalkLikeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TechtalkLike
+        fields = '__all__'           
+
+class LearnSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Learn
+        fields = '__all__'        
