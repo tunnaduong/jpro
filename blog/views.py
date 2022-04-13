@@ -24,7 +24,7 @@ from .serializer import (
     PostDetailSerializer,
     PostSerializer,
     PostCreateSerializer,
-    PostDeleteSerializer, TechtalkLikeSerializer,
+    PostDeleteSerializer, 
     PostUpdateSerializer,
     TechtalkSerializer, TechtalkDetailSerializer, TechtalkCreateSerializer, TechtalkDeleteSerializer,
     TechtalkSubcribeSerializer, TechtalkUpdateSerializer)
@@ -183,22 +183,13 @@ def like_create_api(request, slug):
     serializer = PostDetailSerializer(post)
     return Response(serializer.data, status=status.HTTP_201_CREATED)
 
+@api_view(['POST'])
+def techtalk_like_create_api(request, slug):
+    techtalk = get_object_or_404(Techtalk.objects.all(), slug = slug)
+    techtalk.likes.add(request.user)
+    serializer = TechtalkDetailSerializer(techtalk)
+    return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-class TechtalkLikeList(views.APIView):
-    def get(self, request, slug): 
-        techtalk = Techtalk.objects.filter(slug=slug)
-        like_count = techtalk.like_techtalks.count()
-        serializer = TechtalkLikeSerializer(like_count, many=True)
-        return Response(serializer.data)
-
-    def post(self, request, slug):
-        likeusers = request.user
-        likepost = Techtalk.objects.filter(slug=slug)
-        serializer = TechtalkLikeSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save(likeusers, likepost)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class TechtalkSubcribeList(views.APIView):
     def get(self, request, slug):  

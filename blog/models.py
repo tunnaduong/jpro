@@ -68,14 +68,15 @@ class Techtalk(models.Model):
     content=models.TextField()
     start_on = models.DateTimeField()
     author = models.ForeignKey(User,on_delete = models.CASCADE)
+    likes = models.ManyToManyField(User,related_name= 'techtalk_like')
+
+    def total_likes(self):
+        return self.likes.count()
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs) 
 
-class TechtalkLike(models.Model):
-    like_users = models.ManyToManyField(User)
-    like_techtalks = models.ForeignKey(Techtalk,on_delete=models.CASCADE,null=True,related_name='liketechtalk')
 
 class TechtalkSubcribe(models.Model):
     subcribe_users = models.ManyToManyField(User)
