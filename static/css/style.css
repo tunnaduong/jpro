@@ -361,7 +361,6 @@ ion-icon[name="flash"] {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .event-detail-content {
