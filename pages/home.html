@@ -1,14 +1,25 @@
+<script src="/utils/getAvatar.js"></script>
 <script>
   function handlePosts(data) {
     $("#feed-posts").html("");
     data.map((row) => {
       // `<div>${row.title}</div>`;
       $("#feed-posts").append(
-        "<div class='newsfeed-post'> <div class='feed-post-avatar'> <img src='/static/images/tunganh1.jpeg' alt='Ảnh đại diện của người dùng'/> </div><div> <div class='feed-post-info'> <a href='/tunnaduong/profile'> <div class='feed-post-user-name'>Dương Tùng Anh</div></a> <a href='/discussions/4/details'> <div class='feed-post-created-time'>30 phút trước</div></a> </div><div class='feed-post-content'> <span class='feed-post-title-outer'> [<a href='/discussions/4/details'><span class='feed-post-title'>" +
+        "<div class='newsfeed-post'> <div class='feed-post-avatar' style='background: url(" +
+          row.avatar +
+          ");background-size: cover;background-position: center;background-repeat: no-repeat;border-radius: 100px'></div><div> <div class='feed-post-info'> <a href='/tunnaduong/profile'> <div class='feed-post-user-name'>" +
+          row.authorname +
+          "</div></a> <a href='/discussions/" +
+          row.id +
+          "/details'> <div class='feed-post-created-time'>" +
+          moment(row.date_posted).fromNow() +
+          "</div></a> </div><a href='/discussions/" +
+          row.id +
+          "/details'><div class='feed-post-content'> <span class='feed-post-title-outer'> [<span class='feed-post-title'>" +
           row.title +
-          "</span></a>] </span> <span class='feed-post-excerpt'> " +
+          "</span>] </span> <span class='feed-post-excerpt'> " +
           row.content +
-          " </span> </div></div></div><hr/>"
+          " </span> </div></a></div></div><hr/>"
       );
     });
     $("#feed-posts").append(
@@ -73,6 +84,10 @@
   <div class="right-side-widgets"></div>
 </div>
 <script>
+  $("#home-btn-desktop").addClass("nav-btn-active");
+  $("#home-btn").addClass("nav-btn-active");
+  $("#home-icon-desktop").attr("name", "planet");
+  $("#home-icon").attr("name", "planet");
   $("#page-title").text("JPro - A project of JSClub Team 1");
   setTimeout(() => {
     document
