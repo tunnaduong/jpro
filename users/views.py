@@ -25,10 +25,8 @@ class ProfileDetailView(generics.RetrieveAPIView):
     queryset = Profile.objects.all()
     permission_classes = (AllowAny)
     serializer_class = ProfileSerializer
-    lookup_field = 'username'
 
 class ProfileUpdateView(generics.UpdateAPIView):
     queryset = Profile.objects.all()
     permission_classes = (IsOwnerOrReadOnly) 
-    serializer_class = ProfileUpdateSerializer
-    lookup_field = 'username'   
+    serializer_class = ProfileUpdateSerializer  
