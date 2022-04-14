@@ -1,10 +1,11 @@
 from django.urls import path, include
 
-from blog.serializer import TechtalkCreateSerializer, TechtalkDeleteSerializer
+from blog.serializer import PostCreateSerializer, TechtalkCreateSerializer, TechtalkDeleteSerializer
 
 from .views import (PostListView2,CommentCreateView, LikeView,CreatePostView,PostDetailView,PostUpdateView,PostDeleteView,PostListView, UserPostListView
 ,UserTechtalkListView,CreateTechtalkView,TechtalkUpdateView,TechtalkDetailView,TechTalkListView,TechtalkDeleteView,
-LearnListView,LearnDetailView,like_create_api,techtalk_like_create_api,techtalk_subcribe_create_api)
+LearnListView,LearnDetailView,like_create_api,techtalk_like_create_api,techtalk_subcribe_create_api,
+CreatePostView)
 from . import views 
 
 from rest_framework.routers import DefaultRouter
@@ -16,6 +17,7 @@ router.register('posts',views.PostViewSet)
 urlpatterns = [
     path('post/', PostListView.as_view(), name = 'post-list'),
     path('post/user/<str:username>', UserPostListView.as_view(), name = 'user-posts'),
+    path('post/', CreatePostView.as_view(), name = 'post-create'),
     path('post/<int:pk>/',PostDetailView.as_view(), name = 'post_detail'),
     path('post/<slug:slug>/update/',PostUpdateView.as_view(), name = 'post-update'),
     path('post/<slug:slug>/delete/',PostDeleteView.as_view(), name = 'post-delete'),
