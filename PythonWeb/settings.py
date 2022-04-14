@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
+from datetime import timedelta
 import os
 from pathlib import Path
 from re import L
@@ -162,7 +163,11 @@ CORS_ALLOWED_ORIGINS = [
     'http://jpro-web.herokuapp.com',
     'http://jpro-api.herokuapp.com',
 ]
-from datetime import timedelta
+
+# CORS_ALLOW_HEADERS = [
+#     "Access-Control-Allow-Origin",
+# ]
+
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(hours=2),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
