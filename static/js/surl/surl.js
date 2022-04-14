@@ -149,12 +149,23 @@ function surl(data, config) {
                 loadPath +
                 '"'
             );
-          $.ajax({
-            url: loadPath,
-            success: function (ajaxData) {
-              $(include_content_element).html(ajaxData);
-            },
-          });
+          if (
+            localStorage.getItem("access_token") ||
+            expectedPath == "/login" ||
+            expectedPath == "/logout"
+          ) {
+            $.ajax({
+              url: loadPath,
+              success: function (ajaxData) {
+                $(include_content_element).html(ajaxData);
+              },
+            });
+          } else if (expectedPath == "/") {
+            location.href = "/login";
+          } else {
+            console.log("user has not logged in");
+          }
+
           if (expectedPath == "/login") {
             $("#include-menu").html("");
           }
