@@ -93,7 +93,7 @@ class PostDetailView(generics.RetrieveAPIView):
     queryset = Post.objects.all()
     serializer_class = PostDetailSerializer
     permission_classes = [IsAuthenticated]
-    lookup_field = 'slug'
+
 
     def get_object(self):
         obj = super().get_object()
