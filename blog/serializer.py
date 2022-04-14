@@ -11,7 +11,7 @@ class TagSerializer(ModelSerializer):
 class PostSerializer(ModelSerializer):
     class Meta: 
         model = Post
-        fields = ["id","title","content","author"]
+        fields = ["id","title","content","author","date_posted"]
 
 class PostDetailSerializer(ModelSerializer):
     author = serializers.ReadOnlyField(source='author.username')
