@@ -55,7 +55,7 @@ class CreateCommentSerializer(ModelSerializer):
 
     class Meta:
         model =  Comment
-        fields = ["comment","user"]        
+        fields = ["comment","user","post"]        
 
 
 

@@ -122,12 +122,10 @@ class CommentCreateView(generics.CreateAPIView):
     queryset = Comment.objects.all()
     serializer_class = CreateCommentSerializer
     permisssion_classes = [IsAuthenticated]
-    lookup_field = 'slug'
 
-    def perform_create(self, serializer, slug=None):
+
+    def perform_create(self, serializer):
         serializer.save(author=self.request.user)
-        post = get_object_or_404(Post, slug=slug)
-        serializer.save(post=post)
 
 
 class TechTalkListView (generics.ListAPIView):
