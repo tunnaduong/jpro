@@ -11,11 +11,12 @@ class TagSerializer(ModelSerializer):
 
 class PostSerializer(ModelSerializer):
     authorname = serializers.ReadOnlyField(source='author.get_full_name')
+    username = serializers.ReadOnlyField(source = 'author.username')
     avatar = SerializerMethodField()
 
     class Meta: 
         model = Post
-        fields = ["id","title","content","author","date_posted","authorname","avatar"]
+        fields = ["id","title","content","author","date_posted","authorname","avatar","username"]
 
     def get_avatar(self,post):
         request = self.context.get('request')
