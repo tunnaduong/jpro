@@ -95,11 +95,11 @@ class PostDetailView(generics.RetrieveAPIView):
     permission_classes = [IsAuthenticated]
 
 
-    def get_object(self):
-        obj = super().get_object()
-        obj.blog_views += 1
-        obj.save()
-        return obj
+    # def get_object(self):
+    #     obj = super().get_object()
+    #     obj.blog_views += 1
+    #     obj.save()
+    #     return obj
 
 class PostUpdateView(generics.UpdateAPIView):
     queryset = Post.objects.all()
