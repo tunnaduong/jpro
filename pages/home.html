@@ -1,3 +1,36 @@
+<script>
+  function handlePosts(data) {
+    data.map((row) => {
+      // `<div>${row.title}</div>`;
+      $("#feed-posts").append(
+        "<div class='newsfeed-post'> <div class='feed-post-avatar'> <img src='/static/images/tunganh1.jpeg' alt='Ảnh đại diện của người dùng'/> </div><div> <div class='feed-post-info'> <a href='/tunnaduong/profile'> <div class='feed-post-user-name'>Dương Tùng Anh</div></a> <a href='/discussions/4/details'> <div class='feed-post-created-time'>30 phút trước</div></a> </div><div class='feed-post-content'> <span class='feed-post-title-outer'> [<a href='/discussions/4/details'><span class='feed-post-title'>" +
+          row.title +
+          "</span></a>] </span> <span class='feed-post-excerpt'> " +
+          row.content +
+          " </span> </div></div></div><hr/>"
+      );
+    });
+    $("#feed-posts").append(
+      "<div class='done-reading'> <div> <img src='/static/images/done_reading.png' width='170' alt='Bạn đã đọc hết!'/> <div class='done-reading-text'>Yay, bạn đã đọc hết bài viết!</div></div></div>"
+    );
+  }
+
+  async function getHomePosts() {
+    try {
+      const response = await axiosInstance.get("/post/");
+      handlePosts(response.data);
+      console.log("ok");
+      return response.data;
+    } catch (error) {
+      if (error.response) {
+        console.log("failed");
+        console.log(error.response.data);
+      }
+    }
+  }
+
+  getHomePosts();
+</script>
 <div class="home-cover" style="background-attachment: fixed">
   <div class="js-club-members-image">
     <div class="cover-white-filter">
@@ -26,163 +59,11 @@
   <div class="newsfeed">
     <div class="feed-posts-wrapper">
       <div class="activity-type-select">Hoạt động mới</div>
-      <div class="feed-posts">
-        <div class="newsfeed-post">
-          <div class="feed-post-avatar">
-            <img
-              src="/static/images/tunganh1.jpeg"
-              alt="Ảnh đại diện của người dùng"
-            />
-          </div>
-          <div>
-            <div class="feed-post-info">
-              <a href="/tunnaduong/profile">
-                <div class="feed-post-user-name">Dương Tùng Anh</div>
-              </a>
-              <a href="/discussions/4/details">
-                <div class="feed-post-created-time">30 phút trước</div>
-              </a>
-            </div>
-            <div class="feed-post-content">
-              <span class="feed-post-title-outer">
-                [
-                <a href="/discussions/4/details">
-                  <span class="feed-post-title">Buổi bảo vệ đầu tiên</span> </a
-                >]
-              </span>
-              <span class="feed-post-excerpt">
-                Sau khoảng thời gian làm việc vui vẻ cùng nhau. Hôm nay, Team 1
-                chính thức bắt đầu buổi bảo vệ của mình. Mong rằng Team 1 sẽ
-                hoàn thành thật tốt buổi bảo vệ của mình
-              </span>
-            </div>
-          </div>
-        </div>
-        <hr />
-        <div class="newsfeed-post">
-          <div class="feed-post-avatar">
-            <img
-              src="/static/images/trantrang.jpeg"
-              alt="Ảnh đại diện của người dùng"
-            />
-          </div>
-          <div>
-            <div class="feed-post-info">
-              <a href="/tunnaduong/profile">
-                <div class="feed-post-user-name">Trần Thùy Trang</div>
-              </a>
-              <div class="feed-post-created-time">1 giờ trước</div>
-            </div>
-            <div class="feed-post-content">
-              <span class="feed-post-title-outer">
-                [<span class="feed-post-title"
-                  >Lorem ipsum dolor sit amet, consectetur porttitor.</span
-                >] </span
-              ><span class="feed-post-excerpt">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisl
-                eros, dapibus vitae eleifend eget, scelerisque sit amet odio.
-                Donec a arcu in nisi suscipit tempor ac ut nisi. Donec lacinia
-                ullamcorper nisl blandit porttitor. In hac habitasse platea
-                dictumst. Cras sed diam urna. Vestibulum molestie.</span
-              >
-            </div>
-          </div>
-        </div>
-        <hr />
-        <div class="newsfeed-post">
-          <div class="feed-post-avatar">
-            <img
-              src="/static/images/hoangphat.jpeg"
-              alt="Ảnh đại diện của người dùng"
-            />
-          </div>
-          <div>
-            <div class="feed-post-info">
-              <a href="/tunnaduong/profile">
-                <div class="feed-post-user-name">Hoàng Phát</div>
-              </a>
-              <div class="feed-post-created-time">2 giờ trước</div>
-            </div>
-            <div class="feed-post-content">
-              <span class="feed-post-title-outer">
-                [<span class="feed-post-title"
-                  >Lorem ipsum dolor sit amet, consectetur porttitor.</span
-                >] </span
-              ><span class="feed-post-excerpt">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisl
-                eros, dapibus vitae eleifend eget, scelerisque sit amet odio.
-                Donec a arcu in nisi suscipit tempor ac ut nisi. Donec lacinia
-                ullamcorper nisl blandit porttitor. In hac habitasse platea
-                dictumst. Cras sed diam urna. Vestibulum molestie.</span
-              >
-            </div>
-          </div>
-        </div>
-        <hr />
-        <div class="newsfeed-post">
-          <div class="feed-post-avatar">
-            <img
-              src="/static/images/pbhuu.jpeg"
-              alt="Ảnh đại diện của người dùng"
-            />
-          </div>
-          <div>
-            <div class="feed-post-info">
-              <a href="/tunnaduong/profile">
-                <div class="feed-post-user-name">Phạm Bằng Hữu</div>
-              </a>
-              <div class="feed-post-created-time">1 ngày trước</div>
-            </div>
-            <div class="feed-post-content">
-              <span class="feed-post-title-outer">
-                [<span class="feed-post-title"
-                  >Lorem ipsum dolor sit amet, consectetur porttitor.</span
-                >] </span
-              ><span class="feed-post-excerpt">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisl
-                eros, dapibus vitae eleifend eget, scelerisque sit amet odio.
-                Donec a arcu in nisi suscipit tempor ac ut nisi. Donec lacinia
-                ullamcorper nisl blandit porttitor. In hac habitasse platea
-                dictumst. Cras sed diam urna. Vestibulum molestie.</span
-              >
-            </div>
-          </div>
-        </div>
-        <hr />
-        <div class="done-reading">
-          <div>
-            <img
-              src="/static/images/done_reading.png"
-              width="170"
-              alt="Bạn đã đọc hết!"
-            />
-            <div class="done-reading-text">Yay, bạn đã đọc hết bài viết!</div>
-          </div>
-        </div>
-      </div>
+      <div class="feed-posts" id="feed-posts"></div>
     </div>
   </div>
   <div class="right-side-widgets"></div>
 </div>
-<script>
-  var homePosts = [];
-
-  async function getHomePosts() {
-    try {
-      const response = await axiosInstance.get("/post");
-      homePosts = response.data;
-      console.log("ok");
-      return response.data;
-    } catch (error) {
-      if (error.response) {
-        console.log("failed");
-        console.log(error.response.data);
-      }
-    }
-  }
-
-  getHomePosts();
-</script>
 <script>
   $("#page-title").text("JPro - A project of JSClub Team 1");
   setTimeout(() => {
