@@ -24,10 +24,10 @@ class RegisterView(generics.CreateAPIView):
 
 class ProfileDetailView(generics.RetrieveAPIView):
     queryset = Profile.objects.all()
-    permission_classes = (IsAuthenticated)
+    permission_classes = [IsAuthenticated]
     serializer_class = ProfileSerializer
 
 class ProfileUpdateView(generics.UpdateAPIView):
     queryset = Profile.objects.all()
-    permission_classes = (IsOwnerOrReadOnly,IsAuthenticated) 
+    permission_classes = [IsOwnerOrReadOnly,IsAuthenticated]
     serializer_class = ProfileUpdateSerializer  
