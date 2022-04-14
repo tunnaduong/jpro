@@ -1318,7 +1318,22 @@ form .input_box {
 form .option_div {
   margin-top: 5px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+}
+#noti-dropdown {
+  bottom: -120px;
+  min-width: 346px;
+  right: 15px;
+  padding: 20px;
+}
+.no-select {
+  user-select: none;
+}
+.empty-notification {
+  font-size: 17px;
+  text-align: center;
+  margin: 25px 0 10px;
+  color: gray;
 }
 .return_home a {
   color: white;

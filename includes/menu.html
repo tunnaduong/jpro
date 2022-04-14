@@ -40,14 +40,18 @@
   </div>
 
   <div class="right-side-menu">
-    <div class="chat-button">
+    <div class="chat-button no-select">
       <ion-icon name="chatbubble"></ion-icon>
       <ion-icon name="flash"></ion-icon>
       <div class="nav-btn-badge">3</div>
     </div>
-    <div class="notification-button">
+    <div class="notification-button no-select">
       <ion-icon name="notifications"></ion-icon>
       <div class="nav-btn-badge">9</div>
+      <div class="dropdown-content" id="noti-dropdown">
+        <h4>Thông báo</h4>
+        <div class="empty-notification">Không có thông báo nào...</div>
+      </div>
     </div>
     <div class="user-button dropdown">
       <img
@@ -165,6 +169,19 @@
   $(".user-button").on("click", () => {
     $("#user-dropdown").toggleClass("display");
   });
+
+  $(document).mouseup(function (e) {
+    var container = $(".notification-button");
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+      $("#noti-dropdown").removeClass("display");
+    }
+  });
+
+  $(".notification-button").on("click", () => {
+    $("#noti-dropdown").toggleClass("display");
+  });
+
   if (location.pathname === "/") {
     $("#home-btn").addClass("nav-btn-active");
     $("#home-icon").attr("name", "planet");

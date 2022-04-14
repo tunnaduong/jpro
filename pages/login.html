@@ -2,30 +2,30 @@
   <div class="cover-login">
     <div class="welcome">
       <img src="/static/images/js_logo.png" alt="" class="image-login" />
-      <h2 class="text-center">Welcome</h2>
+      <h2 class="text-center">Chào mừng</h2>
       <span class="text-span text-center"
-        >Sign in by entering the information below</span
+        >Nhập các thông tin bên dưới để đăng nhập</span
       >
     </div>
     <form>
       <div class="input_box">
-        <input type="text" id="username" placeholder="Username" required />
+        <input type="text" id="username" placeholder="Tên tài khoản" required />
         <div class="icon"><i class="fas fa-user"></i></div>
       </div>
       <div class="input_box">
-        <input type="password" id="password" placeholder="Password" required />
+        <input type="password" id="password" placeholder="Mật khẩu" required />
         <div class="icon"><i class="fas fa-lock"></i></div>
       </div>
-      <div class="option_div">
+      <!-- <div class="option_div">
         <div class="return_home">
-          <a href="/">Return Home</a>
+          <a href="/">Về trang chủ</a>
         </div>
         <div class="forget_div">
           <a href="#">Forgot password?</a>
         </div>
-      </div>
+      </div> -->
       <div class="input_box button">
-        <input type="submit" value="Login" id="login-btn" />
+        <input type="submit" value="Đăng nhập" id="login-btn" />
         <div class="loading" id="loading" style="display: none">
           <img
             src="/static/images/loading.svg"
@@ -34,8 +34,8 @@
         </div>
       </div>
       <div class="sign_up">
-        Not a member?
-        <a href="https://facebook.com/fu.jsclub">Join our club now!</a>
+        Chưa phải là thành viên?
+        <a href="https://facebook.com/fu.jsclub">Tham gia câu lạc bộ ngay!</a>
       </div>
     </form>
   </div>
@@ -69,9 +69,13 @@
   //   }
   // );
 
+  if (localStorage.getItem("access_token")) {
+    location.href = "/";
+  }
+
   async function auth(username, password) {
     try {
-      const response = await axiosInstance.post("/api/user/login/", {
+      const response = await axiosInstance.post("/user/login/", {
         username: username,
         password: password,
       });
@@ -89,10 +93,20 @@
       if (error.response) {
         console.log("failed");
         console.log(error.response.data);
-        alert(
-          "Đã có lỗi khi đăng nhập! Vui lòng thử lại...\nMã lỗi: " +
-            error.response.status
-        );
+        if (error.response.data.detail) {
+          alert(
+            "Đã có lỗi khi đăng nhập! Vui lòng thử lại...\nMã lỗi: " +
+              error.response.status +
+              "\n" +
+              error.response.data.detail
+          );
+        } else {
+          alert(
+            "Đã có lỗi khi đăng nhập! Vui lòng thử lại...\nMã lỗi: " +
+              error.response.status +
+              "\nLỗi này có thể xảy ra khi bạn chưa nhập đầy đủ thông tin"
+          );
+        }
         $("#login-btn").css("display", "block");
         $("#loading").css("display", "none");
       }

@@ -165,6 +165,25 @@
   <div class="right-side-widgets"></div>
 </div>
 <script>
+  var homePosts = [];
+
+  async function getHomePosts() {
+    try {
+      const response = await axiosInstance.get("/post");
+      homePosts = response.data;
+      console.log("ok");
+      return response.data;
+    } catch (error) {
+      if (error.response) {
+        console.log("failed");
+        console.log(error.response.data);
+      }
+    }
+  }
+
+  getHomePosts();
+</script>
+<script>
   $("#page-title").text("JPro - A project of JSClub Team 1");
   setTimeout(() => {
     document
