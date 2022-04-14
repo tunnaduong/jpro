@@ -1,5 +1,6 @@
 <script>
   function handlePosts(data) {
+    moment().locale("vi");
     $("#feed-posts").html("");
     data.map((row) => {
       $("#feed-posts").append(
@@ -10,7 +11,7 @@
           "</div></a> <a href='/discussions/" +
           row.id +
           "/details'> <div class='feed-post-created-time'>" +
-          moment(row.date_posted).locale("vi").fromNow() +
+          moment(row.date_posted).fromNow() +
           "</div></a> </div><a href='/discussions/" +
           row.id +
           "/details'><div class='feed-post-content'> <span class='feed-post-title-outer'> [<span class='feed-post-title'>" +
