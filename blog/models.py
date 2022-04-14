@@ -11,6 +11,9 @@ class Post_Category(models.Model):
         return self.name
 
 
+class Tag(models.Model):
+    content = models.CharField(max_length=15)
+
 class Post(models.Model):
     title = models.CharField(max_length = 100)
     slug = models.SlugField(max_length=200 ,default='',unique =False)
@@ -20,6 +23,7 @@ class Post(models.Model):
     category = models.ForeignKey(Post_Category, on_delete= models.CASCADE,default=True, null = False) 
     views = models.IntegerField(default=0)
     likes = models.ManyToManyField(User,related_name= 'post_like')
+    tags = models.TextField(default='')
 
     def total_likes(self):
         return self.likes.count()
@@ -35,8 +39,6 @@ class Post(models.Model):
         self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)    
     
-
-
 
 
 class Comment(models.Model):

@@ -1,7 +1,12 @@
 from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer,SerializerMethodField
-from .models import Learn, Post,Comment, Techtalk
+from .models import Learn, Post,Comment, Techtalk,Tag
 from django.shortcuts import get_object_or_404
+
+class TagSerializer(ModelSerializer):
+    class Meta:
+        model = Tag
+        fields = '__all__'
 
 class PostSerializer(ModelSerializer):
     class Meta: 

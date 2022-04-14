@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from blog.serializer import PostSerializer
-from .models import Learn, Post, Comment, Techtalk
+from .models import Learn, Post, Comment, Techtalk,Tag
 from django.contrib.auth.models import User
 from django.views.generic import DeleteView, ListView, DetailView, CreateView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -27,7 +27,7 @@ from .serializer import (
     PostDeleteSerializer, 
     PostUpdateSerializer,
     TechtalkSerializer, TechtalkDetailSerializer, TechtalkCreateSerializer, TechtalkDeleteSerializer,
-    TechtalkUpdateSerializer)
+    TechtalkUpdateSerializer,TagSerializer)
 from blog import permisssions
 
 
@@ -58,6 +58,10 @@ class PostViewSet(viewsets.ModelViewSet):
     serializer_class = PostSerializer
     permission_classes = [IsAuthenticated]
 
+class TagView(generics.CreateAPIView):
+    queryset = Tag.objects.all()
+    serializer_class = TagSerializer
+    permission_classes = [IsAuthenticated]
 
 class PostListView (generics.ListAPIView):
     serializer_class = PostSerializer
