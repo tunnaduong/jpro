@@ -32,7 +32,7 @@ class PostDetailSerializer(ModelSerializer):
 
     class Meta: 
         model = Post
-        fields = ["id","title","content","author","date_posted","comments","total_likes","username","avatar"] 
+        fields = ["id","title","content","author","views","date_posted","comments","total_likes","username","avatar"] 
 
     def get_comments(self, obj):
         post = obj.id
