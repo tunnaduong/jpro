@@ -9,11 +9,11 @@ class TagSerializer(ModelSerializer):
         fields = '__all__'
 
 class PostSerializer(ModelSerializer):
-    author = serializers.ReadOnlyField(source='author.get_full_name')
+    authorname = serializers.ReadOnlyField(source='author.get_full_name')
 
     class Meta: 
         model = Post
-        fields = ["id","title","content","author","date_posted"]
+        fields = ["id","title","content","author","date_posted","authorname"]
 
 class PostDetailSerializer(ModelSerializer):
     author = serializers.ReadOnlyField(source='author.get_full_name')
@@ -33,7 +33,7 @@ class PostDetailSerializer(ModelSerializer):
 class PostUpdateSerializer(ModelSerializer):
     class Meta: 
         model = Post
-        fields = ["id","title","content","author"] 
+        fields = ["id","title","content","author","authorname"] 
 
 class PostDeleteSerializer(ModelSerializer):
     class Meta: 
