@@ -160,8 +160,8 @@ REST_FRAMEWORK = {
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost',
-    'http://jpro-web.herokuapp.com',
-    'http://jpro-api.herokuapp.com',
+    'https://jpro-web.herokuapp.com',
+    'https://jpro-api.herokuapp.com',
 ]
 
 SIMPLE_JWT = {
