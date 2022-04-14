@@ -9,12 +9,14 @@ class TagSerializer(ModelSerializer):
         fields = '__all__'
 
 class PostSerializer(ModelSerializer):
+    author = serializers.ReadOnlyField(source='author.get_full_name')
+
     class Meta: 
         model = Post
         fields = ["id","title","content","author","date_posted"]
 
 class PostDetailSerializer(ModelSerializer):
-    author = serializers.ReadOnlyField(source='author.username')
+    author = serializers.ReadOnlyField(source='author.get_full_name')
     comments = serializers.SerializerMethodField()
 
     class Meta: 
