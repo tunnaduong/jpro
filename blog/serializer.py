@@ -27,16 +27,24 @@ class PostSerializer(ModelSerializer):
 class PostDetailSerializer(ModelSerializer):
     author = serializers.ReadOnlyField(source='author.get_full_name')
     comments = serializers.SerializerMethodField()
+    username = serializers.ReadOnlyField(source = 'author.username')
+    avatar = SerializerMethodField()
 
     class Meta: 
         model = Post
-        fields = ["id","title","content","author","date_posted","comments","total_likes"] 
+        fields = ["id","title","content","author","date_posted","comments","total_likes","username","avatar"] 
 
     def get_comments(self, obj):
         post = obj.id
         c_qs = Comment.objects.filter(post = post) 
         comments = CommentSerializer(c_qs, many = True).data
         return comments 
+
+    def get_avatar(self,post):
+        request = self.context.get('request')
+        profile = get_object_or_404(Profile,user = post.author)
+        avatar_url = profile.image.url
+        return request.build_absolute_uri(avatar_url)    
 
     
 class PostUpdateSerializer(ModelSerializer):
