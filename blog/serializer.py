@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer,SerializerMethodField
 from .models import Learn, Post,Comment, Techtalk,Tag
+from users.models import Profile
 from django.shortcuts import get_object_or_404
 
 class TagSerializer(ModelSerializer):
@@ -10,10 +11,17 @@ class TagSerializer(ModelSerializer):
 
 class PostSerializer(ModelSerializer):
     authorname = serializers.ReadOnlyField(source='author.get_full_name')
+    avatar = SerializerMethodField()
 
     class Meta: 
         model = Post
-        fields = ["id","title","content","author","date_posted","authorname"]
+        fields = ["id","title","content","author","date_posted","authorname","avatar"]
+
+    def get_avatar(self,post):
+        request = self.context.get('request')
+        profile = get_object_or_404(Profile,user = post.author)
+        avatar_url = profile.image.url
+        return request.build_absolute_uri(avatar_url)    
 
 class PostDetailSerializer(ModelSerializer):
     author = serializers.ReadOnlyField(source='author.get_full_name')
