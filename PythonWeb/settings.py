@@ -164,10 +164,6 @@ CORS_ALLOWED_ORIGINS = [
     'http://jpro-api.herokuapp.com',
 ]
 
-# CORS_ALLOW_HEADERS = [
-#     "Access-Control-Allow-Origin",
-# ]
-
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(hours=2),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
