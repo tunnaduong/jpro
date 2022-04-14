@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from blog.serializer import PostSerializer
-from .models import Learn, Post, Comment, Techtalk
+from .models import Learn, Post, Comment, Techtalk,Tag
 from django.contrib.auth.models import User
 from django.views.generic import DeleteView, ListView, DetailView, CreateView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -27,7 +27,7 @@ from .serializer import (
     PostDeleteSerializer, 
     PostUpdateSerializer,
     TechtalkSerializer, TechtalkDetailSerializer, TechtalkCreateSerializer, TechtalkDeleteSerializer,
-    TechtalkUpdateSerializer)
+    TechtalkUpdateSerializer,TagSerializer)
 from blog import permisssions
 
 
@@ -58,6 +58,10 @@ class PostViewSet(viewsets.ModelViewSet):
     serializer_class = PostSerializer
     permission_classes = [IsAuthenticated]
 
+class TagView(generics.CreateAPIView):
+    queryset = Tag.objects.all()
+    serializer_class = TagSerializer
+    permission_classes = [IsAuthenticated]
 
 class PostListView (generics.ListAPIView):
     serializer_class = PostSerializer
@@ -89,13 +93,13 @@ class PostDetailView(generics.RetrieveAPIView):
     queryset = Post.objects.all()
     serializer_class = PostDetailSerializer
     permission_classes = [IsAuthenticated]
-    lookup_field = 'slug'
 
-    def get_object(self):
-        obj = super().get_object()
-        obj.blog_views += 1
-        obj.save()
-        return obj
+
+    # def get_object(self):
+    #     obj = super().get_object()
+    #     obj.blog_views += 1
+    #     obj.save()
+    #     return obj
 
 class PostUpdateView(generics.UpdateAPIView):
     queryset = Post.objects.all()
@@ -118,12 +122,10 @@ class CommentCreateView(generics.CreateAPIView):
     queryset = Comment.objects.all()
     serializer_class = CreateCommentSerializer
     permisssion_classes = [IsAuthenticated]
-    lookup_field = 'slug'
 
-    def perform_create(self, serializer, slug=None):
+
+    def perform_create(self, serializer):
         serializer.save(author=self.request.user)
-        post = get_object_or_404(Post, slug=slug)
-        serializer.save(post=post)
 
 
 class TechTalkListView (generics.ListAPIView):

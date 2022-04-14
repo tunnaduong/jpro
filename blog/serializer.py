@@ -1,20 +1,38 @@
 from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer,SerializerMethodField
-from .models import Learn, Post,Comment, Techtalk
+from .models import Learn, Post,Comment, Techtalk,Tag
+from users.models import Profile
 from django.shortcuts import get_object_or_404
 
+class TagSerializer(ModelSerializer):
+    class Meta:
+        model = Tag
+        fields = '__all__'
+
 class PostSerializer(ModelSerializer):
+    authorname = serializers.ReadOnlyField(source='author.get_full_name')
+    username = serializers.ReadOnlyField(source = 'author.username')
+    avatar = SerializerMethodField()
+
     class Meta: 
         model = Post
-        fields = ["id","title","content","author"]
+        fields = ["id","title","content","author","date_posted","authorname","avatar","username"]
+
+    def get_avatar(self,post):
+        request = self.context.get('request')
+        profile = get_object_or_404(Profile,user = post.author)
+        avatar_url = profile.image.url
+        return request.build_absolute_uri(avatar_url)    
 
 class PostDetailSerializer(ModelSerializer):
-    author = serializers.ReadOnlyField(source='author.username')
+    author = serializers.ReadOnlyField(source='author.get_full_name')
     comments = serializers.SerializerMethodField()
+    username = serializers.ReadOnlyField(source = 'author.username')
+    avatar = SerializerMethodField()
 
     class Meta: 
         model = Post
-        fields = ["id","title","content","author","date_posted","comments","total_likes"] 
+        fields = ["id","title","content","author","views","date_posted","comments","total_likes","username","avatar"] 
 
     def get_comments(self, obj):
         post = obj.id
@@ -22,11 +40,17 @@ class PostDetailSerializer(ModelSerializer):
         comments = CommentSerializer(c_qs, many = True).data
         return comments 
 
+    def get_avatar(self,post):
+        request = self.context.get('request')
+        profile = get_object_or_404(Profile,user = post.author)
+        avatar_url = profile.image.url
+        return request.build_absolute_uri(avatar_url)    
+
     
 class PostUpdateSerializer(ModelSerializer):
     class Meta: 
         model = Post
-        fields = ["id","title","content","author"] 
+        fields = ["id","title","content","author","authorname"] 
 
 class PostDeleteSerializer(ModelSerializer):
     class Meta: 
@@ -50,7 +74,7 @@ class CreateCommentSerializer(ModelSerializer):
 
     class Meta:
         model =  Comment
-        fields = ["comment","user"]        
+        fields = ["comment","user","post"]        
 
 
 

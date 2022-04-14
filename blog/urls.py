@@ -16,7 +16,7 @@ router.register('posts',views.PostViewSet)
 urlpatterns = [
     path('post/', PostListView.as_view(), name = 'post-list'),
     path('post/user/<str:username>', UserPostListView.as_view(), name = 'user-posts'),
-    path('post/<slug:slug>/',PostDetailView.as_view(), name = 'post_detail'),
+    path('post/<int:pk>/',PostDetailView.as_view(), name = 'post_detail'),
     path('post/<slug:slug>/update/',PostUpdateView.as_view(), name = 'post-update'),
     path('post/<slug:slug>/delete/',PostDeleteView.as_view(), name = 'post-delete'),
     path('post/create',CreatePostView.as_view(),name = 'post_create'),
