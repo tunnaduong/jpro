@@ -88,9 +88,9 @@ WSGI_APPLICATION = 'PythonWeb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'jpro_db',
-        'USER': 'jsteam',
-        'PASSWORD': 'js2022',
+        'NAME': 'tunnaduong_jpro',
+        'USER': 'tunnaduong_jpro',
+        'PASSWORD': 'Tunganh2003',
         'HOST': '103.81.85.224',
         'PORT': '3306',
     }
